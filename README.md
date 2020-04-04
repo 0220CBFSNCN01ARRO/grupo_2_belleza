@@ -1,19 +1,19 @@
-# grupo_2_belleza
+# **grupo_2_belleza**
 
-<p>Productos:
-<br>-Perfumes
-<br>-Jabones
-<br>-Shampoos
-<br>-Acondicionadores
+## Productos:
+-Perfumes
+-Jabones
+-Shampoos
+-Acondicionadores
 
-<p>Audiencia objetivo:
-<br>-Adultos
+## Audiencia objetivo:
+-Adultos
 
 
 
-<p><p>Sitios de referencia:
-<br>https://www.naturacosmeticos.com.ar/consultoria/rosariocentro1
-<br>https://www.maybelline.com.ar/
-<br>http://www.revlon.com.ar/
-<br>https://www.maccosmetics.com.ar/
-<br>https://www.avon.com.ar/ar-home
+## Sitios de referencia:
+[Natura] (https://www.naturacosmeticos.com.ar)
+[Maybelline] (https://www.maybelline.com.ar/)
+[Revlon] (http://www.revlon.com.ar/)
+[Mac] (https://www.maccosmetics.com.ar/)
+[Avon] (https://www.avon.com.ar/ar-home)
