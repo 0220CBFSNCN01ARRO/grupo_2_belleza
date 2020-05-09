@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="../public/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="../css/style.css" rel="stylesheet">
     <title>Home</title>
 </head>
+
 <body>
     <header>
+
         <!-- <img src="../img/dhs-logo.png" width="150px" class="logo"> -->
         <div class="header">DHS</div>
         <!-- <br><br><br><br><br><br><br><br><br><br> -->
-            <nav class="main-nav">
-            <a href="../html/index.html">Home</a> &nbsp; | &nbsp;
+        <nav class="main-nav">
+            <a href="/views/index.ejs">Home</a> &nbsp; | &nbsp;
             <a href="../html/productDetail.html">Productos</a> &nbsp; | &nbsp;
             <a href="">Promociones</a> &nbsp; | &nbsp;
-            <a href="../html/registro.html">Registrarse</a> &nbsp;  | &nbsp;
-            <a href="">Log In</a>&nbsp;  | &nbsp;
-            <a href="../html/productCart.html"><img src="../img/cart.png.png" width="18px"></a>
-        
+            <a href="../html/registro.html">Registrarse</a> &nbsp; | &nbsp;
+            <a href="">Log In</a>&nbsp; | &nbsp;
+            <a href="/views/productCart.ejs"><img src="../img/cart.png" width="18px"></a>
+
         </nav>
-    
-           <form class="buscador" action="index.html" method="get">
-           <input type="search" id="buscar" name="buscar">
-           <button type="submit">Buscar</button>
-    
+
+        <form class="buscador" action="index.html" method="get">
+            <input type="search" id="buscar" name="buscar">
+            <button type="submit">Buscar</button>
+
         </form>
     </header>
 
     <div class="container">
-    <h2>Lo más vendido</h2>
+        <h2>Lo más vendido</h2>
 
-    <marquee>
-        <img src="../public/img/shampoo libre.jpg" width="200px">
-        <img src="../public/img/shampoo liso.jpg" width="200px">
-        <img src="../public/img/shampoo oleosidad.jpg" width="200px">
-        <img src="../public/img/shampoo vivo.jpg" width="200px">               
-    </marquee>
+        <marquee>
+            <img src="../img/shampoo libre.jpg" width="200px">
+            <img src="../img/shampoo liso.jpg" width="200px">
+            <img src="../img/shampoo oleosidad.jpg" width="200px">
+            <img src="../img/shampoo vivo.jpg" width="200px">
+        </marquee>
     </div>
     <br><br>
     <br><br>
 
     <div class="container">
-    <h2 >Promociones</h2>
+        <h2>Promociones</h2>
 
-    <marquee>
-        <img src="../public/img/shampoo libre.jpg" width="200px">
-        <img src="../public/img/shampoo oleosidad.jpg" width="200px">
-        <img src="../public/img/shampoo vivo.jpg" width="200px">               
-        <img src="../public/img/shampoo libre.jpg" width="200px">
-    </marquee>
+        <marquee>
+            <img src="../img/shampoo libre.jpg" width="200px">
+            <img src="../img/shampoo oleosidad.jpg" width="200px">
+            <img src="../img/shampoo vivo.jpg" width="200px">
+            <img src="../img/shampoo libre.jpg" width="200px">
+        </marquee>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
