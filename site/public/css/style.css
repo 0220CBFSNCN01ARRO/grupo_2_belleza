@@ -1,7 +1,7 @@
 body{
-    background-color: #ccc;
+    background-color: #000;
     font-weight: bold;
-    color: black;
+    color: #fff;
 }
 
 a:link, a:visited, a:active {
@@ -48,7 +48,7 @@ h2{
 marquee {
     position: relative;
     top:200px;
-    margin-right: 250px;
-    margin-left: 400px;
+    margin-right: 100px;
+    margin-left: 100px;
 
 }
