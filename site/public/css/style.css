@@ -2,18 +2,26 @@ body{
     background-color: #000;
     font-weight: bold;
     color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+
+
 }
 
 a:link, a:visited, a:active {
     text-decoration:none;
+    color: #fff;
 }
 
+a:hover {
+    color: #6A11B3;
+}
 
-.header {
-    background-color: rgba(106, 17, 179, 0.6);
-    height: 150px;
-    text-align: center;
-    font-size: 125px;    
+.logo {
+    text-align: center;   
+    margin: 15px;
 }
 
 .logo {
@@ -48,7 +56,18 @@ h2{
 marquee {
     position: relative;
     top:200px;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-right: 200px;
+    margin-left: 200px;
+
+}
+
+.registro {
+    align-self: center;
+    margin-top: 5%;
+}
+
+.login {
+    align-self: center;
+    margin-top: 5%;
 
 }
