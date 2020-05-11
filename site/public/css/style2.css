@@ -1,70 +1,8 @@
-/* Resets */
-* {box-sizing: border-box;}
-ul {padding: 0;}
-li {list-style: none;}
-a {text-decoration: none;}
-
-
-/* General */
-body{
-    background-color: #ccc;
-    font-weight: bold;
-    color: black;
-    font-family: 'Gochi Hand', cursive;
-    font-weight: lighter;
-}
-.container {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-div.container {
-    background-color: rgb(54, 53, 53);
-}
+/* Basics */
+* {
+    box-sizing: border-box;
+  }
+  
 header {
-    color: whitesmoke;
-}
-
-
-/* Header */
-.main-header {
-    text-align: left;
-    margin-top: 20px;
-}
-/* .logo {
-    border-radius: 25px;
-    border: 2px solid grey;
-} */
-.main-nav {
-    display: inline-block;
-    font-size: 20px;
-}
-.main-nav a {
-    padding: 10px 0;
-    display: inline;
-}
-.buscador {
-    position: absolute;
-    margin-block-end: auto;
-}
-
-/* Detalle producto */
-.product.box {
-    width: 10%;
-}
-
-/* Footer */
-
-#footer {
-display: flex;
-height: 60px;
-}
-.copy {
-    padding: 10px 20px;
-    font-size: 15px;
-}
-.redes {
-    flex-direction: row;
-    justify-content: space-around;
+    background-color: #7a7272;
 }

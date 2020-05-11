@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/56b68d7c9c.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.js">
+   
     
-    <link rel="stylesheet" href="../css/style2.css">
-    <title>title</title>
+    <link rel="stylesheet" href="../public/css/style2.css">
+    <title>Detalle productos</title>
 </head>
 <body>
     <div class="container">
-        <div>
+        <div class="container-head d-flex w-100">
     
             <!-- Cabecera -->
-        <header class="main-header">
-            <img class="logo" src="../img/DH_style.png" alt="imagen logo" width="150px">
-            
-            <nav class="main-nav">
-                <a href="">Home</a> &nbsp; | &nbsp;
-                <a href="/productDetail.ejs">Productos</a> &nbsp; | &nbsp;
-                <a href="">Promociones</a> &nbsp; | &nbsp;
-                <a href="">Registrate</a> &nbsp; | &nbsp;
-                <a href="">LogIn</a> &nbsp; | &nbsp;
-                <a href=""><i class="fas fa-shopping-cart"></i></a>
+            <header class="main-header d-flex col-12">
+                <img class="logo justify-content-center" src="../public/img/DH_style.png" alt="imagen logo" width="150px">
+                <nav class="main-nav">
+                    <ul class="d-flex list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="">Home</a></li>
+                        <li class="list-inline-item"><a href="/productDetail.ejs">Productos</a></li>
+                        <li class="list-inline-item"><a href="">Promociones</a></li>
+                        <li class="list-inline-item"><a href="">Registrate</a></li>
+                    <li class="list-inline-item"><a href="">LogIn</a></li>
+                    <li class="list-inline-item"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
             </nav>
-    
+            
             <!-- busqueda -->
             <form class="buscador" action="index.html" method="get">
                 <input type="search" id="buscar" name="buscar">
@@ -34,13 +35,13 @@
             </form>
         </header>
         </div>
-    <!-- fin cabecera -->
-    
-    <!-- Detalle productos -->
-    <div class="container-prod">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="products-title">NOMBRE DEL PRODUCTO</h2>
+        <!-- fin cabecera -->
+        
+        <!-- Detalle productos -->
+        <div class="container-prod">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="products-title">NOMBRE DEL PRODUCTO</h3>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
@@ -72,5 +73,9 @@
         </p>
     </footer>
     <!-- Fin Footer -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
     </html>
