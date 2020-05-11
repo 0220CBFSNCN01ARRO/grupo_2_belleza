@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../public/css/style.css" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>
   <header>
+<<<<<<< HEAD
   
     <div class="header">DHS</div>
    
@@ -24,6 +25,16 @@
         <a href="">Log In</a>&nbsp;  | &nbsp;
         <a href="../html/productCart.ejs"><img src="../img/cart.png.png" width="18px"></a>
     
+=======
+    <div class="header"><img src="../img/DH_style.png" height="120"></div>
+      <nav class="main-nav">
+      <a href="../views/index.ejs">Home</a> &nbsp; | &nbsp;
+      <a href="../views/productDetail.ejs">Productos</a> &nbsp; | &nbsp;
+      <a href="">Promociones</a> &nbsp; | &nbsp;
+      <a href="../views/register.ejs">Registrarse</a> &nbsp;  | &nbsp;
+      <a href="../views/login.ejs">Conectarse</a>&nbsp;  | &nbsp;
+      <a href="../views/productCart.ejs"><img src="../public/img/cart.png" width="18px"></a>
+>>>>>>> pruebaRo
     </nav>
 
        <form class="buscador" action="index.html" method="get">
@@ -33,27 +44,34 @@
     </form>
 </header>
 
-    <div class="container">
-        <h3>Login</h3>
-        <form>
-          <input  type="text" class="email" placeholder="email">
-          <br/>
-          <input type="text" class="pwd" placeholder="password">
-        </form>
-        <a href="#" class="link">
-          Olvidaste la contraseña?
-        </a>
-        <br/>
-        <button class="register">
-          <span>Register</span>
-        </button>
-        <button class="signin">
-          <span>Sign in</span>
-        </button>
-     
-       
-       
-      </div>
+<div class="registro">
+  <h3>Registrarse</h3>
+  <form>
+    <br>
+    <input type="text"  placeholder="Nombre" required>
+    <br>
+    <input type="text"  placeholder="Apellido" required>
+    <br>
+    <input type="text"  placeholder="Dirección" required>
+    <br>
+    <input  type="email" placeholder="Email" required>
+    <br>
+    <input type="password" placeholder="Contraseña" required>
+    <br>
+  </form>
+  <br><br>
+  <button type="submit" class="btn btn-outline-light">
+    <span>Registrarse</span>
+  </button>
+  <button type="reset" class="btn btn-outline-light">
+    <span>Borrar</span>
+  </button>
+
+ 
+ 
+</div>
+
+
 
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
