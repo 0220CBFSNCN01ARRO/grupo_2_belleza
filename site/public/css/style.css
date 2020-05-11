@@ -1,54 +1,76 @@
-body{
-    background-color: #000;
-    font-weight: bold;
-    color: #fff;
+body {
+  background-color: #000;
+  font-weight: bold;
+  color: #fff;
 }
 
-a:link, a:visited, a:active {
-    text-decoration:none;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
 }
-
 
 .header {
-    background-color: rgba(106, 17, 179, 0.6);
-    height: 150px;
-    text-align: center;
-    font-size: 125px;    
+  background-color: rgba(106, 17, 179, 0.6);
+  height: 150px;
+  text-align: center;
+  font-size: 125px;
 }
 
 .logo {
-    border-radius: 20%;
+  border-radius: 20%;
 }
 
 .main-nav {
-    position: right, top;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    background-color: rgba(white, white, white, 0.2);
-    margin: 10px;
-    font-size: 17px;
+  position: right, top;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: rgba(white, white, white, 0.2);
+  margin: 10px;
+  font-size: 17px;
 }
 
 .buscador {
-    position: absolute;
-    right: 0%;
-    margin-right: 20px;
+  position: absolute;
+  right: 0%;
+  margin-right: 20px;
 }
 
-h2{
-    position: relative;
-    top: 170px;
-    left: 100px;
-    text-align: left;
-    font-size: 30px;
-
+h2 {
+  position: relative;
+  top: 170px;
+  left: 100px;
+  text-align: left;
+  font-size: 30px;
 }
 
 marquee {
-    position: relative;
-    top:200px;
-    margin-right: 100px;
-    margin-left: 100px;
+  position: relative;
+  top: 200px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
 
+/* Footer */
+
+footer {
+  background: #222;
+  padding: 30px;
+}
+
+.copy {
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+.social i {
+  color: #fff;
+  font-size: 40px;
+  margin: 10px;
+  padding-top: 10px;
+}
+
+.social i:hover {
+  color: #e42448;
 }
