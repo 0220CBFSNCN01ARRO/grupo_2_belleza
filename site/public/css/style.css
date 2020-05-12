@@ -1,31 +1,27 @@
-body{
-  background: #222;
-    font-weight: bold;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    font-family: 'Raleway', sans-serif;
-
-
+body {
+  background-color: #000;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
 }
 
-a:link, a:visited, a:active {
-    text-decoration:none;
-    color: #fff;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #fff;
 }
 
-a:hover {
-    color: #6A11B3;
-}
+/* Navbar */
+
+/* HEADER */
 
 .logo {
-    text-align: center;   
-    margin: 15px;
-}
-
-.logo {
-  border-radius: 20%;
+  text-align: center;
+  margin: 15px;
 }
 
 .main-nav {
@@ -44,60 +40,59 @@ a:hover {
   margin-right: 20px;
 }
 
+/* CUERPO */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 25px;
+  padding: 15px;
+}
 h2 {
-  position: relative;
-  top: 170px;
-  left: 100px;
-  text-align: left;
-  font-size: 30px;
+  margin-bottom: 20px;
 }
 
-marquee {
-    position: relative;
-    top:200px;
-    margin-right: 200px;
-    margin-left: 200px;
+.box1 {
+  margin: 10px;
+}
 
+.box2 {
+  margin: 10px;
 }
 
 .registro {
-    align-self: center;
-    margin-top: 5%;
+  align-self: center;
+  margin-top: 5%;
 }
 
 .login {
-    align-self: center;
-    margin-top: 5%;
-
+  align-self: center;
+  margin-top: 5%;
 }
 
 /* Footer */
 
 footer {
-    background: #222;
-    padding: 30px;
-    clear: both;
-  }
-  
-  .copy {
-    padding-top: 25px;
-    font-weight: bold;
-  }
-  
-  .social i {
-    color: #fff;
-    font-size: 40px;
-    margin: 10px;
-    padding-top: 10px;
-  }
-  
-  .social i:hover {
-    color: #e42448;
-  }
-  
-  /* Detalle del producto */
-  .container-prod, 
-  .otros-prod {
-    background: rgb(53, 51, 51);
-  }
+  background: #222;
+  padding: 30px;
+  clear: both;
+  justify-content: space-between;
+}
 
+.copy {
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+.social i {
+  color: #fff;
+  font-size: 40px;
+  margin: 10px;
+  padding-top: 10px;
+}
+
+.social i:hover {
+  color: #e42448;
+}
