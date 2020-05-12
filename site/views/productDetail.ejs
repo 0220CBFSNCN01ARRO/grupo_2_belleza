@@ -1,41 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/56b68d7c9c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
-    
-    <link href="../public/css/style.css" rel="stylesheet">
-    <title>Home</title>
-</head>
-
-<body>
-    <!-- Header -->
-    <header>
-        <div class="logo"><img src="../public/img/DH_style.png" height="120"></div>
-        <nav class="main-nav">
-            <a href="../views/">Home</a> &nbsp; | &nbsp;
-            <a href="/productDetail.ejs">Productos</a> &nbsp; | &nbsp;
-            <a href="">Promociones</a> &nbsp; | &nbsp;
-            <a href="../views//registro.ejs">Registrarse</a> &nbsp;  | &nbsp;
-            <a href="">Log In</a>&nbsp;  | &nbsp;
-            <a href="../views//productCart.ejs"><img src="../img/cart.png" width="18px"></a>
-        </nav>
-        
-        <form class="buscador" action="index.html" method="get">
-            <input type="search" id="buscar" name="buscar">
-            <button type="submit">Buscar</button>
-        </form>
-    </header>
-    <!-- Fin header -->
-    <!-- <%-include("./partials/_header")  %> -->
+<%-include("./partials/_header")  %>
     
     <!-- Productos -->
     <main class="container-prod d-flex p-5">
-        <div class="row">
+        <div class="row" style="width:80%">
             <div class="col-12">
                 <article class="products-title ml-3">NOMBRE DEL PRODUCTO</article>
             </div>
@@ -44,14 +11,13 @@
                     <figure class="product-box_image">
                         <img src="../public/img/shampoo libre.jpg" alt="imagen de producto" width="250">
                     </figure>
-                    <article class="product-box_inf flex-norow ml-3">
+                    <article class="product-box-inf flex-norow ml-3">
                         <p class="d-flex align-items-center text-justify">Shampo Libre es Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ut saepe laborum beatae mollitia unde vero! Dolorum error laudantium, repudiandae minima iusto laboriosam debitis non placeat hic!.</p>
                         <br>
                         <p class="d-flex align-items-start">$100</p>
                         <br>
-                        <label class="d-flex align-items-end" for="carrito pl-3">Agregar al carrito
-                            <i class="fas fa-shopping-cart"></i>
-                        </label>
+                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Agregar al
+                            carrito</button>
                     </article>
                 </section>
             </div>
@@ -70,31 +36,5 @@
                 </figure> 
             </section>         
     </div>
-    <!-- Fin productos -->
-    
-    <!-- Footer -->
-    <!-- <%-include("./partials/_footer")  %> -->
-    <footer>
-        <div class="row text-center">
-            <div class="col-md-4 social">
-                <a href="https://www.facebook.com" target="_blanck"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.twitter.com" target="_blanck"><i class="fab fa-twitter-square"></i></a>
-                <a href="https://www.instagram.com" target="_blanck"><i class="fab fa-instagram-square"></i></a>
-                <a href="https://www.youtube.com" target="_blanck"><i class="fab fa-youtube-square"></i></a>
-            </div>
-            <div class="col-md-4">
-                <p class="text-light copy">Copyright &copy;2020 Todos loderechos reservados</p>
-                
-            </div>
-            <div class="col-md-4">
-                <a href="#"><img src="../public/img/DH_style.png" width="75height="75" alt="logo"></a>
-            </div>
-        </div>
-    </footer>
-    <!-- Fin footer -->
-    <script src="../js/popper.js"></script>
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap.js"></script>
-    </body>
-</html>
-        
+ 
+<%-include("./partials/_footer")  %>
