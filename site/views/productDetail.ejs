@@ -1,81 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/56b68d7c9c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet"> 
-   
+    <link rel="stylesheet" href="../public/css/bootstrap.css">
     
-    <link rel="stylesheet" href="../public/css/style2.css">
-    <title>Detalle productos</title>
+    <link href="../public/css/style.css" rel="stylesheet">
+    <title>Home</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="container-head d-flex w-100">
-    
-            <!-- Cabecera -->
-            <header class="main-header d-flex col-12">
-                <img class="logo justify-content-center" src="../public/img/DH_style.png" alt="imagen logo" width="150px">
-                <nav class="main-nav">
-                    <ul class="d-flex list-unstyled list-inline">
-                        <li class="list-inline-item"><a href="">Home</a></li>
-                        <li class="list-inline-item"><a href="/productDetail.ejs">Productos</a></li>
-                        <li class="list-inline-item"><a href="">Promociones</a></li>
-                        <li class="list-inline-item"><a href="">Registrate</a></li>
-                    <li class="list-inline-item"><a href="">LogIn</a></li>
-                    <li class="list-inline-item"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
-                </ul>
-            </nav>
-            
-            <!-- busqueda -->
-            <form class="buscador" action="index.html" method="get">
-                <input type="search" id="buscar" name="buscar">
-                <button type="submit">Buscar</button>
-            </form>
-        </header>
-        </div>
-        <!-- fin cabecera -->
+    <!-- Header -->
+    <header>
+        <div class="logo"><img src="../public/img/DH_style.png" height="120"></div>
+        <nav class="main-nav">
+            <a href="../views/">Home</a> &nbsp; | &nbsp;
+            <a href="/productDetail.ejs">Productos</a> &nbsp; | &nbsp;
+            <a href="">Promociones</a> &nbsp; | &nbsp;
+            <a href="../views//registro.ejs">Registrarse</a> &nbsp;  | &nbsp;
+            <a href="">Log In</a>&nbsp;  | &nbsp;
+            <a href="../views//productCart.ejs"><img src="../img/cart.png" width="18px"></a>
+        </nav>
         
-        <!-- Detalle productos -->
-        <div class="container-prod">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="products-title">NOMBRE DEL PRODUCTO</h3>
+        <form class="buscador" action="index.html" method="get">
+            <input type="search" id="buscar" name="buscar">
+            <button type="submit">Buscar</button>
+        </form>
+    </header>
+    <!-- Fin header -->
+    <!-- <%-include("./partials/_header")  %> -->
+    
+    <!-- Productos -->
+    <main class="container-prod d-flex p-5">
+        <div class="row">
+            <div class="col-12">
+                <article class="products-title ml-3">NOMBRE DEL PRODUCTO</article>
             </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="">
-                        <figure class="product-box_image">
-                            <img src="../public/img/shampoo libre.jpg" alt="imagen de producto" width="250">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2>$100</h2>
-                            <span>40% OFF</span>
-                            <p>Shampo Libre Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, iusto. Lorem ipsum, dolor sit amet.</p>
-                            <i class="fas fa-truck"></i>
-                        </article>
-                    </a>
+            <div class="col-12 d-flex">
+                <section class="product-detail d-flex">
+                    <figure class="product-box_image">
+                        <img src="../public/img/shampoo libre.jpg" alt="imagen de producto" width="250">
+                    </figure>
+                    <article class="product-box_inf flex-norow ml-3">
+                        <p class="d-flex align-items-center text-justify">Shampo Libre es Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ut saepe laborum beatae mollitia unde vero! Dolorum error laudantium, repudiandae minima iusto laboriosam debitis non placeat hic!.</p>
+                        <br>
+                        <p class="d-flex align-items-start">$100</p>
+                        <br>
+                        <label class="d-flex align-items-end" for="carrito pl-3">Agregar al carrito
+                            <i class="fas fa-shopping-cart"></i>
+                        </label>
+                    </article>
                 </section>
             </div>
+         </div>
+    </main>
+    <div class="otros-prod">
+        <div class="col-12">
+            <article class="products-title ml-3">Otros productos que podrian interesarte</article>
+        </div> 
+        <div class="col-12 d-flex">
+            <section class="product-resumen d-flex">
+                <figure class="product-box_image">
+                    <img src="../public/img/shampoo liso.jpg" alt="imagen de producto" width="150">
+                    <img src="../public/img/shampoo oleosidad.jpg" alt="imagen de producto" width="150">
+                    <img src="../public/img/shampoo vivo.jpg" alt="imagen de producto" width="150">
+                </figure> 
+            </section>         
     </div>
-
+    <!-- Fin productos -->
+    
     <!-- Footer -->
-    <footer id="footer">
-        <img src="../public/img/DH_style_positivo.png" alt="logo" class="logo" width="50">
-        <!-- espacio en blanco -->
-        <p class="copy">
-            <i class="far fa-registered" 10></i> 2020 DH Style  &nbsp; - &nbsp;
-             <span class="redes"> Seguinos en nuestras redes &nbsp;&nbsp;
-                <a class="social" href="https://www.facebook.com/"></a><i class="fab fa-facebook-square"></i> &nbsp;
-                <a class="social" href="https://www.instagram.com/"></a><i class="fab fa-instagram"></i>
-             </span>
-        </p>
+    <!-- <%-include("./partials/_footer")  %> -->
+    <footer>
+        <div class="row text-center">
+            <div class="col-md-4 social">
+                <a href="https://www.facebook.com" target="_blanck"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.twitter.com" target="_blanck"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com" target="_blanck"><i class="fab fa-instagram-square"></i></a>
+                <a href="https://www.youtube.com" target="_blanck"><i class="fab fa-youtube-square"></i></a>
+            </div>
+            <div class="col-md-4">
+                <p class="text-light copy">Copyright &copy;2020 Todos loderechos reservados</p>
+                
+            </div>
+            <div class="col-md-4">
+                <a href="#"><img src="../public/img/DH_style.png" width="75height="75" alt="logo"></a>
+            </div>
+        </div>
     </footer>
-    <!-- Fin Footer -->
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Fin footer -->
+    <script src="../js/popper.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
     </body>
-    </html>
+</html>
+        
