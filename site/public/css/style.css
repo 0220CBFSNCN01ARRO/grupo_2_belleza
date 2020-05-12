@@ -1,27 +1,27 @@
-body{
-    background-color: #000;
-    font-weight: bold;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    font-family: 'Raleway', sans-serif;
+body {
+  background-color: #000;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
 }
 
-a:link, a:visited, a:active {
-    text-decoration:none;
-    color: #fff;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #fff;
 }
 
-a:hover {
-    color: #6A11B3;
-}
+/* Navbar */
 
 /* HEADER */
 
 .logo {
-    text-align: center;   
-    margin: 15px;
+  text-align: center;
+  margin: 15px;
 }
 
 .main-nav {
@@ -42,7 +42,7 @@ a:hover {
 
 /* CUERPO */
 
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -54,47 +54,45 @@ h2 {
   margin-bottom: 20px;
 }
 
-.box1{
+.box1 {
   margin: 10px;
 }
- 
-.box2{
+
+.box2 {
   margin: 10px;
 }
 
 .registro {
-    align-self: center;
-    margin-top: 5%;
+  align-self: center;
+  margin-top: 5%;
 }
 
 .login {
-    align-self: center;
-    margin-top: 5%;
-
+  align-self: center;
+  margin-top: 5%;
 }
 
 /* Footer */
 
 footer {
-    background: #222;
-    padding: 30px;
-    clear: both;
-    justify-content: space-between;
-  }
-  
-  .copy {
-    padding-top: 25px;
-    font-weight: bold;
-  }
-  
-  .social i {
-    color: #fff;
-    font-size: 40px;
-    margin: 10px;
-    padding-top: 10px;
-  }
-  
-  .social i:hover {
-    color: #e42448;
-  }
-  
+  background: #222;
+  padding: 30px;
+  clear: both;
+  justify-content: space-between;
+}
+
+.copy {
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+.social i {
+  color: #fff;
+  font-size: 40px;
+  margin: 10px;
+  padding-top: 10px;
+}
+
+.social i:hover {
+  color: #e42448;
+}

@@ -12,45 +12,37 @@
     <title>Home</title>
 </head>
 
-<<<<<<< HEAD
-<body class="d-flex">
-
-    <header>
-        <div class="logo"><img src="../img/DH_style.png" height="120"></div>
-        <nav class="main-nav">
-            <a href="../views/">Home</a> &nbsp; | &nbsp;
-            <a href="/productDetail.ejs">Productos</a> &nbsp; | &nbsp;
-            <a href="">Promociones</a> &nbsp; | &nbsp;
-            <a href="../views//registro.ejs">Registrarse</a> &nbsp; | &nbsp;
-            <a href="">Log In</a>&nbsp; | &nbsp;
-            <a href="../views//productCart.ejs"><img src="../img/cart.png" width="18px"></a>
-        </nav>
-
-        <form class="buscador" action="index.html" method="get">
-            <input type="search" id="buscar" name="buscar">
-            <button type="submit">Buscar</button>
-
-        </form>
-    </header>
-=======
 <body>
 
-<header>
-    <div class="logo"><img src="/img/DH_style.png" height="120"></div>
-    <nav class="main-nav">
-    <a href="../views/">Home</a> &nbsp; | &nbsp;
-    <a href="../views//registro.ejs">Registrarse</a> &nbsp;  | &nbsp;
-    <a href="">Log In</a>&nbsp;  | &nbsp;
-    <a href="../views//productCart.ejs"><img src="../img/cart.png" width="18px"></a>
+    <header>
+        <div class="logo">
+            <img src="/img/DH_style.png" height="120">
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:white" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:white" href="#">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:white" href="#">Login</a>
+                        </li>
+                        <li class="nav-item d-flex">
+                            <a href="#"><i class="fas fa-shopping-cart fa-lg" style="padding: 11px;"></i></a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos"
+                            aria-label="Search">
+                        <button class="btn btn-light my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
 
-
-</nav>
-
-<form class="buscador" action="index.html" method="get">
-    <input type="search" id="buscar" name="buscar">
-    <button type="submit">Buscar</button>
-
-</form>
-</header>
->>>>>>> 63678cb6cd13a594dfae2aa2db4557179c531c0c
+    </header>
