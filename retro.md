@@ -1,15 +1,15 @@
-<b>Start doing:</b>
--Usar bootstrap.
--Usar ramas en git.
+<p><b>Start doing:</b>
+<br>-Usar bootstrap.
+<br>-Usar ramas en git.
 
-<b>More of:</b>
--Afianzar todo lo relacionado a Git.
+<p><b>More of:</b>
+<br>-Afianzar todo lo relacionado a Git.
 
-<b>Keep doing:</b>
--Reuniones.
+<p><b>Keep doing:</b>
+<br>-Reuniones.
 
-<b>Less of:</b>
--
+<p><b>Less of:</b>
+<br>-
 
-<b>Stop doing:</b>
--
+<p><b>Stop doing:</b>
+<br>-
