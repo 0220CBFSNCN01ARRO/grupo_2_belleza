@@ -96,3 +96,10 @@ footer {
 .social i:hover {
   color: #e42448;
 }
+
+.responsive {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  margin: 2px;
+}
