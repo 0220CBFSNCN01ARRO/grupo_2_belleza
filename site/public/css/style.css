@@ -1,5 +1,5 @@
 body {
-  background-color: #000;
+  background-color: rgb(124, 124, 124);
   font-weight: bold;
   color: #fff;
   display: flex;
@@ -14,8 +14,6 @@ a:active {
   text-decoration: none;
   color: #fff;
 }
-
-/* Navbar */
 
 /* HEADER */
 
