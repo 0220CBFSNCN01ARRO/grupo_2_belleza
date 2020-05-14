@@ -1,11 +1,31 @@
 body {
-  background-color: #000;
+  /* background-color: #f3c720; */
   font-weight: bold;
-  color: #fff;
+  color: #000;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   font-family: "Raleway", sans-serif;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcf18a+0,f1da36+100 */
+  background: #fcf18a; /* Old browsers */
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #fcf18a 0%,
+    #f1da36 100%
+  ); /* FF3.6-15 */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #fcf18a 0%,
+    #f1da36 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(
+    ellipse at center,
+    #fcf18a 0%,
+    #f1da36 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf18a', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 a:link,
@@ -71,7 +91,9 @@ h2 {
 }
 
 /* Footer */
-
+#link {
+  color: black;
+}
 footer {
   background: #222;
   padding: 30px;
@@ -93,4 +115,11 @@ footer {
 
 .social i:hover {
   color: #e42448;
+}
+
+table,
+tbody,
+tr,
+td {
+  border: black 2px solid;
 }
