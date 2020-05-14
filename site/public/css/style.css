@@ -123,3 +123,9 @@ tr,
 td {
   border: black 2px solid;
 }
+.responsive {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  margin: 2px;
+}
