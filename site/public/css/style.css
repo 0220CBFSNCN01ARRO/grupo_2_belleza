@@ -117,6 +117,12 @@ footer {
   color: #f1da36;
 }
 
+table,
+tbody,
+tr,
+td {
+  border: black 2px solid;
+}
 .responsive {
   width: 100%;
   height: auto;
