@@ -1,9 +1,5 @@
 body {
-<<<<<<< HEAD
-  /* background-color: #f3c720; */
-=======
   background-color: rgb(124, 124, 124);
->>>>>>> 754f66c7c59305ec6ca85b8af89fe0e3c5d844d4
   font-weight: bold;
   color: #000;
   display: flex;
@@ -121,18 +117,9 @@ footer {
   color: #e42448;
 }
 
-<<<<<<< HEAD
 table,
 tbody,
 tr,
 td {
   border: black 2px solid;
 }
-=======
-.responsive {
-  width: 100%;
-  height: auto;
-  align-self: center;
-  margin: 2px;
-}
->>>>>>> 754f66c7c59305ec6ca85b8af89fe0e3c5d844d4
