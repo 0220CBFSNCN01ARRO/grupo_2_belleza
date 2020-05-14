@@ -9,7 +9,8 @@
 <br>-Reuniones.
 
 <p><b>Less of:</b>
-<br>-
+<br>-No pedir ayuda/consejo para resolver problemas que dificultan cadena de tareas.
 
 <p><b>Stop doing:</b>
-<br>-
+<br>-Dejar las cosas para último momento.
+
