@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(124, 124, 124);
-  font-weight: bold;
+  background-color: #eee;
+  /* font-weight: bold; */
   color: #000;
   display: flex;
   flex-wrap: wrap;
@@ -122,4 +122,13 @@ footer {
   height: auto;
   align-self: center;
   margin: 2px;
+}
+
+/* Product Detail */
+#container-prod {
+  background-image: url(/img/fondo-pared.jpg);
+}
+
+h6 {
+  font-weight: 700;
 }
