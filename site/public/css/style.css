@@ -132,9 +132,12 @@ td {
 
 /* Product Detail */
 #container-prod {
-  background-image: url(/img/fondo-pared.jpg);
+  background-image: url(/img/fondo-blue.jpg);
 }
-
 h6 {
   font-weight: 700;
+}
+i.icon {
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
 }
