@@ -1,76 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/56b68d7c9c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="../bootstrap/bootstrap.min.js">
+<%-include("./partials/_header")  %>
     
-    <link rel="stylesheet" href="../css/style2.css">
-    <title>title</title>
-</head>
-<body>
-    <div class="container">
-        <div>
-    
-            <!-- Cabecera -->
-        <header class="main-header">
-            <img class="logo" src="../img/DH_style.png" alt="imagen logo" width="150px">
-            
-            <nav class="main-nav">
-                <a href="">Home</a> &nbsp; | &nbsp;
-                <a href="/productDetail.ejs">Productos</a> &nbsp; | &nbsp;
-                <a href="">Promociones</a> &nbsp; | &nbsp;
-                <a href="">Registrate</a> &nbsp; | &nbsp;
-                <a href="">LogIn</a> &nbsp; | &nbsp;
-                <a href=""><i class="fas fa-shopping-cart"></i></a>
-            </nav>
-    
-            <!-- busqueda -->
-            <form class="buscador" action="index.html" method="get">
-                <input type="search" id="buscar" name="buscar">
-                <button type="submit">Buscar</button>
-            </form>
-        </header>
-        </div>
-    <!-- fin cabecera -->
-    
-    <!-- Detalle productos -->
-    <div class="container-prod">
-        <div class="row">
+    <!-- Productos -->
+    <main class="container-prod d-flex p-5">
+        <div class="row" style="width:80%">
             <div class="col-12">
-                <h2 class="products-title">NOMBRE DEL PRODUCTO</h2>
+                <h5 class="products-title ml-3">NOMBRE DEL PRODUCTO</h5>
             </div>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="">
-                        <figure class="product-box_image">
-                            <img src="../public/img/shampoo libre.jpg" alt="imagen de producto" width="250">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2>$100</h2>
-                            <span>40% OFF</span>
-                            <p>Shampo Libre Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, iusto. Lorem ipsum, dolor sit amet.</p>
-                            <i class="fas fa-truck"></i>
-                        </article>
-                    </a>
+            <div class="col-12 d-flex">
+                <section class="product-detail d-flex">
+                    <figure class="product-box_image">
+                        <img src="/img/shampoo libre.jpg" alt="imagen de producto" width="250">
+                    </figure>
+                    <article class="product-box-inf flex-norow ml-3">
+                        <p class="d-flex align-items-center text-justify">Shampo Libre es Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ut saepe laborum beatae mollitia unde vero! Dolorum error laudantium, repudiandae minima iusto laboriosam debitis non placeat hic!.</p>
+                        <br>
+                        <p class="d-flex align-items-start">$100</p>
+                        <br>
+                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button>
+                    </article>
                 </section>
             </div>
-    </div>
-
-    <!-- Footer -->
-    <footer id="footer">
-        <img src="../public/img/DH_style_positivo.png" alt="logo" class="logo" width="50">
-        <!-- espacio en blanco -->
-        <p class="copy">
-            <i class="far fa-registered" 10></i> 2020 DH Style  &nbsp; - &nbsp;
-             <span class="redes"> Seguinos en nuestras redes &nbsp;&nbsp;
-                <a class="social" href="https://www.facebook.com/"></a><i class="fab fa-facebook-square"></i> &nbsp;
-                <a class="social" href="https://www.instagram.com/"></a><i class="fab fa-instagram"></i>
-             </span>
-        </p>
-    </footer>
-    <!-- Fin Footer -->
-    </body>
-    </html>
+         </div>
+    </main>
+    <div class="container">
+        <div class="row">   
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="productDetail"><img src="../img/jabon avellana.jpg" class="responsive"></a>
+                    <div class="card-body" style="color: black;">
+                        <h5>Jabón Avellana</h5>
+                        <p>$100.00</p>
+                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="productDetail"><img src="../img/jabon flor.jpg" class="responsive"></a>
+                    <div class="card-body" style="color: black;">
+                        <h5>Jabón Flor de Liz</h5>
+                        <p>$100.00</p>
+                        <button class="btn btn-danger align-self-center"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="productDetail"><img src="../img/jabon frutas.jpg" class="responsive"></a>
+                    <div class="card-body" style="color: black;">
+                        <h5>Jabón Frutos Rojos</h5>
+                        <p>$100.00</p>
+                        <button class="btn btn-danger"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+<%-include("./partials/_footer")  %>
