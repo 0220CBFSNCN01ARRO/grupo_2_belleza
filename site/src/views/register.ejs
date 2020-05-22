@@ -1,54 +1,60 @@
-<%-include("./partials/head", {title: 'Registro'})  %>
+<%-include("./partials/head", {title: 'Admin'})  %>
 <%-include("./partials/header")  %>
 
-<body>
-  <div class="containter">
-    <div class="row">
-      <div class="col-md-6 d-flex justify-content-center mt-5  mb-3">
-        <form class="form-group">
-          <div>
-            <h2>Registro</h2>
-              <label>Nombre</label>
-              <input type="text" name="nombre" class="form-control" placeholder="Nombre">
-          <br>
-              <label>Apellido</label>
-              <input type="text" name="apellido" class="form-control" placeholder="Apellido">
-          <br>
-              <label>Dirección</label>
-              <input type="text" name="direccion" class="form-control" placeholder="Direccion">
-          <br>
-              <label>Email</label>
-              <input type="email" name="email" class="form-control" placeholder="Email">
-          <br>
-              <label>Contraseña</label>
-              <input type="password" name="contraseña" class="form-control" placeholder="Contraseña">
-          <br>
-              <label>Repetir contraseña</label>
-              <input type="password" name="contraseña" class="form-control" placeholder="Repetir contraseña">
+<div class="containter">
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center mt-5  mb-3">
+      <form class="form-group">
+        <div>
+          <h2>Registro</h2>
+          <label>Nombre</label>
+          <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+          <br><label>Apellido</label>
+          <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+          <br><label>Dirección</label>
+          <input type="text" name="direccion" class="form-control" placeholder="Direccion">
+          <br><label>Email</label>
+          <input type="email" name="email" class="form-control" placeholder="Email">
+          <br><label>Contraseña</label>
+          <input type="password" name="contraseña" class="form-control" placeholder="Contraseña">
+          <br><label>Repetir contraseña</label>
+          <input type="password" name="contraseña" class="form-control" placeholder="Repetir contraseña">
+
           <br>
           <div class="d-flex align-item-center">
             <button class="btn btn-light" type="submit">Enviar</button>
           </div>
         </div>
+
+
+
       </form>
+
+
     </div>
     <div class="col-md-6 d-flex justify-content-center mt-5">
       <form class="form-group">
         <div>
           <h2>Log In</h2>
-            <label>Email</label>
-            <input type="email" name="nombre" class="form-control" placeholder="Email">
-          <br>
-            <label>Contraseña</label>
-            <input type="password" name="apellido" class="form-control" placeholder="Contraseña">
+          <label>Email</label>
+          <input type="email" name="nombre" class="form-control" placeholder="Email">
+          <br><label>Contraseña</label>
+          <input type="password" name="apellido" class="form-control" placeholder="Contraseña">
+
           <br>
           <div class="d-flex align-item-center">
             <button class="btn btn-light" type="submit">Enviar</button>
           </div>
+
         </div>
-      </div>
+
+
+
+
+
     </div>
   </div>
-</body>
-  
-  <%-include("./partials/footer")  %>
+</div>
+
+
+<%-include("./partials/footer")  %>

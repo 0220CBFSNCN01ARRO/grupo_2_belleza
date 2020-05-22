@@ -3,14 +3,10 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+// var methodOverride =  require('method-override');
 
-var registerRouter = require("./routes/register");
 var indexRouter = require("./routes/index");
-var productDetailRouter = require("./routes/productDetail");
-var usersRouter = require("./routes/users");
-var productCartRouter = require("./routes/productCart");
-var loginRouter = require("./routes/login");
-var productAddRouter = require("./routes/productAdd");
+// var productsRouter = require ("./routes/products");
 
 var app = express();
 
@@ -23,14 +19,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
+// app.use(methodOverride('_method'))
 
-app.use("/register", registerRouter);
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/productCart", productCartRouter);
-app.use("/productDetail", productDetailRouter);
-app.use("/login", loginRouter);
-app.use("/productAdd", productAddRouter);
+// app.use("/products", productsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
