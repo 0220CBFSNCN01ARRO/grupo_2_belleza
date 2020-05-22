@@ -1,7 +1,9 @@
-<%-include("./partials/_header")  %>
+<%-include("./partials/head", {title: 'Inicio'})  %>
+<%-include("./partials/header")  %>
 
-<div class="container">
-    <div class="box1">
+<body>
+    <div class="container">
+        <div class="box1">
         <span>
             <h2>Promociones</h2>
         </span>
@@ -32,7 +34,7 @@
                             <p>$100.00</p>
                             <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i>Agregar al
                                 carrito</button>
-                        </div>
+                            </div>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -63,7 +65,7 @@
                     <div class="card align-items-center">
                         <a href="productDetail"><img src="../img/shampoo vivo.jpg" style="width: 200px;"
                                 class="responsive"></a>
-                        <div class="card-body" style="color: black;">
+                                <div class="card-body" style="color: black;">
                             <h5>Shampoo Vivo</h5>
                             <p>$100.00</p>
                             <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i>Agregar al
@@ -103,7 +105,7 @@
                             <div class="card align-items-center">
                                 <a href="productDetail"><img src="../img/jabon frutas.jpg" style="width: 200px;"
                                         class="responsive"></a>
-                                <div class="card-body" style="color: black;">
+                                        <div class="card-body" style="color: black;">
                                     <h5>Jabón Frutos Rojos</h5>
                                     <p>$100.00</p>
                                     <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i>Agregar al
@@ -114,16 +116,16 @@
                         <div class="col-md-3">
                             <div class="card align-items-center">
                                 <a href="productDetail"><img src="../img/jabon limon.jpg" style="width: 200px;"
-                                        class="responsive"></a>
+                                    class="responsive"></a>
                                 <div class="card-body" style="color: black;">
                                     <h5>Jabón Limón</h5>
                                     <p>$100.00</p>
                                     <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i>Agregar al
                                         carrito</button>
-                                </div>
+                                    </div>
                             </div>
                         </div>
-
+                        
 
                     </div>
                 </div>
@@ -131,9 +133,5 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-<%-include("./partials/_footer")  %>
+</body>
+<%-include("./partials/footer")  %>
