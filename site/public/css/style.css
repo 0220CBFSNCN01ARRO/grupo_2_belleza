@@ -19,7 +19,7 @@ a:active {
 
 .logo {
   text-align: center;
-  margin: 15px;
+  margin-top: 15px;
 }
 
 .main-nav {
@@ -45,8 +45,8 @@ a:active {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: 25px;
-  padding: 15px;
+  /* margin-top: 25px;
+  padding: 15px; */
 }
 h2 {
   margin-bottom: 20px;
@@ -76,7 +76,7 @@ h2 {
 }
 footer {
   background: #222;
-  padding: 30px;
+  /* padding: 30px; */
   clear: both;
   justify-content: space-between;
 }

@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET productCart page. */
+/* GET productDetail page. */
 router.get("/", function (req, res) {
-  res.render("index");
+  res.render("productDetail");
 });
 
 module.exports = router;

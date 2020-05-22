@@ -28,3 +28,7 @@
 ## Wireframe
 
 https://ninjamock.com/s/NFX6DGx
+
+## Trello
+
+https://trello.com/b/To3a4KkB/proy-integrador-webfullstack-grupo-2-belleza
