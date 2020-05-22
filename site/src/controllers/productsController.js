@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports={
+
+var controller={
 products: function (req, res, next){
     res.render('products', {title: 'Productos'});
 },
@@ -15,7 +16,7 @@ edit: function (req, res, next) {
     res.render('products', {title: 'Editar Producto'});
 },
 store: function (req, res, next) {
-    res.render()    
+    res.render()    //Accion de crear y guardar prod nuevo//
 },
 delete: function (req, res, next) {
     // let final = products.filter(prod=> prod.id != req.params.productId)
@@ -26,3 +27,5 @@ update: function (req, res, next) {
     res.redirect('/products')
 }
 }
+
+module.exports = controller;
