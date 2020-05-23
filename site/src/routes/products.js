@@ -1,15 +1,20 @@
-// var express = require('express');
-// var router = express.Router();
-// var productsController = require('../controllers/productsController');
+const express = require('express');
+const router = express.Router();
+const productsController = require('../controllers/productsController');
 
-// // router.get('/products', productsController.products); 
-// // router.get('/products/detail/:id/:category', productsController.detail);
+// PRODUCTOS Y DETALLE
+router.get('/', productsController.products); 
+router.get('/detail', productsController.detail);
 
-// // router.get('/products/create', productsController.create);//Vista del form para crear prod//
-// // router.post('/products/create', productsController.store);//Acción de crear y guardar//
+// CREAR UN PRODUCTO
+router.get('/create', productsController.create);//Vista del form para crear prod//
+router.post('/create', productsController.store);//Acción de crear y guardar//
 
-// // router.get('/products/:id/edit', productsController.edit);//Vista del form para editar prod//
-// // router.put('/products/:id/edit', productsController.update);//Acción d mandar la modificacion (Modificar el formulario)//
-// // router.delete('/products/:id/delete', productsController.delete);
+// EDITAR UN PRODUCTOS
+router.get('/:id/edit', productsController.edit);//Vista del form para editar prod//
+router.put('/:id/edit', productsController.update);//Acción d mandar la modificacion (Modificar el formulario)//
 
-// module.exports = router;
+// BORRAR UN PRODUCTO
+router.delete('/:id/delete', productsController.delete);
+
+module.exports = router;
