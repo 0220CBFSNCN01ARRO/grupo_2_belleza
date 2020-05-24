@@ -11,8 +11,12 @@ router.get("/create", productsController.create); //Vista del form para crear pr
 router.post("/create", productsController.store); //Acción de crear y guardar//
 
 // EDITAR UN PRODUCTOS
-router.get("/:id/edit", productsController.edit); //Vista del form para editar prod//
-router.put("/:id/edit", productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
+router.get("/edit", productsController.edit); //Vista del form para editar prod//
+router.put("/edit", productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
+
+// CARRITO
+router.get("/carrito", productsController.carrito); //carrito//
+router.put("/carrito", productsController.compra); //Acción para comprar//
 
 // BORRAR UN PRODUCTO
 router.delete("/:id/delete", productsController.delete);
