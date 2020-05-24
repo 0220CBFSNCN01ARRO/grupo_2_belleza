@@ -25,7 +25,7 @@ const controller={
 
         // editar un producto existente
     edit: function (req, res) {
-        res.render('edit', {title: 'Editar Producto'});
+        res.render('productCart', {title: 'Editar Producto'});
     },
     update: function (req, res) {
         res.redirect('/products')
