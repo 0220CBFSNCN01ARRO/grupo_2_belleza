@@ -5,6 +5,8 @@ module.exports={
         res.render('index', {title: 'Home'});
     },
     register:function (req, res, next){
-        res.render('register', {title: 'Registro'})
+        console.log('registro');
+        
+        res.render('register', {title: 'Registro'});
     } 
-}
+};
