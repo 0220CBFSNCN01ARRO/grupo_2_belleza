@@ -1,118 +1,34 @@
-<%-include("./partials/head", {title})  %>
+<%-include("./partials/head")  %>
 <%-include("./partials/header")  %>
 
 
 <body>
     <div class="box2">
-
-        <div class="container justify-content-between">
-            <span>
-                <h2>Productos</h2>
-            </span>
+        <div class="products-container">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card align-items-center">
-                        <a href="/products/detail"><img class="img-fluid" src="../img/shampoo libre.jpg"
-                                style="width: 200px;" class="responsive"></a>
+                <div class="col-12">
+                    <span>
+                        <h2>Productos</h2>
+                    </span>
+                </div>
+                <% for(producto of products) {%> 
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <a href="/products/detail/<%= producto.id %>">
+                            <figure class="prod-img">
+                                <img src="/img/products/<%= producto.image %>">
+                            </figure>
+                        </a>
                         <div class="card-body" style="color: black;">
-                            <h6>Shampoo Libre</h6>
-                            <p>$100.00</p>
-                            <a href="/products/carrito"><button class="btn btn-dark"><i class="fa fa-shopping-cart"></i>
-                                    Agregar al
-                                    carrito</button></a>
+                            <h6><%= producto.name %> </h6>
+                            <br>
+                            <p> <%= producto.price %> </p>
+                            <br>
+                            <a href="/products/carrito"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Agregar</button></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card align-items-center">
-                        <a href="/products/detail"><img class="img-fluid" src="../img/shampoo oleosidad.jpg"
-                                style="width: 200px;" class="responsive"></a>
-                        <div class="card-body" style="color: black;">
-                            <h6>Shampoo Oleosidad</h6>
-                            <p>$100.00</p>
-                            <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i> Agregar al
-                                carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card align-items-center">
-                        <a href="/products/detail"><img class="img-fluid" src="../img/shampoo liso.jpg"
-                                style="width: 200px;" class="responsive"></a>
-                        <div class="card-body" style="color: black;">
-                            <h6>Shampoo Liso</h6>
-                            <p>$100.00</p>
-                            <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i> Agregar al
-                                carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card align-items-center">
-                        <a href="/products/detail"><img class="img-fluid" src="../img/shampoo vivo.jpg"
-                                style="width: 200px;" class="responsive"></a>
-                        <div class="card-body" style="color: black;">
-                            <h6>Shampoo Vivo</h6>
-                            <p>$100.00</p>
-                            <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i> Agregar al
-                                carrito</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container justify-content-between">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card align-items-center">
-                                <a href="/products/detail"><img class="img-fluid" src="../img/jabon avellana.jpg"
-                                        style="width: 200px;" class="responsive"></a>
-                                <div class="card-body" style="color: black;">
-                                    <h6>Jabón Avellana</h6>
-                                    <p>$100.00</p>
-                                    <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i> Agregar al
-                                        carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card align-items-center">
-                                <a href="/products/detail"><img class="img-fluid" src="../img/jabon flor.jpg"
-                                        style="width: 200px;" class="responsive"></a>
-                                <div class="card-body" style="color: black;">
-                                    <h6>Jabón Flor de Liz</h6>
-                                    <p>$100.00</p>
-                                    <button class="btn btn-dark align-self-center"><i class="fa fa-shopping-cart"></i>
-                                        Agregar al
-                                        carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card align-items-center">
-                                <a href="/products/detail"><img class="img-fluid" src="../img/jabon frutas.jpg"
-                                        style="width: 200px;" class="responsive"></a>
-                                <div class="card-body" style="color: black;">
-                                    <h6>Jabón Frutos Rojos</h6>
-                                    <p>$100.00</p>
-                                    <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i> Agregar al
-                                        carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card align-items-center">
-                                <a href="/products/detail"><img class="img-fluid" src="../img/jabon limon.jpg"
-                                        style="width: 200px;" class="responsive"></a>
-                                <div class="card-body" style="color: black;">
-                                    <h6>Jabón Limón</h6>
-                                    <p>$100.00</p>
-                                    <button class="btn btn-dark"><i class="fa fa-shopping-cart"></i> Agregar al
-                                        carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% }  %>
             </div>
         </div>
     </div>

@@ -1,17 +1,19 @@
 const fs = require("fs");
 const path = require("path");
 
+const productsFilePath = path.join(__dirname, '../data/Products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const controller = {
   // ver todos los productos
   products: function (req, res) {
-    res.render("products", { title: "Productos" });
+    res.render("products", { products });
   },
 
   // ver detalle de cada producto
   detail: function (req, res) {
-    console.log("anda productDetail");
-
-    res.render("productDetail", { title: "Detalle de producto" });
+    let producto = products.find(prod => prod.id == req.params.productsId);
+    res.render("productDetail", { producto });
   },
 
   // crear un producto nuevo
