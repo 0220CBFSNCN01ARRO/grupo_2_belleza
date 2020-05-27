@@ -10,24 +10,26 @@
         <div class="products-container">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="products-title"> Producto: <%= producto.name %>  </h5>
+                    <h5 class="products-title"> Producto: <%= producto.name %> </h5>
                 </div>
             </div>
             <div class="product-detail">
                 <div class="row">
                     <div class="prod-detail col-12 col-lg-8">
                         <figure>
-                            <img src="/img/products/<%= producto.image %>" alt="imagen de producto" style="position: relative;">
+                            <img src="/img/products/<%= producto.image %>" alt="imagen de producto"
+                                style="position: relative;">
                         </figure>
                         <p class="descrip-prod-detail">
                             <br>
                             <%= producto.description %>
                             <br><br>
-                            <b>$ <%= producto.price %></b> 
+                            <b>$ <%= producto.price %></b>
                         </p>
-                        
+
                         <button class="btn btn-dark align-self-baseline">
-                            <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button></a>
+                            <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
+                                carrito</button></a>
                         <div class="m-1">
                             <i class="far fa-credit-card"></i><i class="icon"> Pagá en cuotas sin interés</i>
                             <br>
@@ -45,34 +47,40 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card ">
-                        <a href="/products/detail"><img class="prod-img" src="../img/jabones/jabon-pink.jpg" class="responsive img-fluid p-2"></a>
+                        <a href="/products/detail"><img class="prod-img" src="../img/jabones/jabon-pink.jpg"
+                                class="responsive img-fluid p-2"></a>
                         <div class="card-data" style="color: black;">
                             <h6>Jabón de Granada</h6>
                             <p>$100.00</p>
                             <button class="btn btn-dark btn-sm">
-                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button></a>
+                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
+                                    carrito</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card">
-                        <a href="/products/detail"><img class="prod-img" src="../img/perfumes/perfume1.jpg" class="responsive img-fluid p-2"></a>
+                        <a href="/products/detail"><img class="prod-img" src="../img/perfumes/perfume1.jpg"
+                                class="responsive img-fluid p-2"></a>
                         <div class="card-body" style="color: black;">
                             <h6>Perfume de Sarasa</h6>
                             <p>$100.00</p>
                             <button class="btn btn-dark btn-sm">
-                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button></a>
+                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
+                                    carrito</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="card">
-                        <a href="/products/detail"><img class="prod-img" src="../img/jabones/jabon-miel.jpg" class="responsive img-fluid p-2"></a>
+                        <a href="/products/detail"><img class="prod-img" src="../img/jabones/jabon-miel.jpg"
+                                class="responsive img-fluid p-2"></a>
                         <div class="card-body" style="color: black;">
                             <h6>Jabón de Miel</h6>
                             <p>$100.00</p>
                             <button class="btn btn-dark btn-sm">
-                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button></a>
+                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
+                                    carrito</button></a>
                         </div>
                     </div>
                 </div>
@@ -81,4 +89,5 @@
     </main>
 </body>
 <%-include("./partials/footer")  %>
+
 </html>
