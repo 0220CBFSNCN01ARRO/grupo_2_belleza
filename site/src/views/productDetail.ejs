@@ -1,28 +1,31 @@
-<%-include("./partials/head")  %>
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("./partials/head", {title: producto.name}) %>
 <%-include("./partials/header")  %>
 
 <body>
-    <!-- Productos -->
-    <main class="container">
-        <div class="container d-flex justify-content-lg-center bg-light m-3" style="border-radius:10px">
+    <!-- Detalle Productos -->
+    <main class="box2">
+        <div class="products-container">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="products-title ml-3">Nombre del producto</h5>
+                    <h5 class="products-title"> Producto: <%= producto.name %>  </h5>
                 </div>
-                <div class="col-10 row justify-content-between lg-nowrap">
-                    <div class="img-prod-detail col-md-3">
-                        <img src="/img/shampoo libre.jpg" class="img-fluid p-2" alt="imagen de producto" width="250">
-                    </div>
-                    <div class="descrip-prod-detail d-flex flex-column col-md-7 pl-4">
-                        <div>
-                            <h6>Shampoo Libre</h6>
-                            <p>Shampoo Libre es Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ut saepe
-                                laborum beatae mollitia unde vero! Dolorum error laudantium, repudiandae minima iusto
-                                laboriosam debitis non placeat hic!.</p>
-                        </div>
-                        <div>
-                            <p class="">$100</p>
-                        </div>
+            </div>
+            <div class="product-detail">
+                <div class="row">
+                    <div class="prod-detail col-12 col-lg-8">
+                        <figure>
+                            <img src="/img/products/<%= producto.image %>" alt="imagen de producto" style="position: relative;">
+                        </figure>
+                        <p class="descrip-prod-detail">
+                            <br>
+                            <%= producto.description %>
+                            <br><br>
+                            <b>$ <%= producto.price %></b> 
+                        </p>
+                        
                         <button class="btn btn-dark align-self-baseline">
                             <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al carrito</button></a>
                         <div class="m-1">
@@ -35,7 +38,7 @@
             </div>
         </div>
 
-        <div class="container productos bg-light p-4 m-3" style="border-radius:10px">
+        <!-- <div class="container productos bg-light p-4 m-3" style="border-radius:10px">
             <div class="col-12">
                 <h6>Otro productos que podrian interesarte</h6>
             </div>
@@ -73,8 +76,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
 </body>
 <%-include("./partials/footer")  %>
+</html>

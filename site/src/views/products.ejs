@@ -1,26 +1,30 @@
-<%-include("./partials/head")  %>
+<!DOCTYPE html>
+<html lang="es">
+
+<%-include("./partials/head", {title: 'Todos los productos'})  %>
 <%-include("./partials/header")  %>
 
 
 <body>
+    <!-- Todos los productos -->
     <div class="box2">
         <div class="products-container">
             <div class="row">
                 <div class="col-12">
                     <span>
-                        <h2>Productos</h2>
+                        <h2 class="titulo">Productos</h2>
                     </span>
                 </div>
                 <% for(producto of products) {%> 
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card">
+                    <div class="tarjeta">
                         <a href="/products/detail/<%= producto.id %>">
                             <figure class="prod-img">
                                 <img src="/img/products/<%= producto.image %>">
                             </figure>
                         </a>
-                        <div class="card-body" style="color: black;">
-                            <h6><%= producto.name %> </h6>
+                        <div class="cuerpo-tarjeta" style="color: black;">
+                            <h4><%= producto.name %> </h4>
                             <br>
                             <p> <%= producto.price %> </p>
                             <br>
@@ -37,3 +41,4 @@
 
 
 <%-include("./partials/footer")  %>
+</html>
