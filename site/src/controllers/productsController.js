@@ -12,7 +12,7 @@ const controller = {
 
   // ver detalle de cada producto
   detail: function (req, res) {
-    let producto = products.find(prod => prod.id == req.params.productsId);
+    let producto = products.find(prod => prod.id == req.params.productId);
     res.render("productDetail", { producto });
   },
 
