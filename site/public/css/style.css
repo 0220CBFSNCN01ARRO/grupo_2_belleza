@@ -106,10 +106,10 @@ h2 {
   display: flex;
 }
 .products-container {
-  margin: 20px;
+  margin: 60px;
   display: flex;
   flex-direction: column;
-  }
+}
 .products-title {
   font-size: 2em;
   font-weight: 400;
@@ -162,25 +162,22 @@ figure {
   border-radius: 8px;
   display: flex;
   flex-wrap: nowrap;
-  }
+}
 article {
   display: inline-flex;
   flex-direction: column;
   order: 2;
-  }
+}
 
 .img-prod-detail {
   padding: 0 40px 0 20px;
 }
 
 /* .otros-products {
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 } */
-
-
-
 
 /* REGISTER-LOGIN */
 
@@ -297,18 +294,19 @@ span {
 }
 footer {
   background: #222;
-  /* padding: 30px; */
+
   clear: both;
   justify-content: space-between;
+  height: 125px;
 }
-
+.text-input {
+  width: 100%;
+}
 .copy {
   padding-top: 25px;
   font-weight: bold;
 }
-footer {
-  height: 125px;
-}
+
 .social i {
   color: #fff;
   font-size: 40px;
