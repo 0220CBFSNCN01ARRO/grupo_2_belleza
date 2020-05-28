@@ -14,42 +14,47 @@
                 </div>
             </div>
             <div class="product-detail">
-                <div class="row">
+                <div class="row pp-dd">
                     <div class="prod-detail col-12 col-lg-8">
-                        <figure>
+                        <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
                             <img src="/img/products/<%= producto.image %>" alt="imagen de producto"
                                 style="position: relative;">
                         </figure>
-                        <p class="descrip-prod-detail">
-                            <br>
-                            <%= producto.description %>
-                            <br><br>
-                            <b>$ <%= producto.price %></b>
-                        </p>
+                        <article>
+                            <p class="descrip-prod-detail">
+                                <br>
+                                <%= producto.description %>
+                                <br><br>
+                                <b>$ <%= producto.price %></b>
+                            </p>
 
-                        <button class="btn btn-dark align-self-baseline">
-                            <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
-                                carrito</button></a>
-                        <div class="m-1">
-                            <i class="far fa-credit-card"></i><i class="icon"> Pagá en cuotas sin interés</i>
-                            <br>
-                            <i class="far fa-paper-plane"></i><i class="icon"> Envíos a todo el país</i>
-                        </div>
+                            <button class="btn btn-dark align-self-baseline">
+                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
+                                    carrito</button></a>
+                            <div class="m-1">
+                                <i class="far fa-credit-card"></i><i class="icon"> Pagá en cuotas sin interés</i>
+                                <br>
+                                <i class="far fa-paper-plane"></i><i class="icon"> Envíos a todo el país</i>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- <div class="container productos bg-light p-4 m-3" style="border-radius:10px">
+        <!-- <div class="otros-products" style="border-radius:10px">
             <div class="col-12">
                 <h6>Otro productos que podrian interesarte</h6>
             </div>
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card ">
-                        <a href="/products/detail"><img class="prod-img" src="../img/jabones/jabon-pink.jpg"
-                                class="responsive img-fluid p-2"></a>
-                        <div class="card-data" style="color: black;">
+                    <div class="tarjeta">
+                        <a href="/products/detail">
+                            <figure class="prod-img">
+                                <img src="../img/products/jabon-pink.jpg">
+                            </figure>
+                        </a>
+                        <div class="cuerpo-tarjeta" style="color: black;">
                             <h6>Jabón de Granada</h6>
                             <p>$100.00</p>
                             <button class="btn btn-dark btn-sm">
@@ -59,10 +64,13 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card">
-                        <a href="/products/detail"><img class="prod-img" src="../img/perfumes/perfume1.jpg"
-                                class="responsive img-fluid p-2"></a>
-                        <div class="card-body" style="color: black;">
+                    <div class="tarjeta">
+                        <a href="/products/detail">
+                            <figure class="prod-img">
+                                <img src="../img/products/perfume1.jpg">
+                            </figure>
+                        </a>
+                        <div class="cuerpo-tarjeta" style="color: black;">
                             <h6>Perfume de Sarasa</h6>
                             <p>$100.00</p>
                             <button class="btn btn-dark btn-sm">
@@ -72,10 +80,13 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card">
-                        <a href="/products/detail"><img class="prod-img" src="../img/jabones/jabon-miel.jpg"
-                                class="responsive img-fluid p-2"></a>
-                        <div class="card-body" style="color: black;">
+                    <div class="tarjeta">
+                        <a href="/products/detail">
+                            <figure class="prod-img">
+                                <img src="../img/products/perfume1.jpg">
+                            </figure>
+                        </a>
+                        <div class="cuerpo-tarjeta" style="color: black;">
                             <h6>Jabón de Miel</h6>
                             <p>$100.00</p>
                             <button class="btn btn-dark btn-sm">

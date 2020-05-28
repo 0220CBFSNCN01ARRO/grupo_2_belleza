@@ -103,16 +103,19 @@ h2 {
 .box2 {
   position: relative;
   overflow: hidden;
+  display: flex;
 }
 .products-container {
   margin: 20px;
   display: flex;
-}
+  flex-direction: column;
+  }
 .products-title {
   font-size: 2em;
   font-weight: 400;
   color: rgb(36, 34, 34);
   padding: 0 20px 0 0;
+  text-align: left;
 }
 .tarjeta {
   background-color: #ffffff;
@@ -133,11 +136,7 @@ h2 {
 figure {
   display: flex;
   justify-content: center;
-}
-.prod-img figure img {
-  border-bottom: 1px solid grey;
-  height: 100%;
-  width: none;
+  height: 200px;
 }
 
 .cuerpo-tarjeta {
@@ -147,12 +146,41 @@ figure {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
+  align-self: flex-end;
 }
 
+/* Detalle productos */
+.products-detail {
+  display: flex;
+  justify-content: space-around;
+}
+.pp-dd {
+  justify-content: center;
+}
 .prod-detail {
   background-color: #ffffff;
   border-radius: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  }
+article {
+  display: inline-flex;
+  flex-direction: column;
+  order: 2;
+  }
+
+.img-prod-detail {
+  padding: 0 40px 0 20px;
 }
+
+/* .otros-products {
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+} */
+
+
+
 
 /* REGISTER-LOGIN */
 
