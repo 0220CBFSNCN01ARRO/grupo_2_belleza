@@ -52,13 +52,13 @@ h2 {
   margin-bottom: 20px;
 }
 
-.box1 {
+/* .box1 {
   margin: 10px;
 }
 
 .box2 {
   margin: 10px;
-}
+} */
 
 .registro {
   align-self: center;
@@ -95,19 +95,6 @@ footer {
 
 .social i:hover {
   color: #f1da36;
-}
-
-table,
-tbody,
-tr,
-td {
-  border: black 2px solid;
-}
-.responsive {
-  width: 100%;
-  height: auto;
-  align-self: center;
-  margin: 2px;
 }
 
 /* Product Detail */
