@@ -1,11 +1,52 @@
+/*====== Basics ======*/
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background-image: url("/img/fondo-blue.jpg");
+  min-height: 100vh;
+  margin: 0;
+  font-size: 10px;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+hr {
+  border: none;
+  border-bottom: solid 1px var(--light-gray);
+}
+
+/* CUERPO */
+body {
+  background-image: url("/img/fondos/fondo-blue.jpg");
   /* font-weight: bold; */
   color: #000;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
 }
 
 a:link,
@@ -40,24 +81,201 @@ a:active {
 
 /* CUERPO */
 
-.container {
+/* .container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
-  /* margin-top: 25px;
-  padding: 15px; */
-}
+  margin-top: 25px;
+  padding: 15px;
+} */
+
 h2 {
   margin-bottom: 20px;
+  font-size: 3rem;
 }
 
-/* .box1 {
-  margin: 10px;
+.box1 {
+  margin-top: 10px;
 }
 
+/* Productos */
 .box2 {
-  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+.products-container {
+  margin: 60px;
+  display: flex;
+  flex-direction: column;
+}
+.products-title {
+  font-size: 2em;
+  font-weight: 400;
+  color: rgb(36, 34, 34);
+  padding: 0 20px 0 0;
+  text-align: left;
+}
+.tarjeta {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 300px;
+  margin: 20px 0;
+  display: block;
+  position: relative;
+  align-items: center;
+}
+.tarjeta a {
+  display: block;
+}
+.prod-img {
+  display: flex;
+}
+figure {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+}
+
+.cuerpo-tarjeta {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+/* Detalle productos */
+.products-detail {
+  display: flex;
+  justify-content: space-around;
+}
+.pp-dd {
+  justify-content: center;
+}
+.prod-detail {
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+article {
+  display: inline-flex;
+  flex-direction: column;
+  order: 2;
+}
+
+.img-prod-detail {
+  padding: 0 40px 0 20px;
+}
+
+/* .otros-products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+
+/* REGISTER-LOGIN */
+
+/* .hero {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.form-box {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  margin: 6% auto;
+  background: #fff;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.button-box {
+  width: 250px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #ff61241f;
+  border-radius: 30px;
+}
+
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;
+  height: 100%;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-top: 0;
+  border-bottom: 1px solid #999;
+  border-left: 0;
+  border-right: 0;
+  outline: none;
+  background: transparent;
+}
+
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
+
+.check-box {
+  margin: 30px 10px 30px 0;
+}
+
+span {
+  color: #777;
+  font-size: 12px;
+  bottom: 68px;
+  position: absolute;
+}
+
+#login {
+  left: 50px;
+}
+
+#registro {
+  right: -350px;
 } */
 
 .registro {
@@ -76,11 +294,14 @@ h2 {
 }
 footer {
   background: #222;
-  /* padding: 30px; */
+
   clear: both;
   justify-content: space-between;
+  height: 125px;
 }
-
+.text-input {
+  width: 100%;
+}
 .copy {
   padding-top: 25px;
   font-weight: bold;
@@ -99,7 +320,7 @@ footer {
 
 /* Product Detail */
 
-h6 {
+h4 {
   font-weight: 700;
 }
 i.icon {

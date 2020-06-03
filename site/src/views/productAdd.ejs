@@ -1,8 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
 <%-include("./partials/head", {title: 'Admin'})  %>
 <%-include("./partials/header")  %>
 
 <body>
-    <div class="container">
+
+    <div class="pb-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+                    <!-- Shopping cart table -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="p-2 px-3 text-uppercase" style="text-align: center;">Imágen</div>
+                                    </th>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="py-2 text-uppercase" style="text-align: center;">Descripción</div>
+                                    </th>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="py-2 text-uppercase" style="text-align: center;">Precio</div>
+                                    </th>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="py-2 text-uppercase" style="text-align: center;">Cantidad</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="border-0">
+                                        <div class="p-2">
+
+                                            <div class="ml-3 d-inline-block align-middle">
+                                                <input class="text-input" type="file">
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="border-0 align-middle"><textarea class="text-input" cols="40"
+                                            rows="5"></textarea></td>
+                                    <td class="border-0 align-middle"><input class="text-input" type="number" min="1"
+                                            step="any"></td>
+                                    <td class="border-0 align-middle"><input class="text-input" type="number" min="1"
+                                            max="999"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- End -->
+                    <div class="col-md-12">
+                        <div class="float-right">
+                            <a class="btn btn-success" href="#">Agregar otro producto</a>
+                            <a class="btn btn-danger" href="#">Cancelar</a>
+                            <a href="#" class="btn btn-secondary">Guardar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container">
         <div class="row  responsive">
             <div class="col-md-12">
                 <h2 style="margin-bottom: 30px; padding-top: 10px;">Carga de producto</h2>
@@ -62,8 +146,10 @@
             </div>
         </div>
     </div>
-    <br>
+    <br> -->
 
 </body>
 
 <%-include("./partials/footer")  %>
+
+</html>
