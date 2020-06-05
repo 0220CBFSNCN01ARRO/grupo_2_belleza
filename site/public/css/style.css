@@ -360,7 +360,8 @@ input {
 	margin-right: 1rem;
 	width: 1rem;
 	height: 1rem;
-	background: rgb(255, 221, 30);
+  background: rgb(255, 221, 30);
+  color: #f1da36;
 	border-radius: 50%;
 	cursor: pointer;
 }
@@ -374,7 +375,8 @@ input:focus {
 }
 
 input:checked {
-	background: hotpink;
+  background: #f1da36;
+  color: #f1da36;
 }
 
 input + * {
@@ -481,13 +483,17 @@ input:last-of-type:before {
 }
 
 
-.suscribe {
+.cajaFinal {
   margin: 10px;
   padding: 15px;
-  text-align: center;
   bottom: unset;
   background-color: rgb(207, 207, 207);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-count: 2;
 }
+
 .email {
   background-color: white;
   border-radius: unset;
@@ -496,3 +502,9 @@ input:last-of-type:before {
 
 }
 
+.contact {
+  
+}
+.suscribe{
+  
+}
