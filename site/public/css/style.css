@@ -181,7 +181,7 @@ article {
 
 /* REGISTER-LOGIN */
 
-/* .hero {
+.hero {
   height: 100%;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
@@ -198,10 +198,11 @@ article {
   background: #fff;
   padding: 5px;
   overflow: hidden;
+  border-radius: 30px;
 }
 
 .button-box {
-  width: 250px;
+  width: 223px;
   margin: 35px auto;
   position: relative;
   box-shadow: 0 0 20px 9px #ff61241f;
@@ -221,7 +222,7 @@ article {
   top: 0;
   left: 0;
   position: absolute;
-  width: 110px;
+  width: 115px;
   height: 100%;
   background: linear-gradient(to right, #ff105f, #ffad06);
   border-radius: 30px;
@@ -252,7 +253,8 @@ article {
   padding: 10px 30px;
   cursor: pointer;
   display: block;
-  margin: auto;
+  margin: 20px auto;
+  position: relative;
   background: linear-gradient(to right, #ff105f, #ffad06);
   border: 0;
   outline: none;
@@ -266,8 +268,8 @@ article {
 span {
   color: #777;
   font-size: 12px;
-  bottom: 68px;
-  position: absolute;
+  bottom: -28px;
+  position: relative;
 }
 
 #login {
@@ -276,16 +278,6 @@ span {
 
 #registro {
   right: -350px;
-} */
-
-.registro {
-  align-self: center;
-  margin-top: 5%;
-}
-
-.login {
-  align-self: center;
-  margin-top: 5%;
 }
 
 /* Footer */
