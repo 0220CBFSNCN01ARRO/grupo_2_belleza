@@ -11,23 +11,23 @@
             <span>
                 <h2>Promociones</h2>
             </span>
-    <div class="wrapper">
-        <input type="radio" name="image-slide" checked="checked">
+    <br><div class="wrapper">
+        <input class="input" type="radio" name="image-slide" checked="checked">
         <picture aria-label="Promo Jabones Florales">
             <img src="../img/products/promo4-jabones.jpg" width="800px" height="500px">
         </picture>
         
-        <input type="radio" name="image-slide">
+        <input class="input" type="radio" name="image-slide">
         <picture aria-label="Promo Jabones Naturales">
             <img src="../img/products/promo3-jabones2.jpg" width="800px" height="500px">
         </picture>
     
-        <input type="radio" name="image-slide">
+        <input class="input" type="radio" name="image-slide">
         <picture aria-label="Promo Jabones Líquidos ">
                 <img src="../img/products/promo1.jpg" width="800px" height="500px" alt="">
                 </picture>
         
-        <input type="radio" name="image-slide">
+        <input class="input" type="radio" name="image-slide">
         <picture aria-label="Promo Woman">
             <img src="../img/products/promo2.jpg" width="800px" height="500px" alt="">
         </picture>
@@ -44,110 +44,58 @@
         <h2>Productos que ayudan a mantenerte sano</h2></span>
         </div>
     
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="tarjeta">
-                <a href="/products/detail/<%= producto.id %>">
-                    <figure class="prod-img">
-                        <img src="/img/products/jabon-pink.jpg">
-                    </figure>
-                </a>
-                <div class="cuerpo-tarjeta" style="color: black;">
-                    <h4><%= producto.name %> </h4>
-                    <br>
-                    <p> $ <%= producto.price %> </p>
-                    <br>
-                    <a href="/products/carrito"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Agregar</button></a>
-                </div>
-            </div>
-            <div class="tarjeta">
-                <a href="/products/detail/<%= producto.id %>">
-                    <figure class="prod-img">
-                        <img src="/img/products/<%= producto.image %>">
-                    </figure>
-                </a>
-                <div class="cuerpo-tarjeta" style="color: black;">
-                    <h4><%= producto.name %> </h4>
-                    <br>
-                    <p> $ <%= producto.price %> </p>
-                    <br>
-                    <a href="/products/carrito"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Agregar</button></a>
-                </div>
-            </div>
-            <div class="tarjeta">
-                <a href="/products/detail/<%= producto.id %>">
-                    <figure class="prod-img">
-                        <img src="/img/products/jabon-pink.jpg">
-                    </figure>
-                </a>
-                <div class="cuerpo-tarjeta" style="color: black;">
-                    <h4><%= producto.name %> </h4>
-                    <br>
-                    <p> $ <%= producto.price %> </p>
-                    <br>
-                    <a href="/products/carrito"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Agregar</button></a>
-                </div>
-            </div>
         </div>
     </div>
     
-    <!-- <div class="containter">
-        <div class="row">
-          <div class="col-md-6 d-flex justify-content-center mt-5  mb-3">
-            <form class="form-group">
-              <div>
-                <h3>Dejanos tu comentario</h3>
-                <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre">
-                <br><label>Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido">
-                <br><label>Comentario</label>
-                <br><textarea cols="40"
-                rows="5"></textarea>
-    
-                <br>
-                <div class="d-flex align-item-center">
-                  <button class="btn btn-light" type="submit">Enviar</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-md-6 d-flex justify-content-center mt-5">
-            <form class="form-group">
-              <div>
-                <h3>¡Recibí las mejores ofertas y novedades!</h3>
-                <br><label>Email</label>
-                <input type="email" name="nombre" class="form-control" placeholder="Email">
-                <br><div class="d-flex align-item-center">
-                  <button class="btn btn-light" type="submit">Suscribirse</button>
-                </div>
-              </div>
+    <div class='productos-especiales'>
+      <div class='row'>
+        <div class='column'>
+          <div class='primer-prod'>
+            <img class="mainProd" src="../img/products/jabon-lavanda.jpg" width="300px">
           </div>
         </div>
-      </div> -->
+        <div class='column'>
+          <div class='segundo-prod'>
+            <img class="mainProd" src="../img/products/jabon-pink.jpg" width="300px">
+          </div>
+        </div>
+        <div class='column'>
+          <div class='tercer-prod'>
+            <img class="mainProd" src="../img/products/jabon-miel.jpg" width="300px">
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-    <div class="cajaFinal">
-        <!-- <div class="suscribe">
-        <h3>¡Recibí las mejores ofertas y novedades!</h1>
-        <br><form action="" method="post">
-            <label>Email</label>
-            <input class="email" type="email" name="email"></input> &nbsp 
-            <br><button class="send" type="submit"> Suscribirse</button>
-        </form> -->
-    
-
-    <div class="contact">
-    <br><h3>Dejanos tu comentario</h3>
+    <div class='cajaFinal'>
+      <div class='row'>
+        <div class='column'>
+          <div class='contact'>
+            <h3>Dejanos tu comentario</h3>
         <br><form action="" method="post">
             <label>Nombre</label>
             <input class="email" type="text" name="nombre">
            <br><label>Email</label>
-            <input class="email" type="email" name="email"></input>
+           &nbsp &nbsp &nbsp<input class="email" type="email" name="email"></input>
             <br><label>Mensaje</label>
-            <br><textarea cols="40"
-            rows="5"></textarea>
+            <br><textarea name="comentarios" cols="40"
+            rows="5">Escribe aquí tus comentarios</textarea>
             <br><button class="send" type="submit"> Enviar</button>
         </form>
+          </div>
+        </div>
+
+        <div class='column'>
+          <div class='suscribe'>
+            <h3>¡Recibí las mejores ofertas y novedades!</h3>
+            <br><form action="" method="post">
+              <label>Email</label>
+              <input class="email" type="email" name="email"></input> &nbsp 
+              <button class="send" type="submit"> Suscribirse</button>
+          </form>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 </div>
