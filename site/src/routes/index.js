@@ -7,3 +7,4 @@ router.get("/", mainController.root);
 router.get("/register", mainController.register);
 
 module.exports = router;
+

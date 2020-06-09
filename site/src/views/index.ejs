@@ -5,20 +5,101 @@
 <%-include("./partials/header")  %>
 
 <body>
+
     <div class="container">
         <div class="box1">
             <span>
                 <h2>Promociones</h2>
             </span>
-            <marquee>
-                <img src="../img/products/promo4-jabones.jpg" width="800px" height="500px">
-                <img src="../img/products/promo3-jabones2.jpg" width="800px" height="500px">
-                <img src="../img/products/promo1.jpg" width="800px" height="500px">
-                <img src="../img/products/promo2.jpg" width="800px" height="500px">
-            </marquee>
+    <br><div class="wrapper">
+        <input class="input" type="radio" name="image-slide" checked="checked">
+        <picture aria-label="Promo Jabones Florales">
+            <img src="../img/products/promo4-jabones.jpg" width="800px" height="500px">
+        </picture>
+        
+        <input class="input" type="radio" name="image-slide">
+        <picture aria-label="Promo Jabones Naturales">
+            <img src="../img/products/promo3-jabones2.jpg" width="800px" height="500px">
+        </picture>
+    
+        <input class="input" type="radio" name="image-slide">
+        <picture aria-label="Promo Jabones Líquidos ">
+                <img src="../img/products/promo1.jpg" width="800px" height="500px" alt="">
+                </picture>
+        
+        <input class="input" type="radio" name="image-slide">
+        <picture aria-label="Promo Woman">
+            <img src="../img/products/promo2.jpg" width="800px" height="500px" alt="">
+        </picture>
+        
+    </div>
+    </div>
+    </div>
+
+    <div class="covid"><a href="https://www.argentina.gob.ar/salud/coronavirus-COVID-19?utm_source=alerta_20200424&utm_medium=web&utm_campaign=campana_coronavirus"><img src="../img/logos/banner-cov.png" width="100%"></a></div>
+
+    <div class="container">
+    <div class="box1">
+        <span>
+        <h2>Productos que ayudan a mantenerte sano</h2></span>
+        </div>
+    
         </div>
     </div>
-</body>
+    
+    <div class='productos-especiales'>
+      <div class='row'>
+        <div class='column'>
+          <div class='primer-prod'>
+            <img class="mainProd" src="../img/products/jabon-lavanda.jpg" width="300px">
+          </div>
+        </div>
+        <div class='column'>
+          <div class='segundo-prod'>
+            <img class="mainProd" src="../img/products/jabon-pink.jpg" width="300px">
+          </div>
+        </div>
+        <div class='column'>
+          <div class='tercer-prod'>
+            <img class="mainProd" src="../img/products/jabon-miel.jpg" width="300px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='cajaFinal'>
+      <div class='row'>
+        <div class='column'>
+          <div class='contact'>
+            <h3>Dejanos tu comentario</h3>
+        <br><form action="" method="post">
+            <label>Nombre</label>
+            <input class="email" type="text" name="nombre">
+           <br><label>Email</label>
+           &nbsp &nbsp &nbsp<input class="email" type="email" name="email"></input>
+            <br><label>Mensaje</label>
+            <br><textarea name="comentarios" cols="40"
+            rows="5">Escribe aquí tus comentarios</textarea>
+            <br><button class="send" type="submit"> Enviar</button>
+        </form>
+          </div>
+        </div>
+
+        <div class='column'>
+          <div class='suscribe'>
+            <h3>¡Recibí las mejores ofertas y novedades!</h3>
+            <br><form action="" method="post">
+              <label>Email</label>
+              <input class="email" type="email" name="email"></input> &nbsp 
+              <button class="send" type="submit"> Suscribirse</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+    </body>
 
 <%-include("./partials/footer")  %>
 </html>

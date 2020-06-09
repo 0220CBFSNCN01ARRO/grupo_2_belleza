@@ -22,3 +22,4 @@ router.post("/carrito", productsController.compra); //Acción para comprar
 router.delete("/delete/:productId", productsController.delete);
 
 module.exports = router;
+
