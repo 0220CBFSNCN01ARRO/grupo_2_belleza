@@ -1,6 +1,22 @@
 const express = require("express");
 const router = express.Router();
+const multer = require('multer');
+
+// controllers require
 const productsController = require("../controllers/productsController");
+
+//  Multer
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname,'../../public/upload'))  //aca hay un problema con la ruta
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+var upload = multer({ storage: storage });
+
 
 // PRODUCTOS Y DETALLE
 router.get("/", productsController.products);
@@ -8,7 +24,7 @@ router.get("/detail/:productId/", productsController.detail);
 
 // CREAR UN PRODUCTO
 router.get("/create/", productsController.create); //Vista del form para crear prod//
-router.post("/create/", productsController.store); //Acción de crear y guardar//
+router.post("/create/", upload.any(), productsController.store); //Acción de crear y guardar//
 
 // EDITAR UN PRODUCTOS
 router.get("/edit", productsController.edit); //Vista del form para editar prod//
