@@ -157,7 +157,7 @@ figure {
 .products-detail {
   display: flex;
   justify-content: space-around;
-  }
+}
 .pp-dd {
   display: flex;
   justify-content: center;
@@ -187,7 +187,6 @@ article {
 }
 .prod-create-box {
   display: flex;
-
 }
 .form-label {
   display: inline-block;
@@ -315,6 +314,7 @@ span {
 }
 
 /* Footer */
+
 #link {
   color: black;
 }
@@ -352,6 +352,43 @@ footer {
 .social i:hover {
   color: #f1da36;
 }
+/* #link {
+  color: black;
+}
+footer {
+  background: #313131;
+  clear: both;
+  justify-content: space-between;
+}
+.text-input {
+  width: 100%;
+}
+.suscribe {
+  align-self: center;
+  color: white;
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+.column-footer {
+  width: 100%;
+}
+
+.copy {
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+.social i {
+  color: #fff;
+  font-size: 40px;
+  margin: 10px;
+  padding-top: 10px;
+}
+
+.social i:hover {
+  color: #f1da36;
+} */
 /* Product Detail */
 
 h4 {
