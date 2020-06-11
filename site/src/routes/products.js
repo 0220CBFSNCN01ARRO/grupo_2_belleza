@@ -8,7 +8,7 @@ const productsController = require("../controllers/productsController");
 //  Multer
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname,'../../public/upload'))  //aca hay un problema con la ruta
+        cb(null, path.join(__dirname,'../../public/img/products'))  //aca hay un problema con la ruta
     },
     filename: (req, file, cb) => {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
