@@ -5,33 +5,56 @@ const productsFilePath = path.join(__dirname, '../data/Products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
-  // ver todos los productos
+  // VER TODOS LOS PRODUCTOS
   products: function (req, res) {
     res.render("products", { products });
   },
 
-  // ver detalle de cada producto
+  // VER DETALLE DE CADA PRODUCTO
   detail: function (req, res) {
     let producto = products.find(prod => prod.id == req.params.productId);
     res.render("productDetail", { producto });
   },
 
-  // crear un producto nuevo
+  // CREAR UN PRODUCTO NUEVO
   create: function (req, res) {
     res.render("productAdd", { title: "Crear Producto" });
   },
-  store: function (req, res) {
-    res.render("products"); //Accion de crear y guardar prod nuevo//
+  //Accion de crear y guardar prod nuevo
+  store: function (req, res, next) {
+    // elegir id
+    let ids = products.map(prod => prod.id)
+    let id = Math.max(...ids) + 1
+
+    // crear producto con datos del formulario
+    req.body.price = Number(req.body.price)
+    req.body.cantidad = Number(req.body.cantidad)
+    
+    // actualizar datos del prod nuevo
+    let productoNuevo = {
+      id: id,
+      ...req.body,
+      image: '/upload/' + req.file.filename,
+    }
+
+    // agregar producto nuevo al array
+    let final = [...products, productoNuevo];
+
+    // se guarda en json
+    fs.writeFileSync(productsFilePath, JSON.stringify(final, null, ' '));
+
+    //redirecciono
+    res.render("products"); 
   },
 
-  // editar un producto existente
+  // EDITAR UN PRODUCTO EXISTENTE
   edit: function (req, res) {
     res.render("edit", { title: "Editar Producto" });
   },
   update: function (req, res) {
     res.redirect("/products");
   },
-  // carrito
+  // CARRITO DE COMPRAS
   carrito: function (req, res) {
     res.render("productCart", { title: "Carrito de compras" });
   },
@@ -40,7 +63,7 @@ const controller = {
     res.render("productCart", { title: "Compra" });
   },
 
-  // borrar un producto
+  // BORRAR UN PRODUCTO
   delete: function (req, res) {
     // let final = products.filter(prcreateod=> prod.id != req.params.productId)
     // fs.writeFileSync(productsFilePath, JSON.stringify(final, null, ' '));
