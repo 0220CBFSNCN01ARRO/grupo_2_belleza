@@ -101,6 +101,7 @@ h2 {
 .box1 {
   margin: 20px;
   align-items: center;
+  margin-left: 10%;
 }
 
 /* Productos */
@@ -330,7 +331,6 @@ footer {
   align-self: center;
   color: white;
   font-weight: bold;
-  font-family: fantasy;
 }
 
 .column-footer {
@@ -450,10 +450,6 @@ section {
   z-index: 1;
 }
 
-/* 
-	just to be safe we hide every element that comes after
-	each slide and that's not an input of type radio
-*/
 .input + * + *:not(input[type="radio"]) {
   display: none;
 }
@@ -542,14 +538,17 @@ input:checked:after {
 
 .primer-prod {
   align-self: center;
+  text-align: center;
 }
 
 .segundo-prod {
   align-self: center;
+  text-align: center;
 }
 
 .tercer-prod {
   align-self: center;
+  text-align: center;
 }
 
 /* Final prods especiales */
