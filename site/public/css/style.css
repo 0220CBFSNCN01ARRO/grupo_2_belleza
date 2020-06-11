@@ -8,6 +8,8 @@ body {
   min-height: 100vh;
   margin: 0;
   font-size: 10px;
+  font-family: "Raleway", sans-serif;
+  
 }
 header {
   background-color: #313131;
@@ -96,6 +98,7 @@ h2 {
   margin: 30px;
   font-size: 3rem;
   color: #000;
+  font-family: "Raleway", sans-serif;
 }
 
 .box1 {
@@ -560,8 +563,9 @@ input:checked:after {
   background-color: rgb(207, 207, 207);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  column-count: 2;
+  justify-content: center;
+  align-items: flex-start;
+  /* column-count: 2; */
 }
 
 .email {
