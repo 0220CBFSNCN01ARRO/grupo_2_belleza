@@ -9,7 +9,6 @@ body {
   margin: 0;
   font-size: 10px;
   font-family: "Raleway", sans-serif;
-  
 }
 header {
   background-color: #313131;
@@ -612,9 +611,6 @@ input:checked:after {
 
 .contact {
   margin-left: 10px;
-<<<<<<< HEAD
-}
-=======
   justify-content: center;
   display: grid;
 }
@@ -637,4 +633,3 @@ input:checked:after {
   align-self: flex-start;
   padding: 20px;
 }
->>>>>>> 22fe9eb943bf0712163c68db2e5ace656cc389f2
