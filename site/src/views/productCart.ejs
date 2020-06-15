@@ -1,104 +1,102 @@
 <%-include("./partials/head", {title: 'Tu carrito'})  %>
 <%-include("./partials/header")  %>
 
-<body>
 
-    <div class="pb-5 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
 
-                    <!-- Shopping cart table -->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="p-2 px-3 text-uppercase" style="text-align: center;">Producto</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Precio</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Cantidad</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Eliminar</div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="border-0">
-                                        <div class="p-2">
-                                            <img src="/img/products/jabon-avena.jpg" alt="" width="70"
-                                                class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"> <a href="#"
-                                                        class="text-dark d-inline-block align-middle">Jabón de
-                                                        avena</a></h5><span
-                                                    class="text-muted font-weight-normal font-italic d-block">Categoria:
-                                                    Jabones</span>
-                                            </div>
+<div class="pb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+                <!-- Shopping cart table -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase" style="text-align: center;">Producto</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Precio</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Cantidad</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Eliminar</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="border-0">
+                                    <div class="p-2">
+                                        <img src="/img/products/jabon-avena.jpg" alt="" width="70"
+                                            class="img-fluid rounded shadow-sm">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0"> <a href="#"
+                                                    class="text-dark d-inline-block align-middle">Jabón de
+                                                    avena</a></h5><span
+                                                class="text-muted font-weight-normal font-italic d-block">Categoria:
+                                                Jabones</span>
                                         </div>
-                                    </th>
-                                    <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                                    <td class="border-0 align-middle"><strong>3</strong></td>
-                                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i
-                                                class="fa fa-trash"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <div class="p-2">
-                                            <img src="/img/products/jabon-lavanda.jpg" alt="" width="70"
-                                                class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Jabón
-                                                        lavanda</a></h5><span
-                                                    class="text-muted font-weight-normal font-italic">Categoria:
-                                                    Jabones</span>
-                                            </div>
+                                    </div>
+                                </th>
+                                <td class="border-0 align-middle"><strong>$79.00</strong></td>
+                                <td class="border-0 align-middle"><strong>3</strong></td>
+                                <td class="border-0 align-middle"><a href="#" class="text-dark"><i
+                                            class="fa fa-trash"></i></a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="p-2">
+                                        <img src="/img/products/jabon-lavanda.jpg" alt="" width="70"
+                                            class="img-fluid rounded shadow-sm">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Jabón
+                                                    lavanda</a></h5><span
+                                                class="text-muted font-weight-normal font-italic">Categoria:
+                                                Jabones</span>
                                         </div>
-                                    </th>
-                                    <td class="align-middle"><strong>$50.00</strong></td>
-                                    <td class="align-middle"><strong>1</strong></td>
-                                    <td class="align-middle"><a href="#" class="text-dark"><i
-                                                class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <div class="p-2">
-                                            <img src="/img/products/perfume3.jpg" alt="" width="70"
-                                                class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Perfume
-                                                        clasico hombre</a></h5><span
-                                                    class="text-muted font-weight-normal font-italic">Categoria:
-                                                    Perfumes</span>
-                                            </div>
+                                    </div>
+                                </th>
+                                <td class="align-middle"><strong>$50.00</strong></td>
+                                <td class="align-middle"><strong>1</strong></td>
+                                <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="p-2">
+                                        <img src="/img/products/perfume3.jpg" alt="" width="70"
+                                            class="img-fluid rounded shadow-sm">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Perfume
+                                                    clasico hombre</a></h5><span
+                                                class="text-muted font-weight-normal font-italic">Categoria:
+                                                Perfumes</span>
                                         </div>
-                                    <td class="align-middle"><strong>$130.00</strong></td>
-                                    <td class="align-middle"><strong>1</strong></td>
-                                    <td class="align-middle"><a href="#" class="text-dark"><i
-                                                class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- End -->
-                    <div class="col-md-12">
-                        <div class="float-right">
-                            <a class="btn btn-danger" href="/products">Seguir comprando</a>
-                            <a href="#" class="btn btn-secondary">Continuar</a>
-                        </div>
+                                    </div>
+                                <td class="align-middle"><strong>$130.00</strong></td>
+                                <td class="align-middle"><strong>1</strong></td>
+                                <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- End -->
+                <div class="col-md-12">
+                    <div class="float-right">
+                        <a class="btn btn-danger" href="/products">Seguir comprando</a>
+                        <a href="#" class="btn btn-secondary">Continuar</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>
+
 
 
 </html>

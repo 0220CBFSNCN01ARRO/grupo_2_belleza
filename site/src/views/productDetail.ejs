@@ -1,45 +1,45 @@
 <%-include("./partials/head", {title: producto.name}) %>
 <%-include("./partials/header")  %>
 
-<body>
-    <!-- Detalle Productos -->
-    <main class="box2">
-        <div class="products-container">
-            <div class="row">
-                <div class="col-12">
-                    <h5 class="products-title"> Producto: <%= producto.name %> </h5>
-                </div>
-            </div>
-            <div class="product-detail">
-                <div class="pp-dd">
-                    <div class="prod-detail col-12 col-lg-8">
-                        <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
-                            <img src="/img/products/<%= producto.image %>" alt="imagen de producto"
-                                style="position: relative;">
-                        </figure>
-                        <article>
-                            <p class="descrip-prod-detail">
-                                <br>
-                                <%= producto.description %>
-                                <br><br>
-                                <b>$ <%= producto.price %></b>
-                            </p>
 
-                            <button class="btn btn-dark align-self-baseline">
-                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
-                                    carrito</button></a>
-                            <div class="m-1">
-                                <i class="far fa-credit-card"></i><i class="icon"> Pagá en cuotas sin interés</i>
-                                <br>
-                                <i class="far fa-paper-plane"></i><i class="icon"> Envíos a todo el país</i>
-                            </div>
-                        </article>
-                    </div>
+<!-- Detalle Productos -->
+<main class="box2">
+    <div class="products-container">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="products-title"> Producto: <%= producto.name %> </h5>
+            </div>
+        </div>
+        <div class="product-detail">
+            <div class="pp-dd">
+                <div class="prod-detail col-12 col-lg-8">
+                    <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
+                        <img src="/img/products/<%= producto.image %>" alt="imagen de producto"
+                            style="position: relative;">
+                    </figure>
+                    <article>
+                        <p class="descrip-prod-detail">
+                            <br>
+                            <%= producto.description %>
+                            <br><br>
+                            <b>$ <%= producto.price %></b>
+                        </p>
+
+                        <button class="btn btn-dark align-self-baseline">
+                            <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
+                                carrito</button></a>
+                        <div class="m-1">
+                            <i class="far fa-credit-card"></i><i class="icon"> Pagá en cuotas sin interés</i>
+                            <br>
+                            <i class="far fa-paper-plane"></i><i class="icon"> Envíos a todo el país</i>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- <div class="otros-products" style="border-radius:10px">
+    <!-- <div class="otros-products" style="border-radius:10px">
             <div class="col-12">
                 <h6>Otro productos que podrian interesarte</h6>
             </div>
@@ -94,6 +94,6 @@
                 </div>
             </div>
         </div> -->
-    </main>
-</body>
+</main>
+
 <%-include("./partials/footer")  %>
