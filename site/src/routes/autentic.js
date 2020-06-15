@@ -1,4 +1,4 @@
-router.get("/login", authController.showLogin);
+router.get("/login", usersController.showLogin);
 router.post("/login", [
     check("email")
         .custom(function (value) {
@@ -20,8 +20,8 @@ router.post("/login", [
         })
         .withMessage("Email no registrado"),
 
-    authController.login,
+    usersController.login,
 ]);
 
 //LOGOUT
-router.get("/logout", authController.logout);
+router.get("/logout", usersController.logout);
