@@ -1,30 +1,71 @@
 <footer>
-    <div class="row text-center">
+    <div class="main-content">
+        <div class="left box">
+            <h2>Sobre Nosotros</h2>
+            <div class="content">
+                <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata
+                    corpora quaeritis. Summus brains sit​​.</p>
+                <div class="social">
+                    <a href="#"><span class="fab fa-facebook"></span></a>
+                    <a href="#"><span class="fab fa-twitter"></span></a>
+                    <a href="#"><span class="fab fa-instagram"></span></a>
+                    <a href="#"><span class="fab fa-youtube"></span></a>
+                </div>
+            </div>
+        </div>
 
-        <div class='column-footer'>
-            <div class='suscribe'>
-                <h3>¡Recibí las mejores ofertas y novedades!</h3>
-                <br>
-                <form action="" method="post">
-                    <label>Email</label>
-                    <input class="email" type="email" name="email"></input> &nbsp
-                    <button class="send" type="submit"> Suscribirse</button>
+        <div class="center box">
+            <h2>Dirección</h2>
+            <div class="content">
+                <div class="place">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="text">Calle Falsa 123</span>
+                </div>
+                <div class="phone">
+                    <span class="fas fa-phone-alt"></span>
+                    <span class="text">+54-0303-456</span>
+                </div>
+                <div class="email">
+                    <span class="fas fa-envelope"></span>
+                    <span class="text">dhstyle@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right box">
+            <h2>Contáctanos</h2>
+            <div class="content">
+                <form action="#">
+                    <div class="email">
+                        <div class="text">E-mail</div>
+                        <input type="email" required>
+                    </div>
+                    <div class="msg">
+                        <div class="text">Mensaje</div>
+                        <textarea id="msgForm" cols="25" rows="2" required></textarea>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>
 
-        <div class="col-md-4 social pt-5">
-            <a href="https://www.facebook.com" target="_blanck"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://www.twitter.com" target="_blanck"><i class="fab fa-twitter-square"></i></a>
-            <a href="https://www.instagram.com" target="_blanck"><i class="fab fa-instagram-square"></i></a>
-            <a href="https://www.youtube.com" target="_blanck"><i class="fab fa-youtube-square"></i></a>
-        </div>
-        <div class="col-md-4 pt-5">
-            <p class="text-light copy">Copyright &copy;2020 Todos los derechos reservados</p>
-        </div>
-        <div class="col-md-4 pt-5">
-            <a href="/"><img src="/img/logos/DH_style.png" width="75" height="75" alt="logo"></a>
-        </div>
+    </div>
+    <div class="bottom">
+        <center>
+            <span class="credit">Creado por <a href="/">DHStyle</a> | </span>
+            <span class="far fa-copyright"></span><span> 2020 - Todos los derechos reservados.</span>
+        </center>
     </div>
 </footer>
+
+<script>
+    $('nav ul li.btn span').click(function () {
+        $('nav ul div.items').toggleClass('show');
+        $('nav ul li.btn span').toggleClass('show');
+    });
+</script>
+</body>
+
 </html>

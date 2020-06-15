@@ -1,11 +1,11 @@
 // function UserLog(req, res, next) {
-//     if (req.session.usuarioLogueado != undefined) {
-//         res.locals.user = req.session.usuarioLogueado;
-//     } else {
-//         res.locals.user = null;
-//     }
+//   if (req.session.usuarioLogueado != undefined) {
+//     res.locals.user = req.session.usuarioLogueado;
+//   } else {
+//     res.locals.user = null;
+//   }
 
-//     next();
+//   next();
 // }
 
 // module.exports = UserLog;

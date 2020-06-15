@@ -1,44 +1,12 @@
 /*====== Basics ======*/
+@import url("https://fonts.coogleapis.com/css?family=Poppins:400,500,600,700&display=sawp");
+
 * {
+  margin: 0;
+  padding: 0;
+  color: #d9d9d9;
   box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-size: 10px;
-  font-family: "Raleway", sans-serif;
-  
-}
-header {
-  background-color: #313131;
-}
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-}
-figure {
-  margin: 0;
-  padding: 0;
-}
-
-input,
-textarea {
-  font-family: inherit;
-}
-
-hr {
-  border: none;
-  border-bottom: solid 1px var(--light-gray);
+  font-family: "Poppins", sans-serif;
 }
 
 /* CUERPO */
@@ -58,6 +26,156 @@ a:visited,
 a:active {
   text-decoration: none;
   color: #fff;
+}
+
+/* NAVBAR */
+
+nav {
+  background: #222222;
+  padding: 10px 40px 10px 70px;
+  border: 1px solid #000;
+  border-left: none;
+  border-right: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li.logo {
+  flex: 1;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.img-logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav ul div.items {
+  padding: 0 25px;
+  display: inline-flex;
+}
+
+nav ul div.items a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 12px;
+}
+
+nav ul div.items a:hover {
+  color: cyan;
+}
+
+nav ul .search-icon {
+  height: 40px;
+  width: 240px;
+  display: flex;
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+
+nav ul .search-icon input {
+  height: 100%;
+  width: 200px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  color: #000;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+}
+
+nav ul .search-icon .icon {
+  height: 100%;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  border-radius: 0 5px 5px 0;
+}
+
+nav ul .search-icon .icon:hover {
+  background: #f1da36;
+}
+
+nav ul .search-icon .icon span {
+  color: #222222;
+  font-size: 18px;
+}
+
+nav ul li.btn {
+  font-size: 29px;
+  flex: 1;
+  padding: 0 40px;
+  display: none;
+}
+
+nav ul li.btn span {
+  height: 42px;
+  width: 42px;
+  text-align: center;
+  line-height: 42px;
+  border: 1px solid #151515;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+nav ul li.btn span.show:before {
+  content: "\f00d";
+}
+@media screen and (max-width: 920px) {
+  nav ul li.btn {
+    display: block;
+  }
+
+  nav {
+    z-index: 1;
+    padding: 9px 40px 9px 0;
+  }
+
+  nav ul div.items {
+    z-index: -1;
+    position: fixed;
+    top: -260px;
+    background: #222222;
+    width: 100%;
+    right: 0;
+    display: inline-block;
+    transition: 0.4s;
+  }
+
+  nav ul div.items.show {
+    top: 60px;
+  }
+
+  nav ul div.items li {
+    text-align: center;
+    line-height: 30px;
+    margin: 30px 0;
+  }
+  nav ul div.items li a {
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  nav {
+    padding: 10px 40px 10px 40px;
+  }
+
+  nav ul li.logo {
+    display: none;
+  }
+
+  nav ul li.items {
+    flex: 4;
+  }
 }
 
 /* HEADER */
@@ -161,7 +279,7 @@ figure {
 .products-detail {
   display: flex;
   justify-content: space-around;
-  }
+}
 .pp-dd {
   display: flex;
   justify-content: center;
@@ -191,7 +309,6 @@ article {
 }
 .prod-create-box {
   display: flex;
-
 }
 .form-label {
   display: inline-block;
@@ -303,7 +420,7 @@ article {
   margin: 30px 10px 30px 0;
 }
 
-span {
+.rec-contra {
   color: #777;
   font-size: 12px;
   bottom: -28px;
@@ -319,65 +436,187 @@ span {
 }
 
 /* Footer */
-#link {
-  color: black;
-}
+
 footer {
-  background: #313131;
-  clear: both;
-  justify-content: space-between;
-}
-.text-input {
+  position: relative;
+  bottom: 0px;
   width: 100%;
-}
-.suscribe {
-  align-self: center;
-  color: white;
-  font-weight: bold;
+  background: #111;
 }
 
-.column-footer {
+.main-content {
+  display: flex;
+}
+
+.main-content .box {
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+
+.box h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.box .content {
+  margin: 20px 0 0 0;
+  position: relative;
+}
+
+.box .content:before {
+  position: absolute;
+  content: "";
+  top: -10px;
+  height: 2px;
   width: 100%;
+  background: #1a1a1a;
 }
 
-.copy {
-  padding-top: 25px;
-  font-weight: bold;
+.box .content:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 15%;
+  background: #f1da36;
+  top: -10px;
 }
 
-.social i {
-  color: #fff;
-  font-size: 40px;
-  margin: 10px;
-  padding-top: 10px;
+.left .content p {
+  text-align: justify;
 }
 
-.social i:hover {
+.left .content .social {
+  margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+  padding: 0 2px;
+}
+
+.left .content .social a span {
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.left .content .social a span:hover {
+  background: #f1da36;
+}
+
+.center .content .fas {
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.center .content .fas:hover {
+  background: #f1da36;
+}
+
+.center .content .text {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.center .content .phone {
+  margin: 15px 0;
+}
+
+.right form .text {
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+
+.right form .msg {
+  margin-top: 10px;
+}
+
+.right form input,
+.right form #msgForm {
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+
+.right form input:focus,
+.right form #msgForm:focus {
+  outline-color: #3498db;
+}
+
+.right form input {
+  height: 35px;
+}
+
+.right form .btn {
+  margin-top: 10px;
+}
+
+.right form .btn button {
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #f12020;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.right form .btn button:hover {
+  background: #f1da36;
+}
+
+.bottom center {
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+
+.bottom center span {
+  color: #656565;
+}
+
+.bottom center a {
+  color: #f12020;
+  text-decoration: none;
+}
+
+.bottom center a:hover {
+  text-decoration: underline;
   color: #f1da36;
 }
-/* Product Detail */
-
-h4 {
-  font-weight: 700;
-}
-i.icon {
-  font-family: "Raleway", sans-serif;
-  font-size: 12px;
-}
+/* FIN FOOTER  */
 
 /* SLIDE */
 
-/* button {
-	border: none;
-	border-radius: 5px;
-	padding: .5rem 1rem;
-	background-color: rgb(216, 213, 36);
-	color: white;
-	margin: 1rem 0;
-	font-size: 1rem;
-} */
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background-color: rgb(216, 213, 36);
+  color: white;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
 
-.wrapper {
+/* .wrapper {
   position: relative;
   width: 800px;
   height: 500px;
@@ -455,11 +694,11 @@ section {
 
 .input + * + *:not(input[type="radio"]) {
   display: none;
-}
+} */
 
 /* ARROWS */
 
-.input:before {
+/* .input:before {
   display: none !important;
   content: "";
   position: absolute;
@@ -505,19 +744,19 @@ input:checked:after {
 
 .input:last-of-type:before {
   background: green;
-}
+} */
 
 /*Fin Slide  */
 
-.covid {
+/* .covid {
   margin: 10px;
-}
+} */
 
 /* Productos cuidados especiales */
 
-.productos-especiales {
+/* .productos-especiales {
   margin: 15px;
-}
+} */
 
 /* .row {
   display: flex;
@@ -528,7 +767,7 @@ input:checked:after {
   padding: 10px;
 } */
 
-.column {
+/* .column {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -536,7 +775,6 @@ input:checked:after {
 }
 
 .mainProd {
-  /* border: #222 2px solid; */
   border-radius: 8px;
 }
 
@@ -553,11 +791,11 @@ input:checked:after {
 .tercer-prod {
   align-self: center;
   text-align: center;
-}
+} */
 
 /* Final prods especiales */
 
-.cajaFinal {
+/* .cajaFinal {
   bottom: unset;
   background-color: rgb(207, 207, 207);
   display: flex;
@@ -596,4 +834,4 @@ input:checked:after {
   justify-content: flex-end;
   align-self: flex-start;
   padding: 20px;
-}
+} */
