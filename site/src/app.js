@@ -3,11 +3,11 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-// var session = require("express-session");
-// var methodOverride =  require('method-override');
+var session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
+var methodOverride =  require('method-override');
 
 var app = express();
 
@@ -24,8 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
-// app.use(methodOverride('_method'))
-// app.use(session({ secret: "SecretBeauty" }));
+app.use(methodOverride('_method'))
+app.use(session({ secret: "SecretBeauty" }));
 
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
