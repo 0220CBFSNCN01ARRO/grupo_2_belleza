@@ -16,7 +16,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Va a el middleweare de log de user
-const userLogsMiddleware = require('../middlewares/userLog');
+const userLogsMiddleware = require('./middlewares/userLog');
 app.use(userLogsMiddleware);
 
 app.use(logger("dev"));
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(methodOverride('_method'))
-app.use(session({ secret: "SecretBeauty" }));
+// app.use(session({ secret: "SecretBeauty" }));
 
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
