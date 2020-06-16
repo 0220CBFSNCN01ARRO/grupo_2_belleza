@@ -7,6 +7,7 @@ var session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
+// var loginRouter = require("./routes/userLogin")
 var methodOverride = require("method-override");
 
 var app = express();
@@ -16,7 +17,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Va a el middleweare de log de user
-// const userLogsMiddleware = require("../src/middlewares/userLog");
+// const userLogsMiddleware = require('../src/middlewares/userLog');
 // app.use(userLogsMiddleware);
 
 app.use(logger("dev"));
@@ -29,6 +30,7 @@ app.use(methodOverride("_method"));
 
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
+// app.use("/login", loginRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -11,7 +11,7 @@
 
 /* CUERPO */
 body {
-  background-image: url("/img/fondos/fondo-blue.jpg");
+  background-image: url("/img/fondos/fondo-clarito.jpg");
   /* font-weight: bold; */
   color: #000;
   display: flex;
@@ -202,16 +202,6 @@ nav ul li.btn span.show:before {
 }
 
 /* CUERPO */
-
-/* .container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-top: 25px;
-  padding: 15px;
-} */
-
 h2 {
   margin: 30px;
   font-size: 3rem;
@@ -225,57 +215,106 @@ h2 {
   margin-left: 10%;
 }
 
-/* Productos */
+/* PRODUCTS */
 .box2 {
   position: relative;
   overflow: hidden;
   display: flex;
+  flex-direction: row;
+  
 }
 .products-container {
-  margin: 60px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 3%;
 }
-.products-title {
-  font-size: 2em;
-  font-weight: 400;
-  color: rgb(36, 34, 34);
-  padding: 0 20px 0 0;
-  text-align: left;
+.tit-productos h2 {
+  width: 100%;
 }
+
 .tarjeta {
   background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
-  height: 300px;
-  margin: 20px 0;
-  display: block;
-  position: relative;
-  align-items: center;
+  width: 100%;
+  height: 397px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  box-shadow: 0 1px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
 }
 .tarjeta a {
   display: block;
 }
 .prod-img {
   display: flex;
+  width: 100%;
 }
 figure {
   display: flex;
   justify-content: center;
+  padding: 5px;
   height: 200px;
 }
-
 .cuerpo-tarjeta {
   padding: 15px;
   position: relative;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
-  align-self: flex-end;
+  align-items: center;
+  height: 157px;
+  line-height: 2;
+  font-size: 20px;
+  text-align: center;
 }
+.tit-h2 {
+  font-weight: 700;
+  margin: -15px 0 auto 0;
+}
+.boton-carrito {
+  background-color: rgb(54, 50, 50);
+  border-radius: 15px;
+  color: honeydew;
+  height: 5vh;
+  width: 20vh;
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .box2 {
+    max-width: 720px;
+  }
+  .products-container {
+    margin-left: 45px;
+  }
+  .prod-container-tarj {
+    overflow: hidden;
+  }
+  .tarjeta {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+  }
+  .cuerpo-tarjeta {
+    font-size: 18px;
+    line-height: 2rem;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .box2 {
+    max-width: 1180px;
+}
+  .tarjeta {
+    float: left;
+    width: 23%;
+    margin-right: 2%;
+  }
+}
+/* END PRODUCTS */
 
-/* Detalle productos */
+/* PRODUCTDETAIL */
 .products-detail {
   display: flex;
   justify-content: space-around;
@@ -284,23 +323,74 @@ figure {
   display: flex;
   justify-content: center;
 }
+.products-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  color: rgb(36, 34, 34);
+  padding: 0 20px 0 0;
+  text-align: left;
+}
 .prod-detail {
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding: 15px;
+  justify-content: center;
 }
 article {
   display: inline-flex;
   flex-direction: column;
-  order: 2;
+  color: #000;
+  font-size: 1.3rem;
+}
+.descrip-detail article p {
+  text-align: center;
+  color: #000;
+}
+#desc-price-detail {
+  text-align: center;
+  color: #000;
 }
 
 .img-prod-detail {
   padding: 0 40px 0 20px;
 }
-/*=== fin detalle productos ===*/
+.boton-carrito-detail {
+  background-color: rgb(54, 50, 50);
+  border-radius: 15px;
+  color: honeydew;
+  height: 5vh;
+  width: 30vh;
+  align-self: center;
+}
+.m-1 {
+  align-self: center;
+  margin: 2%;
+  color: #000;
+}
+i.icon {
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  color: #000;
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .box2 {
+    max-width: 1180
+  }
+  .prod-detail {
+    flex-wrap: nowrap;
+  }
+  .descript-detail, .boton-carrito-detail, .m-1 {
+    align-self: flex-start;
+  }
+  #desc-price-detail {
+    text-align: left;
+  }
+}
+/*=== FIN PRODUCTDETAIL ===*/
 
 /*=== Creacion de productos (formulario) ===*/
 .products-create {
@@ -326,6 +416,7 @@ article {
   justify-content: right;
   padding: 20px;
 }
+
 /*=== Fin creacion ===*/
 
 /* .otros-products {

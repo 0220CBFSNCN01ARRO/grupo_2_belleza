@@ -3,7 +3,7 @@
 
 // router.get("/headerLog", (req, res, next) => {
 //     //const user = req.session.usuarioLogueado;
-//     //delete req.session.usuarioLogueado;
+//     //delete req.session.usuarioLogueado; 
 //     res.render("headerLog", {
 //     });
 
