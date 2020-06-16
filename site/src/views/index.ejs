@@ -1,109 +1,84 @@
-
-
 <%-include("./partials/head", {title: 'Inicio'})  %>
 <%-include("./partials/header")  %>
 
-<body>
+<div class="container">
+  <div class="box1">
+    <span>
+      <h2>Promociones</h2>
+    </span>
+    <br>
+    <div class="wrapper">
+      <input class="input" type="radio" name="image-slide" checked="checked">
+      <picture aria-label="Promo Jabones Florales">
+        <img src="../img/products/promo4-jabones.jpg" width="800px" height="500px">
+      </picture>
 
-  <div class="container">
-    <div class="box1">
-      <span>
-        <h2><strong>Promociones</strong></h2>
-      </span>
-      <br>
-      <div class="wrapper">
-        <input class="input" type="radio" name="image-slide" checked="checked">
-        <picture aria-label="Promo Jabones Florales">
-          <img src="../img/products/promo4-jabones.jpg" width="800px" height="500px">
-        </picture>
+      <input class="input" type="radio" name="image-slide">
+      <picture aria-label="Promo Jabones Naturales">
+        <img src="../img/products/promo3-jabones2.jpg" width="800px" height="500px">
+      </picture>
 
-        <input class="input" type="radio" name="image-slide">
-        <picture aria-label="Promo Jabones Naturales">
-          <img src="../img/products/promo3-jabones2.jpg" width="800px" height="500px">
-        </picture>
+      <input class="input" type="radio" name="image-slide">
+      <picture aria-label="Promo Jabones Líquidos ">
+        <img src="../img/products/promo1.jpg" width="800px" height="500px" alt="">
+      </picture>
 
-        <input class="input" type="radio" name="image-slide">
-        <picture aria-label="Promo Jabones Líquidos ">
-          <img src="../img/products/promo1.jpg" width="800px" height="500px" alt="">
-        </picture>
+      <input class="input" type="radio" name="image-slide">
+      <picture aria-label="Promo Woman">
+        <img src="../img/products/promo2.jpg" width="800px" height="500px" alt="">
+      </picture>
 
-        <input class="input" type="radio" name="image-slide">
-        <picture aria-label="Promo Woman">
-          <img src="../img/products/promo2.jpg" width="800px" height="500px" alt="">
-        </picture>
+    </div>
+  </div>
+</div>
 
+
+
+
+
+
+
+<div class="covid"><a
+    href="https://www.argentina.gob.ar/salud/coronavirus-COVID-19?utm_source=alerta_20200424&utm_medium=web&utm_campaign=campana_coronavirus"><img
+      src="../img/logos/banner-cov.png" width="100%"></a></div>
+
+<div class="container">
+  <div class="box1">
+    <span>
+      <h2><strong> Productos que ayudan a mantenerte sano</strong></h2><br>
+    </span>
+  </div>
+
+</div>
+
+
+<div class='productos-especiales'>
+  <div class='row'>
+    <div class='column'>
+      <div class='primer-prod'>
+        <h3><strong>Alcohol en Gel</strong></h3>
+        <img class="mainProd" src="../img/products/alcoholGel.jpg" width="250px" height="250px">
+      </div>
+    </div>
+    <div class='column'>
+      <div class='segundo-prod'>
+        <h3><strong>Alcohol Líquido</strong></h3>
+        <img class="mainProd" src="../img/products/alcoholLiquido.jpg" width="250px" height="250px">
+      </div>
+    </div>
+    <div class='column'>
+      <div class='tercer-prod'>
+        <h3><strong>Jabón Líquido</strong></h3>
+        <img class="mainProd" src="../img/products/jabonLiquido.jpg" width="250px" height="250px">
       </div>
     </div>
   </div>
+</div>
+</div>
 
-  <div class="covid"><a
-      href="https://www.argentina.gob.ar/salud/coronavirus-COVID-19?utm_source=alerta_20200424&utm_medium=web&utm_campaign=campana_coronavirus"><img
-        src="../img/logos/banner-cov.png" width="100%"></a></div>
 
-  <div class="container">
-    <div class="box1">
-      <span>
-        <h2><strong> Productos que ayudan a mantenerte sano</strong></h2><br>
-      </span>
-    </div>
 
-  </div>
-  </div>
 
-  <div class='productos-especiales'>
-    <div class='row'>
-      <div class='column'>
-        <div class='primer-prod'>
-          <h3><strong>Alcohol en Gel</strong></h3>
-          <img class="mainProd" src="../img/products/alcoholGel.jpg" width="250px" height="250px">
-        </div>
-      </div>
-      <div class='column'>
-        <div class='segundo-prod'>
-          <h3><strong>Alcohol Líquido</strong></h3>
-          <img class="mainProd" src="../img/products/alcoholLiquido.jpg" width="250px" height="250px">
-        </div>
-      </div>
-      <div class='column'>
-        <div class='tercer-prod'>
-          <h3><strong>Jabón Líquido</strong></h3>
-          <img class="mainProd" src="../img/products/jabonLiquido.jpg" width="250px" height="250px">
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class='cajaFinal'>
-    
-     
-        <div class='contact'>
-          <h3 style="text-align: center;">Dejanos tu comentario</h3><br>
-            <form action="" method="post" class="contact-form">
-              <div class="datos1">
-                <div>
-                  <label>Nombre</label>
-                  <input class="email" type="text" name="nombre"><br><br>
-                </div>
-                <div>
-                  <label>Email</label>&nbsp &nbsp &nbsp
-                  <input class="email" type="email" name="email"></input><br>
-                </div>
-              </div>
-              <div class="datos2">
-                <div>
-                  <label>Mensaje</label><br>
-                  <textarea name="comentarios" cols="40" rows="5" placeholder="Escribe aquí tus comentarios"></textarea><br>
-                </div>
-                <div>
-                  <button class="send" type="submit"> Enviar</button>
-                </div>
-            </div>
-            </form>
-        </div>
-      
-   
-  </div>
-
-</body>
 
 <%-include("./partials/footer")  %>

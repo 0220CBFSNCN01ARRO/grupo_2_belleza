@@ -1,180 +1,52 @@
 <%-include("./partials/head", {title: 'Tu carrito'})  %>
 <%-include("./partials/header")  %>
 
-<body>
-
-    <div class="pb-5 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-
-                    <!-- Shopping cart table -->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="p-2 px-3 text-uppercase" style="text-align: center;">Producto</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Precio</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Cantidad</div>
-                                    </th>
-                                    <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Eliminar</div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row" class="border-0">
-                                        <div class="p-2">
-                                            <img src="/img/products/jabon-avena.jpg" alt="" width="70"
-                                                class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"> <a href="#"
-                                                        class="text-dark d-inline-block align-middle">Jabón de
-                                                        avena</a></h5><span
-                                                    class="text-muted font-weight-normal font-italic d-block">Categoria:
-                                                    Jabones</span>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                                    <td class="border-0 align-middle"><strong>3</strong></td>
-                                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i
-                                                class="fa fa-trash"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <div class="p-2">
-                                            <img src="/img/products/jabon-lavanda.jpg" alt="" width="70"
-                                                class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Jabón
-                                                        lavanda</a></h5><span
-                                                    class="text-muted font-weight-normal font-italic">Categoria:
-                                                    Jabones</span>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <td class="align-middle"><strong>$50.00</strong></td>
-                                    <td class="align-middle"><strong>1</strong></td>
-                                    <td class="align-middle"><a href="#" class="text-dark"><i
-                                                class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        <div class="p-2">
-                                            <img src="/img/products/perfume3.jpg" alt="" width="70"
-                                                class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Perfume
-                                                        clasico hombre</a></h5><span
-                                                    class="text-muted font-weight-normal font-italic">Categoria:
-                                                    Perfumes</span>
-                                            </div>
-                                        </div>
-                                    <td class="align-middle"><strong>$130.00</strong></td>
-                                    <td class="align-middle"><strong>1</strong></td>
-                                    <td class="align-middle"><a href="#" class="text-dark"><i
-                                                class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- End -->
-                    <div class="col-md-12">
-                        <div class="float-right">
-                            <a class="btn btn-danger" href="/products">Seguir comprando</a>
-                            <a href="#" class="btn btn-secondary">Continuar</a>
-                        </div>
+<main class="container-carrito">
+    <div class="">
+        <div class="container-tit-carrito">
+            <span class="tit-carrito">Carrito de compras</span>
+        </div>
+        <!-- Shopping cart -->
+        <div class="product-cart-items">
+            <form class="product-cart-form" action="" method="post">
+                <div class="prod-cart-detalle">
+                    <div class="prod-cart-img">
+                        <a href="../img/products/alcoholGel.jpg">
+                            <img class="img-cart" src="../img/products/alcoholGel.jpg" alt="imagen de producto">
+                        </a>
                     </div>
                 </div>
-            </div>
+                <div class="prod-cart-item-descrip">
+                    <h5>Nombre producto</h5><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ipsa.</p>
+                </div><br>
+                <div class="prod-cart-action-list">
+                    <div>
+                        <a href="#" id="action-list">Eliminar &nbsp </a>
+                    </div>
+                    <span id="action-list"> │ </span>
+                    <div>
+                        <a href="#" id="action-list"> &nbsp Guardar para después</a>
+                    </div>
+                </div><br>
+                <section class="product-cart-price">
+                    <div class="product-cart-item-price">
+                        <p>$ 120</p>
+                    </div>
+                    <div class="product-cart-item-cant">
+                        <div>
+                            <button class="decrease" title="disminuir cantidad" type="button">-</button>
+                            <input type="text" class="inputCant">
+                            <button class="increase" title="aumentar cantidad" type="button">+</button>
+                        </div>
+                    </div>
+                    <div class="cont-compra">
+                        <button type="button" class="btn-continuar-compra">Continuar compra</button>
+                    </div>
+                </section>
+            </form>
         </div>
     </div>
-</body>
-
-
-</html>
-
-
-
-
-
-
-
-
-<!-- <div class="container">
-        <div class="row responsive">
-            <div class="col-md-12">
-                <h2 style="margin-bottom: 30px; padding-top: 10px;">Carrito de compras</h2>
-            </div>
-            <div class="col-md-12">
-                <table class="table table-striped text-center">
-
-                    <head>
-                        <tr>
-                            <td>Producto</td>
-                            <td>Nombre</td>
-                            <td>Precio</td>
-                            <td>Cantidad</td>
-                        </tr>
-                    </head>
-                    <tbody>
-                        <tr>
-                            <td width="120"><img src="/img/shampoo libre.jpg" alt="imagen producto" height="100"></td>
-                            <td style="vertical-align: middle;">Shapoo libre</td>
-                            <td style="vertical-align: middle;">$100</td>
-                            <td style="vertical-align: middle;" width="80">1</td>
-                            <td style="vertical-align: middle;" width="30"><a href="#" class="btn btn-link"
-                                    id="link">Eliminar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="120"><img src="/img/shampoo liso.jpg" alt="imagen producto" height="100">
-                            </td>
-                            <td style="vertical-align: middle;">Shapoo liso</td>
-                            <td style="vertical-align: middle;">$120</td>
-                            <td style="vertical-align: middle;" width="80">3</td>
-                            <td style="vertical-align: middle;" width="30"><a href="#" class="btn btn-link"
-                                    id="link">Eliminar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="120"><img src="/img/shampoo oleosidad.jpg" alt="imagen producto" height="100">
-                            </td>
-                            <td style="vertical-align: middle;">Shapoo oleosidad</td>
-                            <td style="vertical-align: middle;">$150</td>
-                            <td style="vertical-align: middle;" width="80">2</td>
-                            <td style="vertical-align: middle;" width="30"><a href="#" class="btn btn-link"
-                                    id="link">Eliminar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="120"><img src="/img/shampoo vivo.jpg" alt="imagen producto" height="100">
-                            </td>
-                            <td style="vertical-align: middle;">Shapoo vivo</td>
-                            <td style="vertical-align: middle;">$90</td>
-                            <td style="vertical-align: middle;" width="80">1</td>
-                            <td style="vertical-align: middle;" width="30"><a href="#" class="btn btn-link"
-                                    id="link">Eliminar</a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
-            
-        </div>
-    </div>
-    <br> -->
-
-
+</main>
 
 <%-include("./partials/footer")  %>
