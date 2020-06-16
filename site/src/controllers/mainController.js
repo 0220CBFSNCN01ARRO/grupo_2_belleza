@@ -25,7 +25,6 @@ module.exports = {
     let userData = {
       id: generateId(),
       ...req.body,
-      avatar: req.files[0].filename,
     };
     guardarUsuario(userData);
     res.redirect("/");
