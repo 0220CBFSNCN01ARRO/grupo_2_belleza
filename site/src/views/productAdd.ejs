@@ -2,24 +2,24 @@
 <%-include("./partials/header")  %>
 
 
-<div class="container p-3">
-    <div class="row">
-        <div class="col-12">
+<div class="contain-prod-create">
+    <div class="">
+        <div class="tit-product-create">
             <h5 class="products-title">Creación de productos</h5>
         </div>
         <!-- Agregar productos nuevos -->
-        <div class="col-12 products-create">
+        <div class="products-create">
             <form action="/products/create" method="POST" enctype="multipart/form-data">
-                <div class="row prod-create-box">
-                    <div class="col-12 col-md-6">
+                <div class="prod-create-box">
+                    <div class="">
                         <label for="name" class="form-label">Nombre del producto</label><br>
                         <input type="text" id="name" name="name" placeholder=" Ej: jabon de miel" class="form-input">
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="">
                         <label for="price" class="form-label">Precio</label><br>
                         <input type="text" id="price" name="price" placeholder=" Ej: 120" class="form-input">
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="">
                         <label for="categoria" class="form-label">Categoría</label><br>
                         <select type="text" id="categoria" name="categoria" class="form-input">
                             <option value="">Selecciona una opción</option>
@@ -29,11 +29,11 @@
                             <option value="acondicionador">acondicionador</option>
                         </select>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="">
                         <label for="cantidad" class="form-label">Cantidad</label><br>
                         <input type="text" id="cantidad" name="cantidad" placeholder="Ej: 20" class="form-input">
                     </div>
-                    <div class="col-12">
+                    <div class="">
                         <label for="description" class="form-label">Descripción</label><br>
                         <textarea name="description" id="description" cols="100" rows="7" class="form-input"
                             placeholder="Agrega aqui el detalle del producto"></textarea>
@@ -45,11 +45,11 @@
                 </div>
 
                 <!-- botones -->
-                <div class="col-12 prod-create-button">
+                <div class="prod-create-button">
                     <div class="float-right">
-                        <button type="submit" class="btn btn-success">Agregar otro producto</button>
-                        <button type="submit" class="btn btn-secondary">Guardar</button>
-                        <button type="reset" class="btn btn-danger">Cancelar</button>
+                        <button type="submit" class="btn-guardar">Guardar</button>
+                        <button type="submit" class="btn-agregar">Agregar otro producto</button>
+                        <button type="reset" class="btn-cancelar">Cancelar</button>
                     </div>
                 </div>
             </form>

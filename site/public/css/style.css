@@ -4,7 +4,7 @@
 * {
   margin: 0;
   padding: 0;
-  color: #d9d9d9;
+  color: #000000;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
@@ -396,17 +396,22 @@ i.icon {
 }
 /*=== FIN PRODUCTDETAIL ===*/
 
-/*=== Creacion de productos (formulario) ===*/
+/*=== PRODUCTADD (formulario) ===*/
+.tit-product-create {
+  margin: 5% 5% 8% 5%;
+}
 .products-create {
   display: flex;
   justify-content: center;
 }
 .prod-create-box {
   display: flex;
+  flex-direction: column;
+  font-size: 15px;
 }
 .form-label {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 .form-input {
   display: block;
@@ -420,14 +425,98 @@ i.icon {
   justify-content: right;
   padding: 20px;
 }
+.btn-guardar {
+  background-color: rgb(80, 71, 71);
+}
+.btn-agregar {
+  background-color: rgb(38, 105, 38);
+}
+.btn-cancelar {
+  background-color: rgb(138, 50, 50);
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .contain-prod-create {
+    max-width: 1180;
+    display: inline-flex;
+    justify-content: center;
+  }
+}
+/*=== Fin PRODUCTADD ===*/
 
-/*=== Fin creacion ===*/
-
-/* .otros-products {
+/*== PRODUCTCART ==*/
+.container-carrito {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-} */
+  justify-content: center;
+  font-size: 1.1rem;
+  color: black;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  margin: 10%;
+  padding: 2%;
+}
+.container-tit-carrito {
+  padding: 20px;
+  text-align: center;
+}
+.prod-cart-detalle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.product-cart-item {
+  display: flex;
+}
+.img-cart {
+  border: 1px solid #f0f0f0;
+  display: inline-block;
+  max-width: 100%;
+  height: 100px;
+}
+.prod-cart-item-descrip {
+  width: 100%;
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+}
+.prod-cart-action-list {
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+}
+#action-list {
+  color: #6f6a6a;
+}
+.product-cart-item-price,
+.product-cart-item-cant,
+.cont-compra {
+  text-align: center;
+}
+.decrease,
+.increase,
+.btn-continuar-compra {
+  background-color: #7e7171;
+}
+.inputCant {
+  width: 12%;
+  border-radius: 7px;
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container-carrito {
+    max-width: 1180;
+    margin: 5%;
+  }
+  .container-tit-carrito {
+    font-size: 25px;
+  }
+  .img-cart {
+    border: 1px solid #f0f0f0;
+    display: inline-block;
+    max-width: 100%;
+    height: 200px;
+  }
+}
 
 /* REGISTER-LOGIN */
 
