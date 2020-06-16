@@ -8,7 +8,26 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+.content-fluid {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
 
+.row {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 0px;
+}
 /* CUERPO */
 body {
   background-image: url("/img/fondos/fondo-clarito.jpg");
@@ -46,15 +65,15 @@ nav ul {
   justify-content: center;
 }
 
+.img-logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
 nav ul li.logo {
   flex: 1;
   font-size: 30px;
   font-weight: 700;
-}
-
-.img-logo img {
-  height: 50px;
-  margin-right: 10px;
 }
 
 nav ul div.items {
@@ -129,6 +148,7 @@ nav ul li.btn span {
 nav ul li.btn span.show:before {
   content: "\f00d";
 }
+
 @media screen and (max-width: 920px) {
   nav ul li.btn {
     display: block;
@@ -138,11 +158,13 @@ nav ul li.btn span.show:before {
     z-index: 1;
     padding: 9px 40px 9px 0;
   }
-
+  .search-icon {
+    flex-direction: row-reverse;
+  }
   nav ul div.items {
     z-index: -1;
     position: fixed;
-    top: -260px;
+    top: -320px;
     background: #222222;
     width: 100%;
     right: 0;
@@ -177,28 +199,9 @@ nav ul li.btn span.show:before {
     flex: 4;
   }
 }
-
-/* HEADER */
-
-.logo {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.main-nav {
-  position: right, top;
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  background-color: rgba(white, white, white, 0.2);
-  margin: 10px;
-  font-size: 17px;
-}
-
-.buscador {
-  position: absolute;
-  right: 0%;
-  margin-right: 20px;
+.cuerpo {
+  height: 500px;
+  color: red;
 }
 
 /* CUERPO */
@@ -221,7 +224,6 @@ h2 {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  
 }
 .products-container {
   display: flex;
@@ -243,7 +245,7 @@ h2 {
   display: flex;
   flex-direction: column;
   margin-top: 2%;
-  box-shadow: 0 1px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+  box-shadow: 0 1px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .tarjeta a {
   display: block;
@@ -305,7 +307,7 @@ figure {
 @media (min-width: 1200px) {
   .box2 {
     max-width: 1180px;
-}
+  }
   .tarjeta {
     float: left;
     width: 23%;
@@ -378,12 +380,14 @@ i.icon {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .box2 {
-    max-width: 1180
+    max-width: 1180;
   }
   .prod-detail {
     flex-wrap: nowrap;
   }
-  .descript-detail, .boton-carrito-detail, .m-1 {
+  .descript-detail,
+  .boton-carrito-detail,
+  .m-1 {
     align-self: flex-start;
   }
   #desc-price-detail {
@@ -441,14 +445,14 @@ i.icon {
   height: 480px;
   position: relative;
   margin: 6% auto;
-  background: #fff;
+  background: lavender;
   padding: 5px;
   overflow: hidden;
   border-radius: 30px;
 }
 
 .button-box {
-  width: 223px;
+  width: 230px;
   margin: 35px auto;
   position: relative;
   box-shadow: 0 0 20px 9px #ff61241f;
@@ -456,6 +460,7 @@ i.icon {
 }
 
 .toggle-btn {
+  color: #262626;
   padding: 10px 30px;
   cursor: pointer;
   background: transparent;
@@ -483,6 +488,7 @@ i.icon {
 }
 
 .input-field {
+  color: black;
   width: 100%;
   padding: 10px 0;
   margin: 5px 0;
@@ -492,9 +498,11 @@ i.icon {
   border-right: 0;
   outline: none;
   background: transparent;
+  font-size: 15px;
 }
 
 .submit-btn {
+  color: #262626;
   width: 85%;
   padding: 10px 30px;
   cursor: pointer;
@@ -512,9 +520,8 @@ i.icon {
 }
 
 .rec-contra {
-  color: #777;
-  font-size: 12px;
-  bottom: -28px;
+  color: black;
+  font-size: 15px;
   position: relative;
 }
 
@@ -546,6 +553,7 @@ footer {
 
 .box h2 {
   font-size: 1.125rem;
+  color: white;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -662,6 +670,7 @@ footer {
   height: 40px;
   width: 100%;
   border: none;
+  border-radius: 8px;
   outline: none;
   background: #f12020;
   font-size: 1.0625rem;
@@ -693,6 +702,22 @@ footer {
   text-decoration: underline;
   color: #f1da36;
 }
+
+@media screen and (max-width: 900px) {
+  footer {
+    position: relative;
+    bottom: 0px;
+  }
+
+  .main-content {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .main-content .box {
+    margin: 5px 0;
+  }
+}
 /* FIN FOOTER  */
 
 /* SLIDE */
@@ -707,7 +732,7 @@ button {
   font-size: 1rem;
 }
 
-/* .wrapper {
+.wrapper {
   position: relative;
   width: 800px;
   height: 500px;
@@ -783,13 +808,17 @@ section {
   z-index: 1;
 }
 
+/* 
+	just to be safe we hide every element that comes after
+	each slide and that's not an input of type radio
+*/
 .input + * + *:not(input[type="radio"]) {
   display: none;
-} */
+}
 
 /* ARROWS */
 
-/* .input:before {
+.input:before {
   display: none !important;
   content: "";
   position: absolute;
@@ -835,30 +864,30 @@ input:checked:after {
 
 .input:last-of-type:before {
   background: green;
-} */
+}
 
 /*Fin Slide  */
 
-/* .covid {
+.covid {
   margin: 10px;
-} */
+}
 
 /* Productos cuidados especiales */
 
-/* .productos-especiales {
+.productos-especiales {
   margin: 15px;
-} */
+}
 
-/* .row {
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   height: 300px;
   padding: 10px;
-} */
+}
 
-/* .column {
+.column {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -882,47 +911,6 @@ input:checked:after {
 .tercer-prod {
   align-self: center;
   text-align: center;
-} */
+}
 
 /* Final prods especiales */
-
-/* .cajaFinal {
-  bottom: unset;
-  background-color: rgb(207, 207, 207);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-}
-
-.email {
-  background-color: white;
-  border-radius: unset;
-  width: unset;
-  height: unset;
-}
-
-.contact {
-  margin-left: 10px;
-  justify-content: center;
-  display: grid;
-}
-
-.contact-form {
-  display: flex;
-}
-
-.datos1 {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-self: flex-start;
-  padding: 20px;
-}
-
-.datos2 {
-  display: grid;
-  justify-content: flex-end;
-  align-self: flex-start;
-  padding: 20px;
-} */
