@@ -1,99 +1,40 @@
 <%-include("./partials/head", {title: producto.name}) %>
 <%-include("./partials/header")  %>
 
-
 <!-- Detalle Productos -->
 <main class="box2">
     <div class="products-container">
-        <div class="row">
-            <div class="col-12">
+        <div class="">
+            <div class="">
                 <h5 class="products-title"> Producto: <%= producto.name %> </h5>
             </div>
         </div>
         <div class="product-detail">
             <div class="pp-dd">
-                <div class="prod-detail col-12 col-lg-8">
+                <div class="prod-detail">
                     <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
                         <img src="/img/products/<%= producto.image %>" alt="imagen de producto"
                             style="position: relative;">
                     </figure>
-                    <article>
-                        <p class="descrip-prod-detail">
+                    <article class="descript-detail">
+                        <p id="desc-price-detail">
                             <br>
                             <%= producto.description %>
                             <br><br>
-                            <b>$ <%= producto.price %></b>
+                            $ <%= producto.price %>
                         </p>
-
-                        <button class="btn btn-dark align-self-baseline">
+                        <button class="boton-carrito-detail">
                             <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
                                 carrito</button></a>
                         <div class="m-1">
-                            <i class="far fa-credit-card"></i><i class="icon"> Pagá en cuotas sin interés</i>
+                            <i class="far fa-credit-card" style="color:#3e3b3b;"></i><i class="icon"> Pagá en cuotas sin interés</i>
                             <br>
-                            <i class="far fa-paper-plane"></i><i class="icon"> Envíos a todo el país</i>
+                            <i class="far fa-paper-plane" style="color:#3e3b3b;"></i><i class="icon"> Envíos a todo el país</i>
                         </div>
                     </article>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- <div class="otros-products" style="border-radius:10px">
-            <div class="col-12">
-                <h6>Otro productos que podrian interesarte</h6>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="tarjeta">
-                        <a href="/products/detail">
-                            <figure class="prod-img">
-                                <img src="../img/products/jabon-pink.jpg">
-                            </figure>
-                        </a>
-                        <div class="cuerpo-tarjeta" style="color: black;">
-                            <h6>Jabón de Granada</h6>
-                            <p>$100.00</p>
-                            <button class="btn btn-dark btn-sm">
-                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
-                                    carrito</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="tarjeta">
-                        <a href="/products/detail">
-                            <figure class="prod-img">
-                                <img src="../img/products/perfume1.jpg">
-                            </figure>
-                        </a>
-                        <div class="cuerpo-tarjeta" style="color: black;">
-                            <h6>Perfume de Sarasa</h6>
-                            <p>$100.00</p>
-                            <button class="btn btn-dark btn-sm">
-                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
-                                    carrito</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="tarjeta">
-                        <a href="/products/detail">
-                            <figure class="prod-img">
-                                <img src="../img/products/perfume1.jpg">
-                            </figure>
-                        </a>
-                        <div class="cuerpo-tarjeta" style="color: black;">
-                            <h6>Jabón de Miel</h6>
-                            <p>$100.00</p>
-                            <button class="btn btn-dark btn-sm">
-                                <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
-                                    carrito</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 </main>
-
 <%-include("./partials/footer")  %>
