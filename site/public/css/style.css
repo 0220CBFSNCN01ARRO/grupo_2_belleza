@@ -301,12 +301,6 @@ h2 {
   font-family: "Raleway", sans-serif;
 }
 
-.box1 {
-  margin: 20px;
-  align-items: center;
-  margin-left: 10%;
-}
-
 /* PRODUCTS */
 .box2 {
   position: relative;
@@ -901,19 +895,15 @@ footer {
 
 /* SLIDE */
 
-button {
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  background-color: rgb(216, 213, 36);
-  color: white;
-  margin: 1rem 0;
-  font-size: 1rem;
+.box1 {
+  margin: 20px;
+  align-items: center;
+  margin-left: 10%;
 }
 
 .wrapper {
   position: relative;
-  width: 800px;
+  width: 100%;
   height: 500px;
   overflow: hidden;
   display: flex;
@@ -993,56 +983,6 @@ section {
 */
 .input + * + *:not(input[type="radio"]) {
   display: none;
-}
-
-/* ARROWS */
-
-.input:before {
-  display: none !important;
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  width: 2rem;
-  height: 2rem;
-  background: orange;
-  border-radius: 50%;
-}
-
-.input:after {
-  display: none !important;
-  content: "";
-  position: absolute;
-  top: calc(50% + 1rem);
-  left: 2rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-bottom: 1px solid #262626;
-  border-left: 1px solid #262626;
-  transform: translate(-25%, -50%) rotate(45deg);
-}
-
-.input:checked:before,
-input:checked:after {
-  display: none;
-}
-
-.input:checked + * + input:before {
-  left: calc(100% - 3rem);
-}
-
-.input:checked + * + input:after {
-  left: calc(100% - 2rem);
-  transform: translate(-75%, -50%) rotate(-135deg);
-}
-
-.input:checked + * + input + * ~ input:before,
-.input:checked + * + input + * ~ input:after {
-  display: none;
-}
-
-.input:last-of-type:before {
-  background: green;
 }
 
 /*Fin Slide  */
