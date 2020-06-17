@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 const userController = require ('../controllers/usersController.js')
 
-router.get('/register', userController.register);
+router.get('/', userController.register);
 
 router.post('/register', userController.store);
 

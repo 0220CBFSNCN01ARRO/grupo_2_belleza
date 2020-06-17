@@ -37,11 +37,11 @@ function guardarUsuario(usuario){
 }
 
 module.exports = {
-    register: (req,res,next) => {
+    register: (req,res) => {
         res.render('register')
     },
     store: (req,res,next) => {
-        delete req.body.repass
+        delete req.body.pass2
         req.body.pass = bcrypt.hashSync(req.body.pass,10);
         let userData = {
             id: generateId(),
@@ -51,14 +51,14 @@ module.exports = {
         guardarUsuario(userData);
         res.redirect('/')
     },
-    login: (req,res,next) => {
-        res.render('register');
+    login: (req,res) => {
+        res.render('login');
     },
     processLogin:(req, res,next) => {
         let usuario = getUserByEmail(req.body.email);
         if(usuario != undefined ){    
             if(bcrypt.compareSync(req.body.pass,usuario.pass)){
-                res.redirect(`/`)
+                res.redirect('/')
             } else {
                 res.send('La contraseña no es correcta')
             }
