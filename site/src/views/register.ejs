@@ -12,14 +12,15 @@
     <form id="login" class="input-group" method="POST" action="/login">
       <input type="text" class="input-field" placeholder="Usuario" required>
       <input type="password" class="input-field" placeholder="Contraseña" required>
-      <input type="checkbox" class="check-box"><span>Recordar contraseña</span>
+      <input type="checkbox" class="check-box"><span style="color: black; font-size: 15px;">Recordar contraseña</span>
       <button type="submit" class="submit-btn">Entrar</button>
     </form>
     <form id="registro" class="input-group" method="POST" action="/register">
       <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Usuario" required>
       <input name="email" id="email" type="email" class="input-field" placeholder="E-mail" required>
       <input name="pass" id="pass" type="password" class="input-field" placeholder="Contraseña" required>
-      <input name="pass2" id="pass2" type="password" class="input-field" placeholder="Vuelva a escribir la contraseña" required>
+      <input name="pass2" id="pass2" type="password" class="input-field" placeholder="Vuelva a escribir la contraseña"
+        required>
 
       <button type="submit" class="submit-btn">Registrarse</button>
     </form>
@@ -42,4 +43,4 @@
       }
     </script>
   </div>
-<%-include("./partials/footer")  %>
+  <%-include("./partials/footer")  %>

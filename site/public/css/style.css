@@ -625,7 +625,7 @@ i.icon {
 }
 
 .button-box {
-  width: 230px;
+  width: 225px;
   margin: 35px auto;
   position: relative;
   box-shadow: 0 0 20px 9px #ff61241f;
@@ -636,6 +636,7 @@ i.icon {
   color: #262626;
   padding: 10px 30px;
   cursor: pointer;
+  font-size: 15px;
   background: transparent;
   border: 0;
   outline: none;
@@ -680,6 +681,7 @@ i.icon {
   padding: 10px 30px;
   cursor: pointer;
   display: block;
+  font-size: 15px;
   margin: 20px auto;
   position: relative;
   background: linear-gradient(to right, #ff105f, #ffad06);
