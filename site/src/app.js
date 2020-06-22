@@ -7,6 +7,7 @@ var session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
+var loginRouter = require("./routes/users")
 var methodOverride =  require('method-override');
 
 var app = express();
@@ -15,20 +16,17 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-// Va a el middleweare de log de user
-const userLogsMiddleware = require('../middlewares/userLog');
-app.use(userLogsMiddleware);
-
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(methodOverride('_method'))
-app.use(session({ secret: "SecretBeauty" }));
+// app.use(session({ secret: "SecretBeauty" }));
 
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
+app.use("/register", loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
