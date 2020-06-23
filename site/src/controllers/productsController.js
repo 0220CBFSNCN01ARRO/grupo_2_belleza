@@ -49,11 +49,31 @@ const controller = {
 
   // EDITAR UN PRODUCTO EXISTENTE
   edit: function (req, res) {
-    res.render("edit", { title: "Editar Producto" });
+    let producto = products.find(prod => prod.id == req.params.productId)
+    res.render("productEdit", { producto });
   },
+  // ACCION DE EDITAR
   update: function (req, res) {
+    req.body.price = Number(req.body.price)
+
+    let final = products.map(prod => {
+      if(prod.id == req.params.productId) {
+        return {
+          id: prod.id,
+          ...req.body,
+          image: prod.image
+        }
+      } else {
+        return prod
+      }
+    })
+
+    // se guarda en el Json
+    fs.writeFileSync(productsFilePath, JSON.stringify(final, null, ' '));
+    // redirecciono a PRODUCTS
     res.redirect("/products");
   },
+
   // CARRITO DE COMPRAS
   carrito: function (req, res) {
     res.render("productCart", { title: "Carrito de compras" });
