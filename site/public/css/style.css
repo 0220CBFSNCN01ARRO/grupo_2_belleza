@@ -915,22 +915,9 @@ footer {
 
 /* SLIDE */
 
-<<<<<<< HEAD
 #slide {
   position: relative;
   margin: auto;
-=======
-.box1 {
-  margin: 20px;
-  align-items: center;
-  margin-left: 10%;
-}
-
-.wrapper {
-  position: relative;
-  width: 100%;
-  height: 500px;
->>>>>>> a56f939abe2f3552bc6ed51367e1c39f4abb9fc8
   overflow: hidden;
 }
 
@@ -976,7 +963,6 @@ footer {
   opacity: 1;
 }
 
-<<<<<<< HEAD
 #slide .flechas {
   position: absolute;
   font-size: 2em;
@@ -1014,16 +1000,6 @@ footer {
   padding-bottom: 10px;
 }
 
-=======
-/* 
-	just to be safe we hide every element that comes after
-	each slide and that's not an input of type radio
-*/
-.input + * + *:not(input[type="radio"]) {
-  display: none;
-}
-
->>>>>>> a56f939abe2f3552bc6ed51367e1c39f4abb9fc8
 /*Fin Slide  */
 
 .covid {

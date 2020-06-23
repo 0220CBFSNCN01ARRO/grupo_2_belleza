@@ -17,11 +17,8 @@
  },
  {
   "id": 3,
-  "name": "Geococcyx californianus",
-  "description": "dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla",
-  "price": 1178.17,
-  "image": "acond-men2.jpg",
-  "categoria": ""
+  "price": null,
+  "image": "acond-men2.jpg"
  },
  {
   "id": 4,
@@ -240,5 +237,13 @@
   "cantidad": 3,
   "description": "prueba subir imagen",
   "image": "./upload/"
+ },
+ {
+  "id": 31,
+  "name": "dsafasdf",
+  "price": 1232,
+  "categoria": "jabon",
+  "cantidad": 213,
+  "description": "asdfsdfsfse"
  }
 ]

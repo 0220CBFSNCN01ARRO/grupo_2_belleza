@@ -7,15 +7,10 @@ var session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
-<<<<<<< HEAD
-// var loginRouter = require("./routes/userLogin")
-var methodOverride = require("method-override");
-=======
 var loginRouter = require("./routes/users");
 
 // Metodo para implementar PUT y DELETE
-var methodOverride =  require('method-override');
->>>>>>> a56f939abe2f3552bc6ed51367e1c39f4abb9fc8
+var methodOverride = require("method-override");
 
 var app = express();
 
@@ -31,13 +26,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
-<<<<<<< HEAD
-app.use(methodOverride("_method"));
-=======
 
 // Metodo para implementar PUT y DELETE
-app.use(methodOverride('_method'))
->>>>>>> a56f939abe2f3552bc6ed51367e1c39f4abb9fc8
+app.use(methodOverride("_method"));
 // app.use(session({ secret: "SecretBeauty" }));
 
 app.use("/", indexRouter);
