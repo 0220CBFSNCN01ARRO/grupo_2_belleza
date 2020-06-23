@@ -422,6 +422,8 @@ figure {
   flex-wrap: wrap;
   padding: 15px;
   justify-content: center;
+  left: 4vw;
+  position: relative;
 }
 article {
   display: inline-flex;
@@ -448,6 +450,7 @@ article {
   height: 5vh;
   width: 30vh;
   align-self: center;
+  font-size: 15px;
 }
 .m-1 {
   align-self: center;
@@ -467,6 +470,8 @@ i.icon {
   }
   .prod-detail {
     flex-wrap: nowrap;
+    left: 4vw;
+    position: relative;
   }
   .descript-detail,
   .boton-carrito-detail,
@@ -475,11 +480,15 @@ i.icon {
   }
   #desc-price-detail {
     text-align: left;
+    margin: 4vh;
   }
 }
 /*=== FIN PRODUCTDETAIL ===*/
 
 /*=== PRODUCTADD (formulario) ===*/
+.cont-prod-create {
+  margin-left: 250px;
+}
 .tit-product-create {
   margin: 5% 5% 8% 5%;
 }
@@ -511,12 +520,21 @@ i.icon {
 }
 .btn-guardar {
   background-color: rgb(80, 71, 71);
+  border-radius: 8px;
+  padding: 3px;
+  font-size: 18px;
 }
 .btn-agregar {
   background-color: rgb(38, 105, 38);
+  border-radius: 8px;
+  padding: 3px;
+  font-size: 18px;
 }
 .btn-cancelar {
   background-color: rgb(138, 50, 50);
+  border-radius: 8px;
+  padding: 3px;
+  font-size: 18px;
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {

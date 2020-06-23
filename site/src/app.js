@@ -8,7 +8,9 @@ var session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
-var loginRouter = require("./routes/users")
+var loginRouter = require("./routes/users");
+
+// Metodo para implementar PUT y DELETE
 var methodOverride =  require('method-override');
 
 var app = express();
@@ -18,10 +20,15 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(logger("dev"));
+
+// todo lo que llegue a traves de un form lo captura como obj literal y convierte a Json
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
+
+// Metodo para implementar PUT y DELETE
 app.use(methodOverride('_method'))
 // app.use(session({ secret: "SecretBeauty" }));
 
