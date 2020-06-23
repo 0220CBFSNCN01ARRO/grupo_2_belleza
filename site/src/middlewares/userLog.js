@@ -1,14 +1,7 @@
-const path = require('path');
-const fs = require('fs');
-
-function UserLog(req, res, next) {
-    if (req.session.usuarioLogueado != undefined) {
-        res.locals.user = req.session.usuarioLogueado;
-    } else {
-        res.locals.user = null;
-    }
-
+module.exports = (req, res, next) => {
+  if (req.session.user) {
     next();
-}
-
-module.exports = UserLog;
+  } else {
+    res.redirect("/");
+  }
+};

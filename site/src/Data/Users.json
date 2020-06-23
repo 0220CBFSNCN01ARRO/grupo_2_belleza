@@ -1,182 +1,188 @@
 [
-  {
-    "id": 1,
-    "nombre": "Amity",
-    "apellido": "Gerbi",
-    "email": "agerbi0@wordpress.com",
-    "pass": "9HR9Fg",
-    "category": "user",
-    "image": "user_1.jpg"
-  },
-  {
-    "id": 2,
-    "nombre": "Brigitte",
-    "apellido": "Erat",
-    "email": "berat1@squarespace.com",
-    "pass": "LFO9qqCnEZ",
-    "category": "user",
-    "image": "user_2.jpg"
-  },
-  {
-    "id": 3,
-    "nombre": "Rosalinda",
-    "apellido": "Colliard",
-    "email": "rcolliard2@bbc.co.uk",
-    "pass": "QTRmkd1GVoi",
-    "category": "user",
-    "image": "user_3.jpg"
-  },
-  {
-    "id": 4,
-    "nombre": "Hayyim",
-    "apellido": "Bousler",
-    "email": "hbousler3@home.pl",
-    "pass": "zyLlbkij",
-    "category": "user",
-    "image": "user_4.jpg"
-  },
-  {
-    "id": 5,
-    "nombre": "Marius",
-    "apellido": "Penvarden",
-    "email": "mpenvarden4@shutterfly.com",
-    "pass": "aH9yMxo2yd",
-    "category": "user",
-    "image": "user_5.jpg"
-  },
-  {
-    "id": 6,
-    "nombre": "Humbert",
-    "apellido": "Steadman",
-    "email": "hsteadman5@quantcast.com",
-    "pass": "qGj4ey6Gar",
-    "category": "user",
-    "image": "user_6.jpg"
-  },
-  {
-    "id": 7,
-    "nombre": "Pail",
-    "apellido": "Sixsmith",
-    "email": "psixsmith6@flavors.me",
-    "pass": "eDhDfavb2Ku",
-    "category": "user",
-    "image": "user_7.jpg"
-  },
-  {
-    "id": 8,
-    "nombre": "Shelli",
-    "apellido": "Nerne",
-    "email": "snerne7@pen.io",
-    "pass": "I5t58Ts5",
-    "category": "user",
-    "image": "user_8.jpg"
-  },
-  {
-    "id": 9,
-    "nombre": "Ana",
-    "apellido": "Rathbone",
-    "email": "arathbone8@networkadvertising.org",
-    "pass": "7RKiKOF",
-    "category": "user",
-    "image": "user_9.jpg"
-  },
-  {
-    "id": 10,
-    "nombre": "Ezmeralda",
-    "apellido": "Holhouse",
-    "email": "eholhouse9@canalblog.com",
-    "pass": "y97rYgl4",
-    "category": "user",
-    "image": "user_10.jpg"
-  },
-  {
-    "id": 11,
-    "nombre": "Vita",
-    "apellido": "Sheasby",
-    "email": "vsheasbya@nba.com",
-    "pass": "MX9zJA",
-    "category": "user",
-    "image": "user_11.jpg"
-  },
-  {
-    "id": 12,
-    "nombre": "Alfredo",
-    "apellido": "Froschauer",
-    "email": "afroschauerb@parallels.com",
-    "pass": "EDMiZUPOkR",
-    "category": "user",
-    "image": "user_12.jpg"
-  },
-  {
-    "id": 13,
-    "nombre": "Brad",
-    "apellido": "Magrannell",
-    "email": "bmagrannellc@businessweek.com",
-    "pass": "Xc8DvsgUuDs0",
-    "category": "user",
-    "image": "user_13.jpg"
-  },
-  {
-    "id": 14,
-    "nombre": "Riki",
-    "apellido": "Brodley",
-    "email": "rbrodleyd@freewebs.com",
-    "pass": "eEfdYj7D5m",
-    "category": "user",
-    "image": "user_14.jpg"
-  },
-  {
-    "id": 15,
-    "nombre": "Nappie",
-    "apellido": "Ewbach",
-    "email": "newbache@weebly.com",
-    "pass": "Bq4iJ4EqX",
-    "category": "user",
-    "image": "user_15.jpg"
-  },
-  {
-    "id": 16,
-    "nombre": "Maury",
-    "apellido": "Rosebotham",
-    "email": "mrosebothamf@nbcnews.com",
-    "pass": "aGuT4Xw9B1",
-    "category": "user",
-    "image": "user_16.jpg"
-  },
-  {
-    "id": 17,
-    "nombre": "Chickie",
-    "apellido": "Tripp",
-    "email": "ctrippg@photobucket.com",
-    "pass": "ColXs8nNcLL",
-    "category": "user",
-    "image": "user_17.jpg"
-  },
-  {
-    "id": 18,
-    "nombre": "Murielle",
-    "apellido": "Bresnen",
-    "email": "mbresnenh@un.org",
-    "pass": "Dl6lE6m",
-    "category": "user",
-    "image": "user_18.jpg"
-  },
-  {
-    "id": 19,
-    "nombre": "Goldina",
-    "apellido": "Askin",
-    "email": "gaskini@topsy.com",
-    "pass": "unikcOF",
-    "category": "user",
-    "image": "user_19.jpg"
-  },
-  {
-    "id": 20,
-    "nombre": "Iosep",
-    "apellido": "Hutcheon",
-    "email": "ihutcheonj@canalblog.com",
-    "pass": "Ibkzt7od2",
-    "category": "user",
-    "image": "user_20.jpg"
-  }
+ {
+  "id": 1,
+  "nombre": "Amity",
+  "apellido": "Gerbi",
+  "email": "agerbi0@wordpress.com",
+  "pass": "9HR9Fg",
+  "category": "user",
+  "image": "user_1.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Brigitte",
+  "apellido": "Erat",
+  "email": "berat1@squarespace.com",
+  "pass": "LFO9qqCnEZ",
+  "category": "user",
+  "image": "user_2.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "Rosalinda",
+  "apellido": "Colliard",
+  "email": "rcolliard2@bbc.co.uk",
+  "pass": "QTRmkd1GVoi",
+  "category": "user",
+  "image": "user_3.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Hayyim",
+  "apellido": "Bousler",
+  "email": "hbousler3@home.pl",
+  "pass": "zyLlbkij",
+  "category": "user",
+  "image": "user_4.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "Marius",
+  "apellido": "Penvarden",
+  "email": "mpenvarden4@shutterfly.com",
+  "pass": "aH9yMxo2yd",
+  "category": "user",
+  "image": "user_5.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Humbert",
+  "apellido": "Steadman",
+  "email": "hsteadman5@quantcast.com",
+  "pass": "qGj4ey6Gar",
+  "category": "user",
+  "image": "user_6.jpg"
+ },
+ {
+  "id": 7,
+  "nombre": "Pail",
+  "apellido": "Sixsmith",
+  "email": "psixsmith6@flavors.me",
+  "pass": "eDhDfavb2Ku",
+  "category": "user",
+  "image": "user_7.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": "Shelli",
+  "apellido": "Nerne",
+  "email": "snerne7@pen.io",
+  "pass": "I5t58Ts5",
+  "category": "user",
+  "image": "user_8.jpg"
+ },
+ {
+  "id": 9,
+  "nombre": "Ana",
+  "apellido": "Rathbone",
+  "email": "arathbone8@networkadvertising.org",
+  "pass": "7RKiKOF",
+  "category": "user",
+  "image": "user_9.jpg"
+ },
+ {
+  "id": 10,
+  "nombre": "Ezmeralda",
+  "apellido": "Holhouse",
+  "email": "eholhouse9@canalblog.com",
+  "pass": "y97rYgl4",
+  "category": "user",
+  "image": "user_10.jpg"
+ },
+ {
+  "id": 11,
+  "nombre": "Vita",
+  "apellido": "Sheasby",
+  "email": "vsheasbya@nba.com",
+  "pass": "MX9zJA",
+  "category": "user",
+  "image": "user_11.jpg"
+ },
+ {
+  "id": 12,
+  "nombre": "Alfredo",
+  "apellido": "Froschauer",
+  "email": "afroschauerb@parallels.com",
+  "pass": "EDMiZUPOkR",
+  "category": "user",
+  "image": "user_12.jpg"
+ },
+ {
+  "id": 13,
+  "nombre": "Brad",
+  "apellido": "Magrannell",
+  "email": "bmagrannellc@businessweek.com",
+  "pass": "Xc8DvsgUuDs0",
+  "category": "user",
+  "image": "user_13.jpg"
+ },
+ {
+  "id": 14,
+  "nombre": "Riki",
+  "apellido": "Brodley",
+  "email": "rbrodleyd@freewebs.com",
+  "pass": "eEfdYj7D5m",
+  "category": "user",
+  "image": "user_14.jpg"
+ },
+ {
+  "id": 15,
+  "nombre": "Nappie",
+  "apellido": "Ewbach",
+  "email": "newbache@weebly.com",
+  "pass": "Bq4iJ4EqX",
+  "category": "user",
+  "image": "user_15.jpg"
+ },
+ {
+  "id": 16,
+  "nombre": "Maury",
+  "apellido": "Rosebotham",
+  "email": "mrosebothamf@nbcnews.com",
+  "pass": "aGuT4Xw9B1",
+  "category": "user",
+  "image": "user_16.jpg"
+ },
+ {
+  "id": 17,
+  "nombre": "Chickie",
+  "apellido": "Tripp",
+  "email": "ctrippg@photobucket.com",
+  "pass": "ColXs8nNcLL",
+  "category": "user",
+  "image": "user_17.jpg"
+ },
+ {
+  "id": 18,
+  "nombre": "Murielle",
+  "apellido": "Bresnen",
+  "email": "mbresnenh@un.org",
+  "pass": "Dl6lE6m",
+  "category": "user",
+  "image": "user_18.jpg"
+ },
+ {
+  "id": 19,
+  "nombre": "Goldina",
+  "apellido": "Askin",
+  "email": "gaskini@topsy.com",
+  "pass": "unikcOF",
+  "category": "user",
+  "image": "user_19.jpg"
+ },
+ {
+  "id": 20,
+  "nombre": "Iosep",
+  "apellido": "Hutcheon",
+  "email": "ihutcheonj@canalblog.com",
+  "pass": "Ibkzt7od2",
+  "category": "user",
+  "image": "user_20.jpg"
+ },
+ {
+  "id": 21,
+  "nombre": "pepito",
+  "email": "sdfsdf@slksjg.com",
+  "pass": "$2b$10$VZTJZmSfcN0m038dnVNlreo9vbhO4W/OypnKU096xbJVimNTm3Ubu"
+ }
 ]
