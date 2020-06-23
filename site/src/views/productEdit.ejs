@@ -6,19 +6,19 @@
 <div class="contain-prod-create">
     <div class="cont-prod-create">
         <div class="tit-product-create">
-            <h5 class="products-title">Creación de productos</h5>
+            <h5 class="products-title">Editar un producto: <i><%= producto.name %> </i></h5>
         </div>
-        <!-- Agregar productos nuevos -->
+        <!-- Editar productos -->
         <div class="products-create">
-            <form action="/products/create" method="POST" enctype="multipart/form-data">
+            <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="prod-create-box">
                     <div class="">
                         <label for="name" class="form-label">Nombre del producto</label><br>
-                        <input type="text" id="name" name="name" placeholder=" Ej: jabon de miel" class="form-input">
+                        <input type="text" id="name" name="name" value="<%= producto.name %>  class="form-input">
                     </div>
                     <div class="">
                         <label for="price" class="form-label">Precio</label><br>
-                        <input type="text" id="price" name="price" placeholder=" Ej: 120" class="form-input">
+                        <input type="text" id="price" name="price" value="<%= producto.price %>  class="form-input">
                     </div>
                     <div class="">
                         <label for="categoria" class="form-label">Categoría</label><br>
@@ -31,13 +31,8 @@
                         </select>
                     </div>
                     <div class="">
-                        <label for="cantidad" class="form-label">Cantidad</label><br>
-                        <input type="text" id="cantidad" name="cantidad" placeholder="Ej: 20" class="form-input">
-                    </div>
-                    <div class="">
                         <label for="description" class="form-label">Descripción</label><br>
-                        <textarea name="description" id="description" cols="100" rows="7" class="form-input"
-                            placeholder="Agrega aqui el detalle del producto"></textarea>
+                        <textarea name="description" id="description" cols="100" rows="7" class="form-input"><%= producto.description %> </textarea>
                     </div>
                     <div class="">
                         <label for="image" class="form-label">Selecciona aquí la imagen del producto</label><br>
@@ -48,8 +43,7 @@
                 <!-- botones -->
                 <div class="prod-create-button">
                     <div class="float-right">
-                        <button type="submit" class="btn-guardar">Guardar</button>
-                        <button type="submit" class="btn-agregar">Agregar otro producto</button>
+                        <button type="submit" class="btn-guardar">Actualizar</button>
                         <button type="reset" class="btn-cancelar">Cancelar</button>
                     </div>
                 </div>

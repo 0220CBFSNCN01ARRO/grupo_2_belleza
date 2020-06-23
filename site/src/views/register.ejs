@@ -1,53 +1,46 @@
 <%-include("./partials/head", {title: 'Admin'})  %>
 <%-include("./partials/header")  %>
 
+<body>
 
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btn"></div>
+      <button type="button" class="toggle-btn" onclick="login()">Entrar</button>
+      <button type="button" class="toggle-btn" onclick="registro()">Registro</button>
+    </div>
+    <form id="login" class="input-group" method="POST" action="/login">
+      <input type="text" class="input-field" placeholder="Usuario" required>
+      <input type="password" class="input-field" placeholder="Contraseña" required>
+      <input type="checkbox" class="check-box"><span style="color: black; font-size: 15px;">Recordar contraseña</span>
+      <button type="submit" class="submit-btn">Entrar</button>
+    </form>
+    <form id="registro" class="input-group" method="POST" action="/register">
+      <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Usuario" required>
+      <input name="email" id="email" type="email" class="input-field" placeholder="E-mail" required>
+      <input name="pass" id="pass" type="password" class="input-field" placeholder="Contraseña" required>
+      <input name="pass2" id="pass2" type="password" class="input-field" placeholder="Vuelva a escribir la contraseña"
+        required>
 
-<div class="form-box">
-  <div class="button-box">
-    <div id="btn"></div>
-    <button type="button" class="toggle-btn" onclick="login()">Entrar</button>
-    <button type="button" class="toggle-btn" onclick="registro()">Registro</button>
+      <button type="submit" class="submit-btn">Registrarse</button>
+    </form>
   </div>
-  <form id="login" class="input-group">
-    <input type="text" class="input-field" placeholder="Usuario" required>
-    <input type="password" class="input-field" placeholder="Contraseña" required>
-    <input type="checkbox" class="check-box"><span class="rec-contra">Recordar contraseña</span>
-    <button type="submit" class="submit-btn">Entrar</button>
-  </form>
-  <form id="registro" method="POST" action="./src/routes/index/register" class="input-group">
-    <input type="text" class="input-field" name="nombre" placeholder="Usuario" required>
-    <input type="email" class="input-field" name="email" placeholder="E-mail" required>
-    <input type="password" class="input-field" name="pass" placeholder="Contraseña" required>
-    <input type="password" class="input-field" name="pass2" placeholder="Vuelva a escribir la contraseña" required>
+  <div>
+    <script>
+      var x = document.getElementById("login");
+      var y = document.getElementById("registro");
+      var z = document.getElementById("btn");
+      function registro() {
+        x.style.left = "-450px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
 
-    <button type="submit" class="submit-btn">Registrarse</button>
-  </form>
-</div>
-<div>
-  <script>
-    var x = document.getElementById("login");
-    var y = document.getElementById("registro");
-    var z = document.getElementById("btn");
-    function registro() {
-      x.style.left = "-450px";
-      y.style.left = "50px";
-      z.style.left = "110px";
-    }
-
-    function login() {
-      x.style.left = "50px";
-      y.style.left = "450px";
-      z.style.left = "0";
-    }
-  </script>
-</div>
-
-
-
-
-
-
-
-
-<%-include("./partials/footer")  %>
+      function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+      }
+    </script>
+  </div>
+  <%-include("./partials/footer")  %>

@@ -4,7 +4,7 @@
     "nombre": "Amity",
     "apellido": "Gerbi",
     "email": "agerbi0@wordpress.com",
-    "contraseña": "9HR9Fg",
+    "pass": "9HR9Fg",
     "category": "user",
     "image": "user_1.jpg"
   },
@@ -13,7 +13,7 @@
     "nombre": "Brigitte",
     "apellido": "Erat",
     "email": "berat1@squarespace.com",
-    "contraseña": "LFO9qqCnEZ",
+    "pass": "LFO9qqCnEZ",
     "category": "user",
     "image": "user_2.jpg"
   },
@@ -22,7 +22,7 @@
     "nombre": "Rosalinda",
     "apellido": "Colliard",
     "email": "rcolliard2@bbc.co.uk",
-    "contraseña": "QTRmkd1GVoi",
+    "pass": "QTRmkd1GVoi",
     "category": "user",
     "image": "user_3.jpg"
   },
@@ -31,7 +31,7 @@
     "nombre": "Hayyim",
     "apellido": "Bousler",
     "email": "hbousler3@home.pl",
-    "contraseña": "zyLlbkij",
+    "pass": "zyLlbkij",
     "category": "user",
     "image": "user_4.jpg"
   },
@@ -40,7 +40,7 @@
     "nombre": "Marius",
     "apellido": "Penvarden",
     "email": "mpenvarden4@shutterfly.com",
-    "contraseña": "aH9yMxo2yd",
+    "pass": "aH9yMxo2yd",
     "category": "user",
     "image": "user_5.jpg"
   },
@@ -49,7 +49,7 @@
     "nombre": "Humbert",
     "apellido": "Steadman",
     "email": "hsteadman5@quantcast.com",
-    "contraseña": "qGj4ey6Gar",
+    "pass": "qGj4ey6Gar",
     "category": "user",
     "image": "user_6.jpg"
   },
@@ -58,7 +58,7 @@
     "nombre": "Pail",
     "apellido": "Sixsmith",
     "email": "psixsmith6@flavors.me",
-    "contraseña": "eDhDfavb2Ku",
+    "pass": "eDhDfavb2Ku",
     "category": "user",
     "image": "user_7.jpg"
   },
@@ -67,7 +67,7 @@
     "nombre": "Shelli",
     "apellido": "Nerne",
     "email": "snerne7@pen.io",
-    "contraseña": "I5t58Ts5",
+    "pass": "I5t58Ts5",
     "category": "user",
     "image": "user_8.jpg"
   },
@@ -76,7 +76,7 @@
     "nombre": "Ana",
     "apellido": "Rathbone",
     "email": "arathbone8@networkadvertising.org",
-    "contraseña": "7RKiKOF",
+    "pass": "7RKiKOF",
     "category": "user",
     "image": "user_9.jpg"
   },
@@ -85,7 +85,7 @@
     "nombre": "Ezmeralda",
     "apellido": "Holhouse",
     "email": "eholhouse9@canalblog.com",
-    "contraseña": "y97rYgl4",
+    "pass": "y97rYgl4",
     "category": "user",
     "image": "user_10.jpg"
   },
@@ -94,7 +94,7 @@
     "nombre": "Vita",
     "apellido": "Sheasby",
     "email": "vsheasbya@nba.com",
-    "contraseña": "MX9zJA",
+    "pass": "MX9zJA",
     "category": "user",
     "image": "user_11.jpg"
   },
@@ -103,7 +103,7 @@
     "nombre": "Alfredo",
     "apellido": "Froschauer",
     "email": "afroschauerb@parallels.com",
-    "contraseña": "EDMiZUPOkR",
+    "pass": "EDMiZUPOkR",
     "category": "user",
     "image": "user_12.jpg"
   },
@@ -112,7 +112,7 @@
     "nombre": "Brad",
     "apellido": "Magrannell",
     "email": "bmagrannellc@businessweek.com",
-    "contraseña": "Xc8DvsgUuDs0",
+    "pass": "Xc8DvsgUuDs0",
     "category": "user",
     "image": "user_13.jpg"
   },
@@ -121,7 +121,7 @@
     "nombre": "Riki",
     "apellido": "Brodley",
     "email": "rbrodleyd@freewebs.com",
-    "contraseña": "eEfdYj7D5m",
+    "pass": "eEfdYj7D5m",
     "category": "user",
     "image": "user_14.jpg"
   },
@@ -130,7 +130,7 @@
     "nombre": "Nappie",
     "apellido": "Ewbach",
     "email": "newbache@weebly.com",
-    "contraseña": "Bq4iJ4EqX",
+    "pass": "Bq4iJ4EqX",
     "category": "user",
     "image": "user_15.jpg"
   },
@@ -139,7 +139,7 @@
     "nombre": "Maury",
     "apellido": "Rosebotham",
     "email": "mrosebothamf@nbcnews.com",
-    "contraseña": "aGuT4Xw9B1",
+    "pass": "aGuT4Xw9B1",
     "category": "user",
     "image": "user_16.jpg"
   },
@@ -148,7 +148,7 @@
     "nombre": "Chickie",
     "apellido": "Tripp",
     "email": "ctrippg@photobucket.com",
-    "contraseña": "ColXs8nNcLL",
+    "pass": "ColXs8nNcLL",
     "category": "user",
     "image": "user_17.jpg"
   },
@@ -157,7 +157,7 @@
     "nombre": "Murielle",
     "apellido": "Bresnen",
     "email": "mbresnenh@un.org",
-    "contraseña": "Dl6lE6m",
+    "pass": "Dl6lE6m",
     "category": "user",
     "image": "user_18.jpg"
   },
@@ -166,7 +166,7 @@
     "nombre": "Goldina",
     "apellido": "Askin",
     "email": "gaskini@topsy.com",
-    "contraseña": "unikcOF",
+    "pass": "unikcOF",
     "category": "user",
     "image": "user_19.jpg"
   },
@@ -175,7 +175,7 @@
     "nombre": "Iosep",
     "apellido": "Hutcheon",
     "email": "ihutcheonj@canalblog.com",
-    "contraseña": "Ibkzt7od2",
+    "pass": "Ibkzt7od2",
     "category": "user",
     "image": "user_20.jpg"
   }

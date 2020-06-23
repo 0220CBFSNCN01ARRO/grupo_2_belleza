@@ -7,8 +7,15 @@ var session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
+<<<<<<< HEAD
 // var loginRouter = require("./routes/userLogin")
 var methodOverride = require("method-override");
+=======
+var loginRouter = require("./routes/users");
+
+// Metodo para implementar PUT y DELETE
+var methodOverride =  require('method-override');
+>>>>>>> a56f939abe2f3552bc6ed51367e1c39f4abb9fc8
 
 var app = express();
 
@@ -16,21 +23,26 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-// Va a el middleweare de log de user
-// const userLogsMiddleware = require('../src/middlewares/userLog');
-// app.use(userLogsMiddleware);
-
 app.use(logger("dev"));
+
+// todo lo que llegue a traves de un form lo captura como obj literal y convierte a Json
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
+<<<<<<< HEAD
 app.use(methodOverride("_method"));
+=======
+
+// Metodo para implementar PUT y DELETE
+app.use(methodOverride('_method'))
+>>>>>>> a56f939abe2f3552bc6ed51367e1c39f4abb9fc8
 // app.use(session({ secret: "SecretBeauty" }));
 
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
-// app.use("/login", loginRouter)
+app.use("/register", loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
