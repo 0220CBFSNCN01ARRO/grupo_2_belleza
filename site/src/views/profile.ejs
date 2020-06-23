@@ -1,0 +1,24 @@
+<%-include("./partials/head", {title: 'Inicio'})  %>
+<%-include("./partials/header")  %>
+
+<body>
+    <div class="container">
+        <h1>Bienvenido <%= `${usuario.nombre} ${usuario.apellido}` %> </h1>
+        <p>Su email es: <%= usuario.email %> </p>
+        <img src="/images/avatars/<%= usuario.avatar  %> " alt="<%= `${usuario.nombre} ${usuario.apellido}` %>">
+    </div>
+    <div>
+    <form action="/register" enctype="multipart/form-data" method="POST">
+        <label for="image" class="form-label">Selecciona aquí la imagen del producto</label><br>
+        <input class="text-input" name="image" type="file">
+    </form>
+    </div>
+
+
+</body>
+
+
+
+
+
+<%-include("./partials/footer")  %>
