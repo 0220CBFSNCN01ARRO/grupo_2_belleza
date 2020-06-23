@@ -28,15 +28,15 @@ router.get("/create/", productsController.create); //Vista del form para crear p
 router.post("/create/", upload.any(), productsController.store); //Acción de crear y guardar//
 
 // EDITAR UN PRODUCTOS
-router.get("/edit", productsController.edit); //Vista del form para editar prod//
-router.put("/edit", productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
+router.get("/edit/:productId", productsController.edit); //Vista del form para editar prod//
+router.put("/edit/:productId", productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
 
 // CARRITO
 router.get("/carrito", productsController.carrito); //carrito
 router.post("/carrito", productsController.compra); //Acción para comprar
 
 // BORRAR UN PRODUCTO
-router.delete("/delete/:productId", productsController.delete);
+router.delete("/delete/:productId/", productsController.delete);
 
 module.exports = router;
 
