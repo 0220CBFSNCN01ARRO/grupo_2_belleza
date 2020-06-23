@@ -1,36 +1,54 @@
 <%-include("./partials/head", {title: 'Inicio'})  %>
 <%-include("./partials/header")  %>
 
-<div class="container">
-  <div class="box1">
-    <span>
-      <h2>Promociones</h2>
-    </span>
-    <br>
-    <div class="wrapper">
-      <input class="input" type="radio" name="image-slide" checked="checked">
-      <picture aria-label="Promo Jabones Florales">
-        <img src="../img/products/promo4-jabones.jpg" width="800px" height="500px">
-      </picture>
 
-      <input class="input" type="radio" name="image-slide">
-      <picture aria-label="Promo Jabones Naturales">
-        <img src="../img/products/promo3-jabones2.jpg" width="800px" height="500px">
-      </picture>
 
-      <input class="input" type="radio" name="image-slide">
-      <picture aria-label="Promo Jabones Líquidos ">
-        <img src="../img/products/promo1.jpg" width="800px" height="500px" alt="">
-      </picture>
+<div id="slide">
+  <ul>
+    <li> <img src="/img/products/promo1.jpg">
+      <div class="texto-slide">
+        <h1>Titulo</h1>
+        <h3>Zombie ipsum reversus ab viral inferno, nam rick grimes malum</h3>
+      </div>
+    </li>
+    <li> <img src="/img/products/promo2.jpg">
+      <div class="texto-slide">
+        <h1>Titulo</h1>
+        <h3>Zombie ipsum reversus ab viral inferno, nam rick grimes malum</h3>
+      </div>
+    </li>
+    <li> <img src="/img/products/promo3-jabones2.jpg">
+      <div class="texto-slide">
+        <h1>Titulo</h1>
+        <h3>Zombie ipsum reversus ab viral inferno, nam rick grimes malum</h3>
+      </div>
+    </li>
+    <li> <img src="/img/products/promo4-jabones.jpg">
+      <div class="texto-slide">
+        <h1>Titulo</h1>
+        <h3>Zombie ipsum reversus ab viral inferno, nam rick grimes malum</h3>
+      </div>
+    </li>
+  </ul>
 
-      <input class="input" type="radio" name="image-slide">
-      <picture aria-label="Promo Woman">
-        <img src="../img/products/promo2.jpg" width="800px" height="500px" alt="">
-      </picture>
-
-    </div>
+  <ol id="paginacion">
+    <li item="1"><span class="fa fa-circle"></span></li>
+    <li item="2"><span class="fa fa-circle"></span></li>
+    <li item="3"><span class="fa fa-circle"></span></li>
+    <li item="4"><span class="fa fa-circle"></span></li>
+  </ol>
+  <div class="flechas" id="retroceder">
+    <span class="fa fa-chevron-left"></span>
+  </div>
+  <div class="flechas" id="avanzar">
+    <span class="fa fa-chevron-right"></span>
   </div>
 </div>
+
+</div>
+
+
+<script src="../scripts/slide.min.js"></script>
 
 <div class="covid"><a
     href="https://www.argentina.gob.ar/salud/coronavirus-COVID-19?utm_source=alerta_20200424&utm_medium=web&utm_campaign=campana_coronavirus"><img
@@ -69,7 +87,6 @@
   </div>
 </div>
 </div>
-
 
 
 
