@@ -10,7 +10,7 @@ function getUsers() {
     return userContent != '' ? JSON.parse(userContent) : []
 }
 // Buscar usuario por id
-function getUser(id){
+function getUsers(id){
     let usuarios = getUsers();
     return usuarios.find(user => user.id == id)
 }
@@ -49,30 +49,52 @@ module.exports = {
             avatar: req.files[0].filename
         }
         guardarUsuario(userData);
-        res.redirect('/')
+        res.redirect('/');
     },
     login: (req,res) => {
         res.render('login');
     },
     processLogin:(req, res,next) => {
+
+        // Si existe el usuario
         let usuario = getUserByEmail(req.body.email);
         if(usuario != undefined ){    
+
+        // Si la contraseña existe y es correcta
             if(bcrypt.compareSync(req.body.pass,usuario.pass)){
-                res.redirect('/')
+
+                delete usuario.pass
+                req.session.user = usuario
+                if (req.body.remember) {
+                    res.cookie('usuario', usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
+                }
+
+                res.redirect(`profile/${usuario.id}`)
             } else {
-                res.send('La contraseña no es correcta')
+                res.render('register', {
+                    errors: {
+                        pass: 'Error en la contraseña'
+                    }
+                })
             }
         } else {
-            res.send('Ese usuario no existe')
+            res.render('register', {
+                errors: {
+                    email: 'No existe cuenta registrada con ese email'
+                }
+            })
         }
     },
-    // profile:(req,res,next)=> {  
-    //     let usuario = getUser(req.params.id)
-    //     if(usuario != undefined ){
-    //         res.render('profile',{ usuario })
-    //     } else {
-    //         res.send("Ese usuario no existe");
-    //     }
-    // }
-    
+    profile: (req, res) => {
+        let usuario = getUserById(req.params.id)
+        res.render('profile', {usuario});
+    },
+    logout: (req, res) => {
+        req.session.user = null
+        // Destruimos la cookie de recordar
+        res.clearCookie('usuario');
+
+        // res.locals.usuario = null
+        res.redirect('/')
+    }
 }
