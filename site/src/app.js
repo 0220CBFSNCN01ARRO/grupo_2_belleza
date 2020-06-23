@@ -4,7 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require("express-session");
-
+var auth = require("./middlewares/auth");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
@@ -30,7 +30,8 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 // Metodo para implementar PUT y DELETE
 app.use(methodOverride("_method"));
-// app.use(session({ secret: "SecretBeauty" }));
+app.use(session({ secret: "SecretBeauty" }));
+app.use(auth);
 
 app.use("/", indexRouter);
 app.use("/products", productsRouter);

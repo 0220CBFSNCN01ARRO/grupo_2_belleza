@@ -1,12 +1,6 @@
-const adminUsers = ['Tim', 'Ada', 'Vim', 'Greta'];
-
-function isAdmin (req, res, next) {
-	let adminUser = req.query.user;
-	if ( adminUsers.includes(adminUser) ) {
-		next();
-		return;
-	}
-	res.send('No tienes los privilegios para ingresar');
-}
-
-module.exports = isAdmin;
+module.exports = (req, res, next) => {
+  if (req.session.user && req.session.user.is_admin) {
+    next();
+  }
+  res.redirect("/login");
+};
