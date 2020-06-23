@@ -27,7 +27,7 @@ router.post('/register', guestUser, userController.store);
 
 router.get('/login', guestUser, userController.login);
 
-router.post('/login', guestUser, userController.processLogin);
+router.post('/login', userLog, userController.processLogin);
 
 router.post('/logout', userLog, userController.logout);
 

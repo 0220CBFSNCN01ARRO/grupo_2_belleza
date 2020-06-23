@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 usersPath = path.join(__dirname, '../Data/Users.json');
 
@@ -10,7 +10,7 @@ function getUsers() {
     return userContent != '' ? JSON.parse(userContent) : []
 }
 // Buscar usuario por id
-function getUsers(id){
+function getUserById(id){
     let usuarios = getUsers();
     return usuarios.find(user => user.id == id)
 }
