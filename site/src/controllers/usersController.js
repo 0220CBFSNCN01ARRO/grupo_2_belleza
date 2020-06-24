@@ -40,7 +40,7 @@ module.exports = {
     res.render("register");
   },
   store: (req, res, next) => {
-    delete req.body.pass2;
+    delete req.body.pass;
     req.body.pass = bcrypt.hashSync(req.body.pass, 10);
     let userData = {
       id: generateId(),
@@ -56,16 +56,21 @@ module.exports = {
   processLogin: (req, res, next) => {
     // Si existe el usuario
     let usuario = getUserByEmail(req.body.email);
-    if (usuario != undefined) {
+    if (usuario) {
       // Si la contraseña existe y es correcta
       if (bcrypt.compareSync(req.body.pass, usuario.pass)) {
-        delete usuario.pass;
-        req.session.user = usuario;
+        // delete usuario.pass;
+        let userSession = {
+          id: usuario.id,
+          nombre: usuario.nombre,
+          email: usuario.email
+      };
+        req.session.user = userSession;
         if (req.body.remember) {
           res.cookie("usuario", usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
         }
 
-        res.redirect(`profile/${usuario.id}`);
+        res.redirect(`/`);
       } else {
         res.render("register", {
           errors: {

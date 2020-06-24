@@ -196,5 +196,11 @@
   "nombre": "rocksy",
   "email": "rocksyro@gmail.com",
   "pass": "$2b$10$PUgD.U2wfsWoVxWyNqohs.2PLUGbA2/DtvmIU/cTCHCTO6oD0Hm0u"
+ },
+ {
+  "id": 24,
+  "nombre": "rocksy",
+  "email": "rocksyro@gmail.com",
+  "pass": "$2b$10$j3m.9NVJxtQFpA4acBiBL.7iJWe3kR.jyZPa4u9xfTLsQ84hZGcdK"
  }
 ]

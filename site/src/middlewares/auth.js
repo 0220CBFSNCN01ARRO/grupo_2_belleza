@@ -1,7 +1,7 @@
 module.exports = (req, res, next) => {
   res.locals.user = false;
 
-  if (req.session.user) {
+  if (req.session.user != undefined) {
     res.locals.user = req.session.user;
   } else if (req.cookies.usuario) {
     // Si esta la cookie con el usuario se lo pasamos a la sesión a la vista
