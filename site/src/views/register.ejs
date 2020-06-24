@@ -1,4 +1,4 @@
-<%-include("./partials/head", {title: 'Admin'})  %>
+<%-include("./partials/head", {title: 'Registro'})  %>
 <%-include("./partials/header")  %>
 
 <body>
@@ -9,9 +9,19 @@
       <button type="button" class="toggle-btn" onclick="login()">Entrar</button>
       <button type="button" class="toggle-btn" onclick="registro()">Registro</button>
     </div>
-    <form id="login" class="input-group" method="POST" action="/login">
-      <input type="text" class="input-field" placeholder="Usuario" required>
-      <input type="password" class="input-field" placeholder="Contraseña" required>
+    <form id="login" class="input-group" method="POST" action="/register/login">
+      <div>
+        <input type="text" class="input-field" placeholder="Email" required>
+        <% if(locals.errors && errors.email) { %>
+        <p><%= errors.email  %> </p>
+        <% } %>
+      </div>
+      <div>
+        <input type="password" class="input-field" placeholder="Contraseña" required>
+        <% if(locals.errors && errors.pass) { %>
+        <p><%= errors.pass  %> </p>
+        <% } %>
+      </div>
       <input type="checkbox" class="check-box"><span style="color: black; font-size: 15px;">Recordar contraseña</span>
       <button type="submit" class="submit-btn">Entrar</button>
     </form>
