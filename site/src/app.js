@@ -11,7 +11,7 @@ var productsRouter = require("./routes/products");
 var loginRouter = require("./routes/users");
 
 // Metodo para implementar PUT y DELETE
-var methodOverride = require("method-override");
+// var methodOverride = require("method-override");
 
 var app = express();
 
@@ -25,14 +25,21 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Session y cookies
 app.use(cookieParser());
+app.use(session({
+  secret: 'topSecret',
+  resave: false,
+  saveUninitialized: true
+}));
 app.use(express.static(path.join(__dirname, "../public")));
 
 // Metodo para implementar PUT y DELETE
-app.use(methodOverride("_method"));
+// app.use(methodOverride("_method"));
 app.use(session({ secret: "SecretBeauty" }));
 app.use(auth);
 
+// app.use(sessionUser);
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/register", loginRouter);
