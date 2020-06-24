@@ -36,7 +36,7 @@ router.get("/carrito", productsController.carrito); //carrito
 router.post("/carrito", productsController.compra); //Acción para comprar
 
 // BORRAR UN PRODUCTO
-router.delete("/delete/:productId/", productsController.delete);
+router.delete("/delete/:productId/", productsController.destroy);
 
 module.exports = router;
 

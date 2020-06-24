@@ -184,5 +184,11 @@
   "nombre": "pepito",
   "email": "sdfsdf@slksjg.com",
   "pass": "$2b$10$VZTJZmSfcN0m038dnVNlreo9vbhO4W/OypnKU096xbJVimNTm3Ubu"
+ },
+ {
+  "id": 22,
+  "nombre": "guille",
+  "email": "sara@sasa.com",
+  "pass": "$2b$10$oHOQC7W7FXdDBK6jeMUHTeS83.1ScIco1Rih2nbErIHuJ2wGDETei"
  }
 ]
