@@ -6,11 +6,11 @@
 <div class="contain-prod-create">
     <div class="cont-prod-create">
         <div class="tit-product-create">
-            <h5 class="products-title">Editar producto: <i><%= producto.name %> </i></h5>
+            <h5 class="products-title">Eliminar producto: <i><%= producto.name %> </i></h5>
         </div>
         <!-- Editar productos -->
         <div class="products-create">
-            <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
                 <div class="prod-create-box">
                     <div class="">
                         <label for="name" class="form-label">Nombre del producto</label><br>
@@ -44,7 +44,7 @@
                 <!-- botones -->
                 <div class="prod-create-button">
                     <div class="float-right">
-                        <button type="submit" class="btn-guardar">Actualizar</button>
+                        <button type="submit" class="btn-guardar">Eliminar</button>
                         <button type="reset" class="btn-cancelar">Cancelar</button>
                     </div>
                 </div>

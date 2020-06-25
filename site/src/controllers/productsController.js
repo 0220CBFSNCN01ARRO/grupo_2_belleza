@@ -34,7 +34,7 @@ const controller = {
     let productoNuevo = {
       id: id,
       ...req.body,
-      // image: "/img/products" + req.file.filename,
+      image: req.files[0].filename
     };
 
     // agregar producto nuevo al array
@@ -56,7 +56,7 @@ const controller = {
   update: function (req, res) {
     req.body.price = Number(req.body.price);
 
-    let final = products.map((prod) => {
+    let final = products.map(prod => {
       if (prod.id == req.params.productId) {
         return {
           id: prod.id,
@@ -84,9 +84,12 @@ const controller = {
   },
 
   // BORRAR UN PRODUCTO
-  delete: function (req, res) {
-    // let final = products.filter(prcreateod=> prod.id != req.params.productId)
-    // fs.writeFileSync(productsFilePath, JSON.stringify(final, null, ' '));
+  destroy: function (req, res) {
+    // 1- eliminar el producto seleccionado
+    let final = products.filter(prod=> prod.id != req.params.productId)
+    // 2- actualizar el json sin el producto
+    fs.writeFileSync(productsFilePath, JSON.stringify(final, null, ' '));
+    // 3- redirecciono a todos los productos
     res.redirect("/products");
   },
 };

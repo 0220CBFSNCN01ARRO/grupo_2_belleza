@@ -245,5 +245,14 @@
   "categoria": "jabon",
   "cantidad": 213,
   "description": "asdfsdfsfse"
+ },
+ {
+  "id": 32,
+  "name": "prueba guille 2",
+  "price": 100,
+  "categoria": "jabon",
+  "cantidad": 10,
+  "description": "sarasa",
+  "image": "image-1593118130573.jpg"
  }
 ]
