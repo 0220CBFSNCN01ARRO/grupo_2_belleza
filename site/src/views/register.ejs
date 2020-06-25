@@ -11,13 +11,13 @@
     </div>
     <form id="login" class="input-group" method="POST" action="/register/login">
       <div>
-        <input type="text" class="input-field" placeholder="Email" required>
+        <input type="text" class="input-field" placeholder="Email" name="email" required>
         <% if(locals.errors && errors.email) { %>
         <p><%= errors.email  %> </p>
         <% } %>
       </div>
       <div>
-        <input type="password" class="input-field" placeholder="Contraseña" required>
+        <input type="password" class="input-field" placeholder="Contraseña" name="pass" required>
         <% if(locals.errors && errors.pass) { %>
         <p><%= errors.pass  %> </p>
         <% } %>

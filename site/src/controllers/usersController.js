@@ -53,9 +53,13 @@ module.exports = {
   login: (req, res) => {
     res.render("login");
   },
+
   processLogin: (req, res, next) => {
+    return res.send(req.body);
     // Si existe el usuario
     let usuario = getUserByEmail(req.body.email);
+    console.log(usuario);
+
     if (usuario) {
       // Si la contraseña existe y es correcta
       if (bcrypt.compareSync(req.body.pass, usuario.pass)) {
@@ -63,8 +67,8 @@ module.exports = {
         let userSession = {
           id: usuario.id,
           nombre: usuario.nombre,
-          email: usuario.email
-      };
+          email: usuario.email,
+        };
         req.session.user = userSession;
         if (req.body.remember) {
           res.cookie("usuario", usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
