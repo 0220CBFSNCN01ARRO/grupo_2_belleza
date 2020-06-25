@@ -34,7 +34,7 @@ const controller = {
     let productoNuevo = {
       id: id,
       ...req.body,
-      // image: "/img/products" + req.file.filename,
+      image: req.files[0].filename
     };
 
     // agregar producto nuevo al array
