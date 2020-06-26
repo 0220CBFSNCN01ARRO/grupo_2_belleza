@@ -9,6 +9,7 @@ var auth = require("./middlewares/auth");
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
 var loginRouter = require("./routes/users");
+var adminRouter = require("./routes/admin");
 
 // Metodo para implementar PUT y DELETE
 var methodOverride = require("method-override");
@@ -43,6 +44,7 @@ app.use(auth);
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/register", loginRouter);
+app.use("/admin", adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

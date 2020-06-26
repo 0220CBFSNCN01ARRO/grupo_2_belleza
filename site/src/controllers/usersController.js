@@ -55,10 +55,8 @@ module.exports = {
   },
 
   processLogin: (req, res, next) => {
-    return res.send(req.body);
     // Si existe el usuario
     let usuario = getUserByEmail(req.body.email);
-    console.log(usuario);
 
     if (usuario) {
       // Si la contraseña existe y es correcta

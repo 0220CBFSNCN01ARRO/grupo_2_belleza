@@ -183,7 +183,8 @@
   "id": 21,
   "nombre": "pepito",
   "email": "sdfsdf@slksjg.com",
-  "pass": "$2b$10$VZTJZmSfcN0m038dnVNlreo9vbhO4W/OypnKU096xbJVimNTm3Ubu"
+  "pass": "$2b$10$VZTJZmSfcN0m038dnVNlreo9vbhO4W/OypnKU096xbJVimNTm3Ubu",
+  "categoria": 1
  },
  {
   "id": 22,
@@ -195,12 +196,13 @@
   "id": 23,
   "nombre": "rocksy",
   "email": "rocksyro@gmail.com",
-  "pass": "$2b$10$PUgD.U2wfsWoVxWyNqohs.2PLUGbA2/DtvmIU/cTCHCTO6oD0Hm0u"
+  "pass": "$2b$10$PUgD.U2wfsWoVxWyNqohs.2PLUGbA2/DtvmIU/cTCHCTO6oD0Hm0u",
+  "categoria": 1
  },
  {
   "id": 24,
   "nombre": "rocksy",
   "email": "rocksyro@gmail.com",
   "pass": "$2b$10$j3m.9NVJxtQFpA4acBiBL.7iJWe3kR.jyZPa4u9xfTLsQ84hZGcdK"
- }
+  }
 ]

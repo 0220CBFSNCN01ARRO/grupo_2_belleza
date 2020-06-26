@@ -254,5 +254,14 @@
   "cantidad": 10,
   "description": "sarasa",
   "image": "image-1593118130573.jpg"
+ },
+ {
+  "id": 33,
+  "name": "otra prueba",
+  "price": 12300,
+  "categoria": "perfume",
+  "cantidad": 2,
+  "description": "sarasa",
+  "image": "image-1593131262468.jpg"
  }
 ]
