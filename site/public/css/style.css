@@ -374,6 +374,7 @@ h3 {
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
 }
 .products-container {
   display: flex;
@@ -439,6 +440,8 @@ figure {
   }
   .products-container {
     margin-left: 45px;
+    flex-wrap: wrap;
+    display: flex;
   }
   .prod-container-tarj {
     overflow: hidden;
