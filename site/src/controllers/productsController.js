@@ -44,7 +44,7 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(final, null, " "));
 
     //redirecciono
-    res.render("products");
+    res.redirect("/products");
   },
 
   // EDITAR UN PRODUCTO EXISTENTE
