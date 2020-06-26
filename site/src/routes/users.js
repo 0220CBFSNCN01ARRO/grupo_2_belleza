@@ -8,7 +8,7 @@ const path = require("path");
 
 const userLog = require("../middlewares/userLog");
 const guestUser = require("../middlewares/guestUser");
-const userAdmin = require("../middlewares/userAdmin");
+
 
 // MULTER
 var storage = multer.diskStorage({
@@ -35,5 +35,6 @@ router.post("/login", guestUser, userController.processLogin);
 router.post("/logout", userLog, userController.logout);
 
 router.get("/profile/:id", userLog, userController.profile);
+
 
 module.exports = router;
