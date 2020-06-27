@@ -9,7 +9,11 @@ module.exports = (sequelize, DataTypes) => {
     categoriaProductoId: DataTypes.INTEGER
   }, {});
   productos.associate = function(models) {
-    // associations can be defined here
-  };
-  return productos;
+    productos.belongsTo(models.categoriaProducto);
+    productos.belongToMany(models.usuarios,{
+      through: 'productoUsuario',
+      timestamps: false
+    });
+    };
+    return productos;
 };

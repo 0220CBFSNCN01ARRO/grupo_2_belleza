@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     cantidadProducto: DataTypes.INTEGER
   }, {});
   historial.associate = function(models) {
-    // associations can be defined here
+    historial.belongsTo(models.usuarios);
+    historial.belongsTo(models.pedidos);
   };
   return historial;
 };

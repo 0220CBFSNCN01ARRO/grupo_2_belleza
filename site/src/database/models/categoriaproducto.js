@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     parentCategoryId: DataTypes.INTEGER
   }, {});
   categoriaProducto.associate = function(models) {
-    // associations can be defined here
+    categoriaProducto.hasMany(models.productos);
   };
   return categoriaProducto;
 };

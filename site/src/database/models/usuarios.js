@@ -10,7 +10,12 @@ module.exports = (sequelize, DataTypes) => {
     categoriaUsuarioId: DataTypes.INTEGER
   }, {});
   usuarios.associate = function(models) {
-    // associations can be defined here
+    usuarios.belongsTo(models.categoriaUsuario);
+    usuarios.belongsTo(models.historial);
+    usuarios.belongsToMany(models.productos,{
+      through: 'productoUsuario',
+      timestamps: false
+    });
   };
   return usuarios;
-};
+}
