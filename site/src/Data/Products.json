@@ -263,5 +263,23 @@
   "cantidad": 2,
   "description": "sarasa",
   "image": "image-1593131262468.jpg"
+ },
+ {
+  "id": 34,
+  "name": "jabon",
+  "price": 1200,
+  "categoria": "shampoo",
+  "cantidad": 20,
+  "description": "sarasa",
+  "image": "image-1593132973584.jpg"
+ },
+ {
+  "id": 35,
+  "name": "jabon",
+  "price": 1200,
+  "categoria": "shampoo",
+  "cantidad": 20,
+  "description": "sarasa",
+  "image": "image-1593133061284.jpg"
  }
 ]
