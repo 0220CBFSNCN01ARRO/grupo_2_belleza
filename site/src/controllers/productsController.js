@@ -15,9 +15,15 @@ const controller = {
 
   // VER DETALLE DE CADA PRODUCTO
   detail: (req, res) => {
-    db.productos.findByPk(req.params.id, { include: [{association: "categoriaProducto"}]})
-        .then(function(producto){
-        res.render('productDetail')});
+    db.productos.findByPk(req.params.id)
+    .then(producto => {
+        if(producto) {
+            res.render('productDetail', { producto:producto });
+        } else {
+            res.render('error');
+        }
+    })
+    .catch(error => console.log(error));
   },
 
   // CREAR UN PRODUCTO NUEVO

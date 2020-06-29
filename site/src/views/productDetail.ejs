@@ -13,15 +13,15 @@
             <div class="pp-dd">
                 <div class="prod-detail">
                     <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
-                        <img src="/img/products/<%= producto[0].imagen %>" alt="imagen de producto"
+                        <img src="/img/products/<%= producto.imagen %>" alt="imagen de producto"
                             style="position: relative;">
                     </figure>
                     <article class="descript-detail">
                         <p id="desc-price-detail">
                             <br>
-                            <%= producto[0].descripcion %>
+                            <%= producto.descripcion %>
                             <br><br>
-                            $ <%= producto[0].precio %>
+                            $ <%= producto.precio %>
                         </p>
                         <button class="boton-carrito-detail">
                             <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
