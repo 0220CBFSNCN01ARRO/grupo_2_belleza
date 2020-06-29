@@ -8,13 +8,17 @@ module.exports = (sequelize, DataTypes) => {
     stock: DataTypes.INTEGER,
     categoriaProductoId: DataTypes.INTEGER
   },
-  {
-    timestamps: false
-  });
-  productos.associate = (models) => {
-    productos.belongsTo(models.categoriaProducto);
+  {timestamps: false});
+  productos.associate = function(models) {
+    productos.belongsTo(models.categoriaProducto,{
+      as:"categoria",
+      foreignKey: "categoriaProductoId"
+    });
     productos.belongsToMany(models.usuarios,{
+      as:"usuarios",
       through: 'productoUsuario',
+      foreignKey: "productoId",
+      otherKey: "usuarioId",
       timestamps: false
     });
     };
