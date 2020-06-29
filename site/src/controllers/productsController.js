@@ -8,17 +8,18 @@ const controller = {
     db.productos
             .findAll()
             .then(productos => {
-                res.render('products', { productos });
+                res.render('products', { productos : productos });
             })
             .catch(error => console.log(error));
     },
 
   // VER DETALLE DE CADA PRODUCTO
   detail: (req, res) => {
-    db.productos.findByPk(req.params.id)
+    db.productos.findByPk(req.params.productId)
     .then(producto => {
         if(producto) {
-            res.render('productDetail', { producto:producto });
+       
+            res.render('productDetail', { producto : producto });
         } else {
             res.render('error');
         }
