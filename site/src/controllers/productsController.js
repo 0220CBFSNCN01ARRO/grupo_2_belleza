@@ -35,7 +35,19 @@ const controller = {
       })
       .catch(error => { console.log(error)});
   },
+    store: (req, res) => {
+    producto = req.body;
+    producto.imagen = req.file ? req.file.filename : '';
+    
+    db.productos
+        .create(producto)
+        .then(storedProduct => {
+            //storedProduct.addTags(req.body.keywords.split(' '))
+            return res.redirect(`/products/${storedProduct.id}`)
+        })
+        .catch(error => { console.log(error) });
 
+},
     //   nombre: req.body.nombre,
     //     descripcion: req.body.descripcion,
     //     precio: req.body.precio,
