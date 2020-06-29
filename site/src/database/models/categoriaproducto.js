@@ -3,8 +3,10 @@ module.exports = (sequelize, DataTypes) => {
   const categoriaProducto = sequelize.define('categoriaProducto', {
     categoria: DataTypes.STRING,
     parentCategoryId: DataTypes.INTEGER
-  }, {});
-  categoriaProducto.associate = function(models) {
+  }, {
+    timestamps: false
+  });
+  categoriaProducto.associate = (models) => {
     categoriaProducto.hasMany(models.productos);
   };
   return categoriaProducto;

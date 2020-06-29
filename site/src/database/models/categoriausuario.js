@@ -2,8 +2,10 @@
 module.exports = (sequelize, DataTypes) => {
   const categoriaUsuario = sequelize.define('categoriaUsuario', {
     categoria: DataTypes.STRING
-  }, {});
-  categoriaUsuario.associate = function(models) {
+  }, {
+    timestamps: false
+  });
+  categoriaUsuario.associate = (models) => {
     categoriaUsuario.hasMany(models.usuarios);
   };
   return categoriaUsuario;

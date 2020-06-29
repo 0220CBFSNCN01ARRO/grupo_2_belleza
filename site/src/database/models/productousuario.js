@@ -3,8 +3,10 @@ module.exports = (sequelize, DataTypes) => {
   const productoUsuario = sequelize.define('productoUsuario', {
     usuarioId: DataTypes.INTEGER,
     productoId: DataTypes.INTEGER
-  }, {});
-  productoUsuario.associate = function(models) {
+  }, {
+    timestamps: false
+  });
+  productoUsuario.associate = (models) => {
     // productoUsuario.(models.usuario);
 
   };

@@ -8,8 +8,10 @@ module.exports = (sequelize, DataTypes) => {
     stock: DataTypes.INTEGER,
     categoriaProductoId: DataTypes.INTEGER
   },
-  {timestamps: false});
-  productos.associate = function(models) {
+  {
+    timestamps: false
+  });
+  productos.associate = (models) => {
     productos.belongsTo(models.categoriaProducto);
     productos.belongsToMany(models.usuarios,{
       through: 'productoUsuario',

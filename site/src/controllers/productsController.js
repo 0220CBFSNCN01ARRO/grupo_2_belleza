@@ -7,17 +7,17 @@ const db = require('../database/models');
 
 const controller = {
   // VER TODOS LOS PRODUCTOS
-  products: (req, res) => {
-  db.productos
+    products: (req, res) => {
+    db.productos
             .findAll()
             .then(productos => {
                 res.render('products', { productos });
             })
             .catch(error => console.log(error));
-  },
+    },
 
   // VER DETALLE DE CADA PRODUCTO
-  detail: (req, res) => {
+    detail: (req, res) => {
     db.productos
         .findByPk(req.params.id, { include: ['categoriaproducto']})
         .then(productos => {
@@ -28,57 +28,56 @@ const controller = {
             }
         })
         .catch(error => console.log(error));
-  },
+    },
 
   // CREAR UN PRODUCTO NUEVO
-  create: (req, res) => {
-  db.productos
-  .findAll()
-  .then(productos => {
-      res.render('productAdd');
-  })
-  .catch(error => console.log(error));
-  },
-  //Accion de crear y guardar prod nuevo
-  store: (req, res) => {
-    producto = req.body;
-    producto.imagen = req.file ? req.file.filename : '';
-        
+    create: (req, res) => {
     db.productos
-      .create(producto)
-      .then(storedProduct => {
+    .findAll()
+    .then(productos => {
+        res.render('productAdd');
+    })
+    .catch(error => console.log(error));
+    },
+  //Accion de crear y guardar prod nuevo
+    store: (req, res) => {
+        producto = req.body;
+        producto.imagen = req.file ? req.file.filename : '';
+            
+        db.productos
+        .create(producto)
+        .then(storedProduct => {
           //storedProduct.addTags(req.bokeywords.split(' '))
-          return res.redirect(`/products/${storedProduct.id}`)
-      })
-      .catch(error => { console.log(error)});
-  },
+        return res.redirect(`/products/${storedProduct.id}`)
+    })
+    .catch(error => { console.log(error)});
+    },
 
   // EDITAR UN PRODUCTO EXISTENTE
-  edit: (req, res) => {
-  const producto = db.productos.findByPk(req.params.id);
-  const categorias = db.categoriaproducto.findAll();
+    edit: (req, res) => {
+    const producto = db.productos.findByPk(req.params.id);
+    const categorias = db.categoriaproducto.findAll();
 
-  Promise
-      .all([producto, categorias])
-      .then(responses => {
-          if(responses[0]) {
-              console.log(responses[0].dataValues);
-              res.render('productEdit', { producto: responses[0], categorias: responses[1] });
-          } else {
-              res.render('error');
-          }
-      })
-      .catch(error => console.log(error));
-  },
+    Promise
+        .all([producto, categorias])
+        .then(responses => {
+            if(responses[0]) {
+                console.log(responses[0].dataValues);
+                res.render('productEdit', { producto: responses[0], categorias: responses[1] });
+            } else {
+                res.render('error');
+            }
+        })
+        .catch(error => console.log(error));
+    },
   // ACCION DE EDITAR
-  update: (req, res) => {
+    update: (req, res) => {
 
     producto = req.body;
     
     producto.imagen = req.params.imagen ? req.body.imagen : req.body.oldImagen;
     delete product.oldImagen;
 
-    // product.keywords = product.keywords.split(' ');
     
     db.productos
         .update(producto, {
@@ -87,24 +86,22 @@ const controller = {
             }
         })
         .then(updatedProducto => {
-            // Guardar tags
-            // updatedProduct.addTags()
             res.redirect(`/productDetail/${req.params.id}`)
         })
         .catch(error => { console.log(error) })
     
 },
   // CARRITO DE COMPRAS
-  carrito: function (req, res) {
+    carrito: function (req, res) {
     res.render("productCart", { title: "Carrito de compras" });
-  },
+    },
   // compra
-  compra: function (req, res) {
+    compra: function (req, res) {
     res.render("productCart", { title: "Compra" });
-  },
+    },
 
   // BORRAR UN PRODUCTO
-  destroy: (req, res) => {
+    destroy: (req, res) => {
     db.productos
         .findByPk(req.params.id)
         // Si el registro existe

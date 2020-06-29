@@ -4,8 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     usuarioId: DataTypes.INTEGER,
     productoId: DataTypes.INTEGER,
     cantidadProducto: DataTypes.INTEGER
-  }, {});
-  pedidos.associate = function(models) {
+  }, {
+    timestamps: false
+  });
+  pedidos.associate = (models) => {
     pedidos.belongsTo(models.historial);
     pedidos.belongsTo(models.productoUsuario);
   };

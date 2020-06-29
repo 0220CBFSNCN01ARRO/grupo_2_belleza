@@ -17,18 +17,25 @@
         <% } %>
       </div>
       <div>
-        <input type="password" class="input-field" placeholder="Contraseña" name="pass" required>
-        <% if(locals.errors && errors.pass) { %>
-        <p><%= errors.pass  %> </p>
+        <input type="password" class="input-field" placeholder="Contraseña" name="password" required>
+        <% if(locals.errors && errors.password) { %>
+        <p><%= errors.password  %> </p>
         <% } %>
       </div>
       <input type="checkbox" class="check-box"><span style="color: black; font-size: 15px;">Recordar contraseña</span>
       <button type="submit" class="submit-btn">Entrar</button>
     </form>
     <form id="registro" class="input-group" method="POST" action="/register">
-      <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Usuario" required>
-      <input name="email" id="email" type="email" class="input-field" placeholder="E-mail" required>
-      <input name="pass" id="pass" type="password" class="input-field" placeholder="Contraseña" required>
+      <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Nombre" required>
+      <input name="apellido" id="apellido" type="text" class="input-field" placeholder="Apellido" required>
+      <input name="email" id="email" type="email" class="input-field <%= locals.errors && errors.email ? 'is-danger': '' %> " value="<%= locals.errors && errors.value('email') %>" placeholder="E-mail" required>
+      <% if(locals.errors && errors.has('email')) { %>
+        <p><%= errors.msg('email') %> </p>
+    <% } %>
+      <input name="pass" id="pass" type="password" class="input-field <%= locals.errors && errors.password ? 'is-danger': '' %> " value="<%= locals.errors && errors.value('password') %>" placeholder="Contraseña" required>
+      <% if(locals.errors && errors.has('password')) { %>
+        <p><%= errors.msg('password') %> </p>
+    <% } %>
       <input name="pass2" id="pass2" type="password" class="input-field" placeholder="Vuelva a escribir la contraseña"
         required>
 
