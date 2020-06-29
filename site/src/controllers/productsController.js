@@ -37,20 +37,19 @@ const controller = {
       .catch(error => { console.log(error)});
   },
     store: (req, res) => {
-    producto = req.body;
-    producto.imagen = req.file ? req.file.filename : '';
+    productos = req.body;
+    productos.imagen = req.file ? req.file.filename : '';
     
     db.productos
-        .create(producto)
+        .create(productos)
         .then(storedProduct => {
-          return res.redirect(`/productDetail/${storedProduct.productId}`)
+          return res.redirect('/products/')
         })
         .catch(error => { console.log(error) });
-
 },
   // EDITAR UN PRODUCTO EXISTENTE
   edit: (req, res) => {
-  const producto = db.productos.findByPk(req.params.id);
+  const producto = db.productos.findByPk(req.params.productId);
   const categorias = db.categoriaProducto.findAll();
 
   Promise.all([producto, categorias])
