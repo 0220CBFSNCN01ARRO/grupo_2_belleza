@@ -50,13 +50,20 @@ const controller = {
   // EDITAR UN PRODUCTO EXISTENTE
   edit: (req, res) => {
   const producto = db.productos.findByPk(req.params.productId);
-  const categorias = db.categoriaProducto.findAll();
+  const categoria = db.categoriaProducto.findAll();
 
-  Promise.all([producto, categorias])
-  .then(function ([producto, categorias]){
-    res.redirect(`/productDetail/${req.params.productId}`)
+  Promise
+  .all([producto, categoria])
+  .then(responses => {
+      if(responses[0]) {
+          console.log(responses[0].dataValues);
+          res.render('productEdit', { producto: responses[0], categoria: responses[1] });
+      } else {
+          res.render('error');
+      }
   })
-  },
+  .catch(error => console.log(error));
+},
   // ACCION DE EDITAR
     update: (req, res) => {
 
@@ -95,13 +102,13 @@ const controller = {
             await db.productos.destroy({ where: { id: req.params.productId } });
             
             // y además borramos la imagen asociada
-            const imagenPath = path.resolve(__dirname, '../../public/img/products', producto.imagen);
-            if (fs.existsSync(imagenPath)) {
-                fs.unlinkSync(imagenPath);
-            }
+            // const imagenPath = path.resolve(__dirname, '../../public/img/products', producto.imagen);
+            // if (fs.existsSync(imagenPath)) {
+            //     fs.unlinkSync(imagenPath);
+            // }
 
             // luego volvemos al listado
-            res.redirect(`/products/`)
+            res.redirect('/products/')
         })
         .catch(error => console.log(error));
 }

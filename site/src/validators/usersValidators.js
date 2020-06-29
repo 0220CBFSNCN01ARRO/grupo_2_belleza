@@ -31,12 +31,12 @@ module.exports = {
             .notEmpty().withMessage('Debes completar el password').bail()
             .isLength({ min: 8 }),
         // Utilizamos el req.file que enviamos desde las rutas para validar las imágenes
-        check('image')
-            .custom((value, { req }) => {
-                if (req.file.error === 'type') {
-                    throw new Error('La imagen debe ser de tipo PNG');
-                }
-                return true;
-            })
+        // check('imagen')
+        //     .custom((value, { req }) => {
+        //         if (req.file.error === 'type') {
+        //             throw new Error('La imagen debe ser de tipo PNG');
+        //         }
+        //         return true;
+        //     })
     ]
 }

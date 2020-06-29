@@ -32,11 +32,11 @@
       <% if(locals.errors && errors.has('email')) { %>
         <p><%= errors.msg('email') %> </p>
     <% } %>
-      <input name="pass" id="pass" type="password" class="input-field <%= locals.errors && errors.password ? 'is-danger': '' %> " value="<%= locals.errors && errors.value('password') %>" placeholder="Contraseña" required>
+      <input name="password" id="pass" type="password" class="input-field <%= locals.errors && errors.password ? 'is-danger': '' %> " value="<%= locals.errors && errors.value('password') %>" placeholder="Contraseña" required>
       <% if(locals.errors && errors.has('password')) { %>
         <p><%= errors.msg('password') %> </p>
     <% } %>
-      <input name="pass2" id="pass2" type="password" class="input-field" placeholder="Vuelva a escribir la contraseña"
+      <input name="password2" id="pass2" type="password" class="input-field" placeholder="Vuelva a escribir la contraseña"
         required>
 
       <button type="submit" class="submit-btn">Registrarse</button>

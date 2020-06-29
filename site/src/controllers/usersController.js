@@ -18,7 +18,7 @@ module.exports = {
         betterErrors.create('email', 'No me gusta el email que elegiste', req.body.email);
 
         if(!errors.isEmpty()) {
-            return res.render('users/register', { 
+            return res.render('register', { 
                 old: req.body, 
                 errors: betterErrors 
             });
