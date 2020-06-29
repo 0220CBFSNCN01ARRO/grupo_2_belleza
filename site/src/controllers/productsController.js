@@ -4,14 +4,14 @@ const db = require('../database/models');
 
 const controller = {
   // VER TODOS LOS PRODUCTOS
-  products: (req, res) => {
-  db.productos
+    products: (req, res) => {
+    db.productos
             .findAll()
             .then(productos => {
                 res.render('products', { productos });
             })
             .catch(error => console.log(error));
-  },
+    },
 
   // VER DETALLE DE CADA PRODUCTO
   detail: (req, res) => {
@@ -27,19 +27,7 @@ const controller = {
   },
 
   // CREAR UN PRODUCTO NUEVO
-  create: (req, res) => {
-  db.productos
-  .findAll()
-  .then(productos => {
-      res.render('productAdd');
-  })
-  .catch(error => console.log(error));
-  },
-  //Accion de crear y guardar prod nuevo
-  store: (req, res) => {
-    producto = req.body;
-    producto.imagen = req.file ? req.file.filename : '';
-        
+    create: (req, res) => {
     db.productos
       .create(producto)
       .then(storedProduct => {
@@ -68,14 +56,13 @@ const controller = {
   })
   },
   // ACCION DE EDITAR
-  update: (req, res) => {
+    update: (req, res) => {
 
     producto = req.body;
     
     producto.imagen = req.params.imagen ? req.body.imagen : req.body.oldImagen;
     delete product.oldImagen;
 
-    // product.keywords = product.keywords.split(' ');
     
     db.productos
         .update(producto, {
@@ -88,16 +75,16 @@ const controller = {
         })    
 },
   // CARRITO DE COMPRAS
-  carrito: function (req, res) {
+    carrito: function (req, res) {
     res.render("productCart", { title: "Carrito de compras" });
-  },
+    },
   // compra
-  compra: function (req, res) {
+    compra: function (req, res) {
     res.render("productCart", { title: "Compra" });
-  },
+    },
 
   // BORRAR UN PRODUCTO
-  destroy: (req, res) => {
+    destroy: (req, res) => {
     db.productos
         .findByPk(req.params.id)
         // Si el registro existe

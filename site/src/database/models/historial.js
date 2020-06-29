@@ -7,8 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     descripcionProducto: DataTypes.TEXT,
     precioProducto: DataTypes.DECIMAL,
     cantidadProducto: DataTypes.INTEGER
-  }, {});
-  historial.associate = function(models) {
+  }, {
+    timestamps: false
+  });
+  historial.associate = (models) => {
     historial.belongsTo(models.usuarios);
     historial.belongsTo(models.pedidos);
   };

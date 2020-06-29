@@ -578,10 +578,11 @@ i.icon {
 }
 .form-input {
   display: block;
-  width: 100%;
+  width: 70%;
   margin-bottom: 20px;
   border-radius: 8px;
   border: solid 1px gray;
+  height: 25px;
 }
 .prod-create-button {
   display: flex;
@@ -989,6 +990,7 @@ footer {
   position: relative;
   margin: auto;
   overflow: hidden;
+  width: 70%;
 }
 
 #slide ul {
