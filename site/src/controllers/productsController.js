@@ -8,10 +8,10 @@ const db = require('../database/models');
 const controller = {
   // VER TODOS LOS PRODUCTOS
   products: (req, res) => {
-  db.product
+  db.productos
             .findAll()
-            .then(products => {
-                res.render('/products', { productos });
+            .then(productos => {
+                res.render('products', { productos });
             })
             .catch(error => console.log(error));
   },
@@ -41,11 +41,11 @@ const controller = {
   },
   //Accion de crear y guardar prod nuevo
   store: (req, res) => {
-    product = req.body;
-    product.image = req.file ? req.file.filename : '';
+    producto = req.body;
+    producto.imagen = req.file ? req.file.filename : '';
         
-    db.product
-      .create(product)
+    db.productos
+      .create(producto)
       .then(storedProduct => {
           //storedProduct.addTags(req.bokeywords.split(' '))
           return res.redirect(`/products/${storedProduct.id}`)
@@ -75,8 +75,8 @@ const controller = {
 
     producto = req.body;
     
-    producto.image = req.params.image ? req.body.image : req.body.oldImage;
-    delete product.oldImage;
+    producto.imagen = req.params.imagen ? req.body.imagen : req.body.oldImagen;
+    delete product.oldImagen;
 
     // product.keywords = product.keywords.split(' ');
     
@@ -113,9 +113,9 @@ const controller = {
             await db.productos.destroy({ where: { id: req.params.id } });
             
             // y además borramos la imagen asociada
-            const imagePath = path.resolve(__dirname, '../../public/img/products', producto.image);
-            if (fs.existsSync(imagePath)) {
-                fs.unlinkSync(imagePath);
+            const imagenPath = path.resolve(__dirname, '../../public/img/products', producto.imagen);
+            if (fs.existsSync(imagenPath)) {
+                fs.unlinkSync(imagenPath);
             }
 
             // luego volvemos al listado

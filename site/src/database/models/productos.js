@@ -7,10 +7,11 @@ module.exports = (sequelize, DataTypes) => {
     imagen: DataTypes.STRING,
     stock: DataTypes.INTEGER,
     categoriaProductoId: DataTypes.INTEGER
-  }, {});
+  },
+  {timestamps: false});
   productos.associate = function(models) {
     productos.belongsTo(models.categoriaProducto);
-    productos.belongToMany(models.usuarios,{
+    productos.belongsToMany(models.usuarios,{
       through: 'productoUsuario',
       timestamps: false
     });
