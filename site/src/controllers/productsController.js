@@ -30,10 +30,10 @@ const controller = {
   // CREAR UN PRODUCTO NUEVO
     create: (req, res) => {
     db.productos
-      .create(producto)
-      .then(storedProduct => {
-          return res.redirect(`/products/${storedProduct.id}`)
-      })
+      .findAll()
+      .then(categoria => {
+        res.render('productAdd', { categoria });
+    })
       .catch(error => { console.log(error)});
   },
     store: (req, res) => {
@@ -43,21 +43,11 @@ const controller = {
     db.productos
         .create(producto)
         .then(storedProduct => {
-            //storedProduct.addTags(req.body.keywords.split(' '))
-            return res.redirect(`/products/${storedProduct.id}`)
+          return res.redirect(`/productDetail/${storedProduct.productId}`)
         })
         .catch(error => { console.log(error) });
 
 },
-    //   nombre: req.body.nombre,
-    //     descripcion: req.body.descripcion,
-    //     precio: req.body.precio,
-    //     imagen: req.body.imagen,
-    //     stock: req.body.stock,
-    //     categoriaProductoId: req.body.categoriaProductoId
-    // });
-    // res.redirect('/products/${storedProduct.id}')
-
   // EDITAR UN PRODUCTO EXISTENTE
   edit: (req, res) => {
   const producto = db.productos.findByPk(req.params.id);
@@ -65,7 +55,7 @@ const controller = {
 
   Promise.all([producto, categorias])
   .then(function ([producto, categorias]){
-    res.redirect(`/productDetail/${req.params.id}`)
+    res.redirect(`/productDetail/${req.params.productId}`)
   })
   },
   // ACCION DE EDITAR
@@ -80,11 +70,11 @@ const controller = {
     db.productos
         .update(producto, {
             where: {
-                id: req.params.id
+                id: req.params.productId
             }
         })
         .then(updatedProducto => {
-            res.redirect(`/productDetail/${req.params.id}`)
+            res.redirect(`/productDetail/${req.params.productId}`)
         })    
 },
   // CARRITO DE COMPRAS
@@ -99,11 +89,11 @@ const controller = {
   // BORRAR UN PRODUCTO
     destroy: (req, res) => {
     db.productos
-        .findByPk(req.params.id)
+        .findByPk(req.params.productId)
         // Si el registro existe
         .then(async producto => {
             // Lo borramos
-            await db.productos.destroy({ where: { id: req.params.id } });
+            await db.productos.destroy({ where: { id: req.params.productId } });
             
             // y además borramos la imagen asociada
             const imagenPath = path.resolve(__dirname, '../../public/img/products', producto.imagen);
