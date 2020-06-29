@@ -1,4 +1,4 @@
-<%-include("./partials/head", {title: producto.name}) %>
+<%-include("./partials/head", {title: 'Detalle'}) %>
 <%-include("./partials/header")  %>
 
 <!-- Detalle Productos -->
@@ -6,22 +6,22 @@
     <div class="products-container">
         <div class="">
             <div class="">
-                <h5 class="products-title"> Producto: <%= producto.name %> </h5>
+                <h5 class="products-title"> Producto: <%= producto.nombre %> </h5>
             </div>
         </div>
         <div class="product-detail">
             <div class="pp-dd">
                 <div class="prod-detail">
                     <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
-                        <img src="/img/products/<%= producto.image %>" alt="imagen de producto"
+                        <img src="/img/products/<%= producto[0].imagen %>" alt="imagen de producto"
                             style="position: relative;">
                     </figure>
                     <article class="descript-detail">
                         <p id="desc-price-detail">
                             <br>
-                            <%= producto.description %>
+                            <%= producto[0].descripcion %>
                             <br><br>
-                            $ <%= producto.price %>
+                            $ <%= producto[0].precio %>
                         </p>
                         <button class="boton-carrito-detail">
                             <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
