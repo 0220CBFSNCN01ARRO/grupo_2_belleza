@@ -9,7 +9,6 @@ module.exports = (sequelize, DataTypes) => {
   });
   pedidos.associate = (models) => {
     pedidos.belongsTo(models.historial);
-    pedidos.belongsTo(models.productoUsuario);
   };
   return pedidos;
 };

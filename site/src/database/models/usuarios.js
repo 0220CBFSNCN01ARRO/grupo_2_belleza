@@ -12,10 +12,15 @@ module.exports = (sequelize, DataTypes) => {
   {timestamps: false
   });
   usuarios.associate = (models) => {
-    usuarios.belongsTo(models.categoriaUsuario);
-    usuarios.belongsTo(models.historial);
+    usuarios.belongsTo(models.categoriaUsuario, {
+      as: 'categoria',
+      foreignKey: 'categoriaUsuarioId'
+    });
     usuarios.belongsToMany(models.productos,{
+      as: 'productos',
       through: 'productoUsuario',
+      foreignKey: 'usuarioId',
+      otherKey: 'productoId',
       timestamps: false
     });
   };

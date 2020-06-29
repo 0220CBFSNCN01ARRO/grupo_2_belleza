@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false
   });
   categoriaUsuario.associate = (models) => {
-    categoriaUsuario.hasMany(models.usuarios);
+    categoriaUsuario.hasMany(models.usuarios, {
+      as: 'usuarios',
+      foreignKey: 'categoriaUsuarioId'
+    });
   };
   return categoriaUsuario;
 };
