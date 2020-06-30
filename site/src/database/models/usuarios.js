@@ -8,12 +8,19 @@ module.exports = (sequelize, DataTypes) => {
     direccion: DataTypes.STRING,
     imagen: DataTypes.STRING,
     categoriaUsuarioId: DataTypes.INTEGER
-  }, {});
-  usuarios.associate = function(models) {
-    usuarios.belongsTo(models.categoriaUsuario);
-    usuarios.belongsTo(models.historial);
+  }, 
+  {timestamps: false
+  });
+  usuarios.associate = (models) => {
+    usuarios.belongsTo(models.categoriaUsuario, {
+      as: 'categoria',
+      foreignKey: 'categoriaUsuarioId'
+    });
     usuarios.belongsToMany(models.productos,{
+      as: 'productos',
       through: 'productoUsuario',
+      foreignKey: 'usuarioId',
+      otherKey: 'productoId',
       timestamps: false
     });
   };

@@ -1,97 +1,117 @@
 const fs = require("fs");
 const path = require("path");
-
-const productsFilePath = path.join(__dirname, "../data/Products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const db = require('../database/models');
 
 const controller = {
   // VER TODOS LOS PRODUCTOS
-  products: function (req, res) {
-    res.render("products", { products });
-  },
+    products: (req, res) => {
+    db.productos
+            .findAll()
+            .then(productos => {
+                res.render('products', { productos : productos });
+            })
+            .catch(error => console.log(error));
+    },
 
   // VER DETALLE DE CADA PRODUCTO
-  detail: function (req, res) {
-    let producto = products.find((prod) => prod.id == req.params.productId);
-    res.render("productDetail", { producto });
+  detail: (req, res) => {
+    db.productos.findByPk(req.params.productId)
+    .then(producto => {
+        if(producto) {
+       
+            res.render('productDetail', { producto : producto });
+        } else {
+            res.render('error');
+        }
+    })
+    .catch(error => console.log(error));
   },
 
   // CREAR UN PRODUCTO NUEVO
-  create: function (req, res) {
-    res.render("productAdd", { title: "Crear Producto" });
+    create: (req, res) => {
+    db.productos
+      .findAll()
+      .then(categoria => {
+        res.render('productAdd', { categoria });
+    })
+      .catch(error => { console.log(error)});
   },
-  //Accion de crear y guardar prod nuevo
-  store: function (req, res, next) {
-    // elegir id
-    let ids = products.map((prod) => prod.id);
-    let id = Math.max(...ids) + 1;
-
-    // crear producto con datos del formulario
-    req.body.price = Number(req.body.price);
-    req.body.cantidad = Number(req.body.cantidad);
-
-    // actualizar datos del prod nuevo
-    let productoNuevo = {
-      id: id,
-      ...req.body,
-      image: req.files[0].filename
-    };
-
-    // agregar producto nuevo al array
-    let final = [...products, productoNuevo];
-
-    // se guarda en json
-    fs.writeFileSync(productsFilePath, JSON.stringify(final, null, " "));
-
-    //redirecciono
-    res.redirect("/products");
-  },
-
+    store: (req, res) => {
+    productos = req.body;
+    productos.imagen = req.file ? req.file.filename : '';
+    
+    db.productos
+        .create(productos)
+        .then(storedProduct => {
+          return res.redirect('/products/')
+        })
+        .catch(error => { console.log(error) });
+},
   // EDITAR UN PRODUCTO EXISTENTE
-  edit: function (req, res) {
-    let producto = products.find((prod) => prod.id == req.params.productId);
-    res.render("productEdit", { producto });
-  },
-  // ACCION DE EDITAR
-  update: function (req, res) {
-    req.body.price = Number(req.body.price);
+  edit: (req, res) => {
+  const producto = db.productos.findByPk(req.params.productId);
+  const categoria = db.categoriaProducto.findAll();
 
-    let final = products.map(prod => {
-      if (prod.id == req.params.productId) {
-        return {
-          id: prod.id,
-          ...req.body,
-          image: prod.image,
-        };
+  Promise
+  .all([producto, categoria])
+  .then(responses => {
+      if(responses[0]) {
+          console.log(responses[0].dataValues);
+          res.render('productEdit', { producto: responses[0], categoria: responses[1] });
       } else {
-        return prod;
+          res.render('error');
       }
-    });
+  })
+  .catch(error => console.log(error));
+},
+  // ACCION DE EDITAR
+    update: (req, res) => {
 
-    // se guarda en el Json
-    fs.writeFileSync(productsFilePath, JSON.stringify(final, null, " "));
-    // redirecciono a PRODUCTS
-    res.redirect("/products");
-  },
+    producto = req.body;
+    
+    producto.imagen = req.params.imagen ? req.body.imagen : req.body.oldImagen;
+    delete product.oldImagen;
 
+    
+    db.productos
+        .update(producto, {
+            where: {
+                id: req.params.productId
+            }
+        })
+        .then(updatedProducto => {
+            res.redirect(`/productDetail/${req.params.productId}`)
+        })    
+},
   // CARRITO DE COMPRAS
-  carrito: function (req, res) {
+    carrito: function (req, res) {
     res.render("productCart", { title: "Carrito de compras" });
-  },
+    },
   // compra
-  compra: function (req, res) {
+    compra: function (req, res) {
     res.render("productCart", { title: "Compra" });
-  },
+    },
 
   // BORRAR UN PRODUCTO
-  destroy: function (req, res) {
-    // 1- eliminar el producto seleccionado
-    let final = products.filter(prod=> prod.id != req.params.productId)
-    // 2- actualizar el json sin el producto
-    fs.writeFileSync(productsFilePath, JSON.stringify(final, null, ' '));
-    // 3- redirecciono a todos los productos
-    res.redirect("/products");
-  },
+    destroy: (req, res) => {
+    db.productos
+        .findByPk(req.params.productId)
+        // Si el registro existe
+        .then(async producto => {
+            // Lo borramos
+            await db.productos.destroy({ where: { id: req.params.productId } });
+            
+            // y además borramos la imagen asociada
+            // const imagenPath = path.resolve(__dirname, '../../public/img/products', producto.imagen);
+            // if (fs.existsSync(imagenPath)) {
+            //     fs.unlinkSync(imagenPath);
+            // }
+
+            // luego volvemos al listado
+            res.redirect('/products/')
+        })
+        .catch(error => console.log(error));
+}
 };
 
 module.exports = controller;

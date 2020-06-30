@@ -11,16 +11,16 @@
                 </span>
             </div>
             <div class="prod-container-tarj">
-                <% for(producto of products) {%> 
+                <% for(producto of productos) {%> 
                     <div class="tarjeta">
                         <a href="/products/detail/<%= producto.id %>">
                             <figure class="prod-img">
-                                <img src="/img/products/<%= producto.image %>">
+                                <img src="/img/products/<%= producto.imagen %>">
                             </figure>
                         </a>
                         <div class="cuerpo-tarjeta">
-                            <h4 style="color: black;"><%= producto.name %> </h4>
-                            <p style="color: black;"> $ <%= producto.price %> </p>
+                            <h4 style="color: black;"><%= producto.nombre %> </h4>
+                            <p style="color: black;"> $ <%= producto.precio %> </p>
                             <a href="/products/carrito"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i> Agregar</button></a>
                         </div>
                     </div>

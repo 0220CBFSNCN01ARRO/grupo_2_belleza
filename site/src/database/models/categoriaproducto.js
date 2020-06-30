@@ -5,7 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     parentCategoryId: DataTypes.INTEGER
   }, {});
   categoriaProducto.associate = function(models) {
-    categoriaProducto.hasMany(models.productos);
+    categoriaProducto.hasMany(models.productos,{
+      as: "productos",
+      foreignKey:"categoriaProductoId"
+    });
   };
   return categoriaProducto;
 };

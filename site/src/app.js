@@ -1,10 +1,7 @@
 var createError = require("http-errors");
 var express = require("express");
+var app = express();
 var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-var session = require("express-session");
-var auth = require("./middlewares/auth");
 
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
@@ -13,34 +10,34 @@ var adminRouter = require("./routes/admin");
 
 // Metodo para implementar PUT y DELETE
 var methodOverride = require("method-override");
+var session = require("express-session");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
 
-var app = express();
-
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+var auth = require("./middlewares/auth");
 
 app.use(logger("dev"));
 
-// todo lo que llegue a traves de un form lo captura como obj literal y convierte a Json
-app.use(express.json());
+// view engine setup
+app.use(express.static(path.join(__dirname, '../public')));
+app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
+// Formularios
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 
 // Session y cookies
 app.use(cookieParser());
 app.use(session({
-  secret: 'topSecret',
+  secret: 'SecretBeauty',
   resave: false,
   saveUninitialized: true
 }));
-app.use(express.static(path.join(__dirname, "../public")));
-
-// Metodo para implementar PUT y DELETE
-app.use(methodOverride("_method"));
-app.use(session({ secret: "SecretBeauty" }));
 app.use(auth);
 
-// app.use(sessionUser);
+
+// Rutas
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/register", loginRouter);

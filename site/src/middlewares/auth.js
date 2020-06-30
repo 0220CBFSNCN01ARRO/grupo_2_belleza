@@ -1,12 +1,23 @@
-module.exports = (req, res, next) => {
-  res.locals.user = false;
+const db = require('../database/models');
 
-  if (req.session.user != undefined) {
-    res.locals.user = req.session.user;
+module.exports = async (req, res, next) => {
+ 
+  if (req.session.usuario) {
+
+    res.locals.usuario = req.session.usuario;
+    return next;
+
   } else if (req.cookies.usuario) {
     // Si esta la cookie con el usuario se lo pasamos a la sesión a la vista
-    req.session.user = req.cookies.usuario;
-    res.locals.user = req.cookies.usuario;
+    req.session.usuario = req.cookies.usuario;
+    res.locals.usuario = req.cookies.usuario;
   }
+  // if (usuarios) {
+  //   userData = usuario.dataValues;
+  //   delete userData.password;
+
+  //   req.session.usuario = userData;
+  //   res.locals.usuario = userData;               
+// }
   next();
 };

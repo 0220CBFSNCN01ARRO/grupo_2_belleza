@@ -7,11 +7,18 @@ module.exports = (sequelize, DataTypes) => {
     imagen: DataTypes.STRING,
     stock: DataTypes.INTEGER,
     categoriaProductoId: DataTypes.INTEGER
-  }, {});
+  },
+  {timestamps: false});
   productos.associate = function(models) {
-    productos.belongsTo(models.categoriaProducto);
-    productos.belongToMany(models.usuarios,{
+    productos.belongsTo(models.categoriaProducto,{
+      as:"categoria",
+      foreignKey: "categoriaProductoId"
+    });
+    productos.belongsToMany(models.usuarios,{
+      as:"usuarios",
       through: 'productoUsuario',
+      foreignKey: "productoId",
+      otherKey: "usuarioId",
       timestamps: false
     });
     };

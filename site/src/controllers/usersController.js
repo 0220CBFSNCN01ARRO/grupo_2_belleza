@@ -1,54 +1,43 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const crypto = require('crypto');
+const db = require('../database/models');
+const { validationResult } = require('express-validator');
+const validationHelper = require('../validators/validatorHelpler')
 
-usersPath = path.join(__dirname, "../Data/Users.json");
-
-// Leer usuarios en Json
-function getUsers() {
-  let userContent = fs.readFileSync(usersPath, "utf8");
-  return userContent != "" ? JSON.parse(userContent) : [];
-}
-// Buscar usuario por id
-function getUserById(id) {
-  let usuarios = getUsers();
-  return usuarios.find((user) => user.id == id);
-}
-// Buscar que el email exista
-function getUserByEmail(email) {
-  let usuarios = getUsers();
-  return usuarios.find((user) => user.email == email);
-}
-// Creación de usuario
-function generateId() {
-  let usuarios = getUsers();
-  if (usuarios.length) {
-    return usuarios.length + 1;
-  } else {
-    return 1;
-  }
-}
-// Guardar usuario en Json
-function guardarUsuario(usuario) {
-  let usuarios = getUsers();
-  usuarios.push(usuario);
-  fs.writeFileSync(usersPath, JSON.stringify(usuarios, null, " "));
-}
 
 module.exports = {
   register: (req, res) => {
     res.render("register");
   },
-  store: (req, res, next) => {
-    delete req.body.pass;
-    req.body.pass = bcrypt.hashSync(req.body.pass, 10);
-    let userData = {
-      id: generateId(),
-      ...req.body,
-      //   avatar: req.files[0].filename,
-    };
-    guardarUsuario(userData);
-    res.redirect("/");
+  store: (req, res) => {
+    let errors = validationResult(req);
+        let betterErrors = validationHelper(errors.mapped())
+        // betterErrors.create('image', 'No me gusta el archivo que subiste', req.body.imagen);
+        betterErrors.create('email', 'No me gusta el email que elegiste', req.body.email);
+
+        if(!errors.isEmpty()) {
+            return res.render('register', { 
+                old: req.body, 
+                errors: betterErrors 
+            });
+        }
+        usuario = {
+          nombre:req.body.nombre,
+          apellido: req.body.apellido,
+          // imagen: req.file ? req.file.filename : '',
+          email:req.body.email,
+          password: bcrypt.hashSync(req.body.password, 10),
+          categoriaUsuarioId: 2
+      };
+      
+      db.usuarios
+          .create(usuario)
+          .then((storedUsuario) => {
+              return res.redirect('/');
+          })
+          .catch(error => console.log(error));
   },
   login: (req, res) => {
     res.render("login");
@@ -56,48 +45,83 @@ module.exports = {
 
   processLogin: (req, res, next) => {
     // Si existe el usuario
-    let usuario = getUserByEmail(req.body.email);
+    let errors = validationResult(req);
 
-    if (usuario) {
-      // Si la contraseña existe y es correcta
-      if (bcrypt.compareSync(req.body.pass, usuario.pass)) {
-        // delete usuario.pass;
-        let userSession = {
-          id: usuario.id,
-          nombre: usuario.nombre,
-          email: usuario.email,
-        };
-        req.session.user = userSession;
-        if (req.body.remember) {
-          res.cookie("usuario", usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
-        }
-
-        res.redirect(`/`);
-      } else {
-        res.render("register", {
-          errors: {
-            pass: "Error en la contraseña",
-          },
-        });
-      }
-    } else {
-      res.render("register", {
-        errors: {
-          email: "No existe cuenta registrada con ese email",
-        },
+    if(!errors.isEmpty()) {
+      return res.render('register/login', { 
+          old: req.body, 
+          errors: errors.mapped() 
       });
-    }
+  }
+
+  db.usuarios
+      .findOne({
+          where: { email: req.body.email}
+      })
+      .then(usuario => {
+          // Si el email existe
+          console.log(usuario);
+          if(usuario) {
+              // Y la contraseña es válida
+              if(bcrypt.compareSync(req.body.password, usuario.password)) {
+                  // Eliminamos la contraseña antes de guardar en sesión
+                  userData = usuario.dataValues;
+                  delete userData.password
+  
+                  req.session.usuario = userData;
+  
+                  // Si pidió que recordar
+                  // if (req.body.remember) {
+                  //     // Generamos un token seguro, eso para que no pueda entrar cualquiera
+                  //     // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
+                  //     const token = crypto.randomBytes(64).toString('base64');
+  
+                  //     // Lo guardamos en nuestra base, para poder chequearlo luego
+                  //     user.createToken({userId: user.id, token});
+  
+                  //     // Recordamos al usuario por 3 meses         msegs  segs  mins  hs   días
+                  //     res.cookie('rememberToken', token, { maxAge: 1000 * 60  * 60 *  24 * 90 });
+                  // }
+  
+                  return res.redirect('/register/profile');
+              } else {
+                  return res.render('register/login', {
+                      errors: {
+                          password: {
+                              msg: 'La contraseña no coincide con la base.' 
+                          }, 
+                      },
+                      old: req.body
+                  }); 
+              }
+          } else {
+              return res.render('register/login', {
+                  errors: {
+                      email: {
+                          msg: 'El email no se encuentra registrado en nuestra base de datos' 
+                      },
+                  },
+                  old: req.body 
+              });
+          }
+      });
   },
   profile: (req, res) => {
-    let usuario = getUserById(req.params.id);
     res.render("profile", { usuario });
   },
-  logout: (req, res) => {
-    req.session.user = null;
-    // Destruimos la cookie de recordar
-    res.clearCookie("usuario");
+  logout: async (req, res) => {
+    // Borramos el registro de la base de datos si existe
+  //   if (req.cookies.remember) {
+  //     await db.token.destroy({
+  //         where: { token: req.cookies.remember}
+  //     })
+  // }
 
-    // res.locals.usuario = null
-    res.redirect("/");
-  },
+  // Destruimos la sesión
+  req.session.destroy();
+  // Destruimos la cookie de recordar
+  // res.cookie('rememberToken', null, { maxAge: -1 });
+  // Redirigimos a la home
+  res.redirect('/')
+}
 };

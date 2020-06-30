@@ -2,9 +2,14 @@
 module.exports = (sequelize, DataTypes) => {
   const categoriaUsuario = sequelize.define('categoriaUsuario', {
     categoria: DataTypes.STRING
-  }, {});
-  categoriaUsuario.associate = function(models) {
-    categoriaUsuario.hasmany(models.usuarios);
+  }, {
+    timestamps: false
+  });
+  categoriaUsuario.associate = (models) => {
+    categoriaUsuario.hasMany(models.usuarios, {
+      as: 'usuarios',
+      foreignKey: 'categoriaUsuarioId'
+    });
   };
   return categoriaUsuario;
 };
