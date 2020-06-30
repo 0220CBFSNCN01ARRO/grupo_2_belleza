@@ -36,7 +36,7 @@ const controller = {
     })
       .catch(error => { console.log(error)});
   },
-    store: (req, res) => {
+    store: (req, res, next) => {
     productos = req.body;
     productos.imagen = req.file ? req.file.filename : '';
     
