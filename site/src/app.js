@@ -25,6 +25,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Formularios
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(methodOverride("_method"));
 
 // Session y cookies

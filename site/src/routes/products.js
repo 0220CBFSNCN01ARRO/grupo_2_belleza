@@ -28,7 +28,7 @@ router.get("/create/", productsController.create); //Vista del form para crear p
 router.post("/create/", upload.any(), productsController.store); //Acción de crear y guardar//
 
 // EDITAR UN PRODUCTOS
-router.get("/edit/:productId", productsController.edit); //Vista del form para editar prod//
+router.get("/edit/", productsController.edit); //Vista del form para editar prod//
 router.put("/edit/:productId", productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
 
 // CARRITO

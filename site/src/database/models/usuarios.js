@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   usuarios.associate = (models) => {
     usuarios.belongsTo(models.categoriaUsuario, {
-      as: 'categoria',
+      as: 'categoriaUsuario',
       foreignKey: 'categoriaUsuarioId'
     });
     usuarios.belongsToMany(models.productos,{
