@@ -1,23 +1,25 @@
 const express = require("express");
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
+const multer = require("multer");
+const path = require("path");
 
 // controllers require
 const productsController = require("../controllers/productsController");
 
 //  Multer
 var storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname,'../../public/img/products'))  //aca hay un problema con la ruta
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "../../public/img/products")); //aca hay un problema con la ruta
+  },
+  filename: (req, file, cb) => {
+    cb(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
 });
 
 var upload = multer({ storage: storage });
-
 
 // PRODUCTOS Y DETALLE
 router.get("/", productsController.products);
@@ -38,5 +40,7 @@ router.post("/carrito", productsController.compra); //Acción para comprar
 // BORRAR UN PRODUCTO
 router.delete("/delete/:productId/", productsController.destroy);
 
-module.exports = router;
+// BUSCAR UN PRODUCTO
+router.get("/search", productsController.search);
 
+module.exports = router;
