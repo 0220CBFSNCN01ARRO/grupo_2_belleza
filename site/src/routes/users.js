@@ -9,8 +9,7 @@ const path = require("path");
 const userLog = require("../middlewares/userLog");
 const guestUser = require("../middlewares/guestUser");
 
-const validate = require('../validators/usersValidators');
-
+const validate = require("../validators/usersValidators");
 
 // MULTER
 var storage = multer.diskStorage({
@@ -32,13 +31,12 @@ router.post("/", guestUser, userController.store);
 
 // Login de usuario
 router.get("/login", guestUser, userController.login);
-router.post("/login", guestUser, validate.userLogin, userController.processLogin);
+router.post("/login", guestUser, userController.processLogin);
 
 // Logout
 router.post("/logout", userLog, userController.logout);
 
 // Perfil del usuario
 router.get("/profile/:id", userLog, userController.profile);
-
 
 module.exports = router;
