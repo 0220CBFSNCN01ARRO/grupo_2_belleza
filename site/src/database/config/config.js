@@ -8,6 +8,9 @@ module.exports ={
     "host": "127.0.0.1",
     "port":process.env.DB_PORT,
     "dialect": "mysql",
+    "define": {
+      "paranoid": true
+    },
     "operatorsAliases": 0
   },
   "test": {

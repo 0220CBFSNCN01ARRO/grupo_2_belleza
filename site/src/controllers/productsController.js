@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const db = require("../database/models");
 const { Op } = db.Sequelize;
+
+
 const controller = {
   // VER TODOS LOS PRODUCTOS
   products: (req, res) => {
@@ -43,13 +45,11 @@ const controller = {
     productos.imagen = req.file ? req.file.filename : "";
 
     db.productos
-      .create(productos)
+      .create(req.body)
       .then((storedProduct) => {
         return res.redirect("/products/");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => res.send(error));
   },
   // EDITAR UN PRODUCTO EXISTENTE
   edit: (req, res) => {
@@ -122,7 +122,7 @@ const controller = {
     db.productos
       .findAll({
         where: {
-          categoriaProducto: { [Op.like]: "%" + search + "%" },
+          categoriaProductoId: { [Op.like]: "%" + search + "%" },
         },
       })
       .then((productos) => res.render("search", { productos, search }));
