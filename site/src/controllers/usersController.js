@@ -48,7 +48,7 @@ module.exports = {
     let errors = validationResult(req);
 
     if(!errors.isEmpty()) {
-      return res.render('register/login', { 
+      return res.render('register', { 
           old: req.body, 
           errors: errors.mapped() 
       });
@@ -85,7 +85,7 @@ module.exports = {
   
                   return res.redirect('/register/profile');
               } else {
-                  return res.render('register/login', {
+                  return res.render('register', {
                       errors: {
                           password: {
                               msg: 'La contraseña no coincide con la base.' 
