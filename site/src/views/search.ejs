@@ -1,0 +1,28 @@
+<%-include("./partials/head", {title: 'Admin'})  %>
+<%-include("./partials/header")  %>
+
+
+<body>
+    <p>Search results for <strong><%= search %></strong></p>
+    <hr>
+    <ul>
+        <% for (producto of productos) {%>
+        <li><a href="/products/<%= producto.categoriaProductoId %> "><%= producto.categoriaProducto %> </a></li>
+        <% } %>
+    </ul>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%-include("./partials/footer")  %>

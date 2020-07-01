@@ -13,11 +13,16 @@
                 <li><a href="/products/create">Admin</a></li>
                 <li><a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a></li>
             </div>
-            <li class="search-icon">
+            <form action="/products/search" method="GET">
+                <input type="text" name="buscar" class="form-control" placeholder="buscar producto">
+
+            </form>
+            <!-- <li class="search-icon">
                 <input type="search" placeholder="Buscar un producto">
                 <label class="icon">
                     <span class="fas fa-search"></span>
+                
                 </label>
-            </li>
+            </li> -->
         </ul>
     </nav>
