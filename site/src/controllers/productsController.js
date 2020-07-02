@@ -122,7 +122,7 @@ const controller = {
     db.productos
       .findAll({
         where: {
-          categoriaProducto: { [Op.like]: "%" + search + "%" },
+          categoriaProductoId: { [Op.like]: "%" + search + "%" },
         },
       })
       .then((productos) => res.render("search", { productos, search }));

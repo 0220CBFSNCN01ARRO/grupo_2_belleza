@@ -4,12 +4,31 @@
 
 <body>
     <p>Search results for <strong><%= search %></strong></p>
-    <hr>
+    <!-- <hr>
     <ul>
         <% for (producto of productos) {%>
-        <li><a href="/products/<%= producto.categoriaProductoId %> "><%= producto.categoriaProducto %> </a></li>
+        <li><a href="/products/<%= producto.categoriaProductoId %> "><%= producto.categoriaProductoId %> </a></li>
         <% } %>
-    </ul>
+    </ul> -->
+
+    <div class="prod-container-tarj">
+        <% for(producto of productos) {%>
+        <div class="tarjeta">
+            <a href="/products/<%= producto.categoriaProductoId %> "><%= producto.categoriaProductoId %> </a>
+            <a href="/products/detail/<%= producto.id %>">
+                <figure class="prod-img">
+                    <img src="/img/products/<%= producto.imagen %>" alt="imagen <%= producto.nombre %>">
+                </figure>
+            </a>
+            <div class="cuerpo-tarjeta">
+                <h4 style="color: black;"><%= producto.nombre %> </h4>
+                <p style="color: black;"> $ <%= producto.precio %> </p>
+                <a href="/products/carrito"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i>
+                        Agregar</button></a>
+            </div>
+        </div>
+        <% }  %>
+    </div>
 
 </body>
 
