@@ -3,38 +3,9 @@
 
 
 <body>
-<<<<<<< HEAD
-    <p>Search results for <strong><%= search %></strong></p>
-    <!-- <hr>
-    <ul>
-        <% for (producto of productos) {%>
-        <li><a href="/products/<%= producto.categoriaProductoId %> "><%= producto.categoriaProductoId %> </a></li>
-        <% } %>
-    </ul> -->
-
-    <div class="prod-container-tarj">
-        <% for(producto of productos) {%>
-        <div class="tarjeta">
-            <a href="/products/<%= producto.categoriaProductoId %> "><%= producto.categoriaProductoId %> </a>
-            <a href="/products/detail/<%= producto.id %>">
-                <figure class="prod-img">
-                    <img src="/img/products/<%= producto.imagen %>" alt="imagen <%= producto.nombre %>">
-                </figure>
-            </a>
-            <div class="cuerpo-tarjeta">
-                <h4 style="color: black;"><%= producto.nombre %> </h4>
-                <p style="color: black;"> $ <%= producto.precio %> </p>
-                <a href="/products/carrito"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i>
-                        Agregar</button></a>
-            </div>
-        </div>
-        <% }  %>
-    </div>
-
-=======
     <div class="prod-container-tarj">
         <p>Resultado de busqueda de: <strong><%= search %></strong></p>
-            <ul>
+        <ul>
             <% for (producto of productos) {%>
             <a href="/products/<%= producto.categoriaProductoId %> "> </a>
             <div class="tarjeta">
@@ -46,13 +17,13 @@
                 <div class="cuerpo-tarjeta">
                     <h4 style="color: black;"><%= producto.nombre %> </h4>
                     <p style="color: black;"> $ <%= producto.precio %> </p>
-                    <a href="/products/carrito"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i> Agregar</button></a>
+                    <a href="/products/carrito"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i>
+                            Agregar</button></a>
                 </div>
             </div>
             <% } %>
         </ul>
     </div>
->>>>>>> b6e2e13831eeceda9c5889a2603a5dd3f1917585
 </body>
 
 
