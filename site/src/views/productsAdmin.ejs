@@ -1,0 +1,32 @@
+<%-include("./partials/head", {title: 'Admin'})  %>
+<%-include("./partials/admin")  %>
+
+<body>
+    <!-- Todos los productos -->
+    <div class="box2">
+        <div class="products-container">
+            <div class="tit-productos">
+                <span>
+                    <h2 class="titulo">Productos</h2>
+                </span>
+            </div>
+            <div class="prod-container-tarj">
+                <% for(producto of productos) {%> 
+                    <div class="tarjeta">
+                        <a href="/products/detail/<%= producto.id %>">
+                            <figure class="prod-img">
+                                <img src="/img/products/<%= producto.imagen %>" alt="imagen <%= producto.nombre %>">
+                            </figure>
+                        </a>
+                        <div class="cuerpo-tarjeta">
+                            <h4 style="color: black;"><%= producto.nombre %> </h4>
+                            <p style="color: black;"> $ <%= producto.precio %> </p>
+                            <a href="/products/edit"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i> Editar</button></a>
+                            <a href="/products/delete"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i> Borrar</button></a>
+                        </div>
+                    </div>
+                    <% }  %>
+            </div>
+        </div>
+    </div>
+</body>

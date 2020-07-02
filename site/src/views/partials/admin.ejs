@@ -1,15 +1,20 @@
 <nav class="sidebar">
     <div class="text">Menu Administardor</div>
     <ul>
-        <li><a href="#">Usuarios</a></li>
+        <li><a href="#">Usuarios</a>
+            <ul class="op-btn-show">
+                <li><a href="#">Agregar</a></li>
+                <li><a href="#">Editar</a></li>
+                <li><a href="#">Eliminar</a></li>
+            </ul></li>
         <li>
             <a href="#" class="op-btn">Productos
                 <span class="fas fa-caret-down first"></span>
             </a>
             <ul class="op-btn-show">
-                <li><a href="/productAdd">Agregar</a></li>
-                <li><a href="/productEdit">Modificar</a></li>
-                <li><a href="/productDelete">Eliminar</a></li>
+                <li><a href="/products/create">Agregar</a></li>
+                <li><a href="/products/edit">Editar</a></li>
+                <li><a href="/products/delete">Eliminar</a></li>
             </ul>
         </li>
         <li><a href="/">Home</a></li>

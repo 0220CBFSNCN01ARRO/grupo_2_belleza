@@ -52,27 +52,14 @@ const controller = {
       .catch((error) => res.send(error));
   },
   // EDITAR UN PRODUCTO EXISTENTE
-  edit: (req, res) => {
-    const producto = db.productos.findByPk(req.params.productId);
-    const categoria = db.categoriaProducto.findAll();
-
-    Promise.all([producto, categoria])
-      .then((responses) => {
-        if (responses[0]) {
-          console.log(responses[0].dataValues);
-          res.render("productEdit", {
-            producto: responses[0],
-            categoria: responses[1],
-          });
-        } else {
-          res.render("error");
-        }
-      })
-      .catch((error) => console.log(error));
+  edit: async (req, res) => {
+    const categoria = await db.categoriaProducto.findAll();
+    const producto = await db.productos.findByPk(req.params.productId, {include: ['categoriaProducto']});
+    return res.render('productEdit', {producto, categoria})
   },
   // ACCION DE EDITAR
   update: (req, res) => {
-    producto = req.body;
+    let producto = req.body;
 
     producto.imagen = req.params.imagen ? req.body.imagen : req.body.oldImagen;
     delete product.oldImagen;
@@ -84,41 +71,21 @@ const controller = {
         },
       })
       .then((updatedProducto) => {
-        res.redirect(`/productDetail/${req.params.productId}`);
-      });
-  },
-  // CARRITO DE COMPRAS
-  carrito: function (req, res) {
-    res.render("productCart", { title: "Carrito de compras" });
-  },
-  // compra
-  compra: function (req, res) {
-    res.render("productCart", { title: "Compra" });
-  },
-
-  // BORRAR UN PRODUCTO
-  destroy: (req, res) => {
-    db.productos
-      .findByPk(req.params.productId)
-      // Si el registro existe
-      .then(async (producto) => {
-        // Lo borramos
-        await db.productos.destroy({ where: { id: req.params.productId } });
-
-        // y además borramos la imagen asociada
-        // const imagenPath = path.resolve(__dirname, '../../public/img/products', producto.imagen);
-        // if (fs.existsSync(imagenPath)) {
-        //     fs.unlinkSync(imagenPath);
-        // }
-
-        // luego volvemos al listado
-        res.redirect("/products/");
+        return res.redirect(`/productDetail/${req.params.productId}`);
       })
-      .catch((error) => console.log(error));
+      .catch(error => res.send(error));
   },
+  
+  // BORRAR UN PRODUCTO
+  destroy: async (req, res) => {
+      await db.productos.destroy({ where: { id: req.params.productId } });
+      res.redirect("/products/");
+  },
+
   // BUSCAR PRODUCTO
   search: (req, res) => {
     let search = req.query.buscar;
+    
     db.productos
       .findAll({
         where: {
@@ -126,6 +93,14 @@ const controller = {
         },
       })
       .then((productos) => res.render("search", { productos, search }));
+    },
+  // CARRITO DE COMPRAS
+  carrito: function (req, res) {
+  res.render("productCart", { title: "Carrito de compras" });
+  },
+  // compra
+  compra: function (req, res) {
+  res.render("productCart", { title: "Compra" });
   },
 };
 
