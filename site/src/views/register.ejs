@@ -6,25 +6,8 @@
   <div class="form-box">
     <div class="button-box">
       <div id="btn"></div>
-      <button type="button" class="toggle-btn" onclick="login()">Entrar</button>
       <button type="button" class="toggle-btn" onclick="registro()">Registro</button>
     </div>
-    <form id="login" class="input-group" method="POST" action="/register/login">
-      <div>
-        <input type="text" class="input-field" placeholder="Email" name="email" required>
-        <% if(locals.errors && errors.email) { %>
-        <p><%= errors.email  %> </p>
-        <% } %>
-      </div>
-      <div>
-        <input type="password" class="input-field" placeholder="Contraseña" name="password" required>
-        <% if(locals.errors && errors.password) { %>
-        <p><%= errors.password  %> </p>
-        <% } %>
-      </div>
-      <input type="checkbox" class="check-box"><span style="color: black; font-size: 15px;">Recordar contraseña</span>
-      <button type="submit" class="submit-btn">Entrar</button>
-    </form>
     <form id="registro" class="input-group" method="POST" action="/register">
       <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Nombre" required>
       <input name="email" id="email" type="email"
@@ -63,4 +46,5 @@
       }
     </script>
   </div>
+</body>
   <%-include("./partials/footer")  %>
