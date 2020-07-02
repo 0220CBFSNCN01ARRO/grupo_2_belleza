@@ -38,7 +38,7 @@ module.exports = {
     db.usuarios
       .create(usuario)
       .then((storedUsuario) => {
-        return res.redirect("/");
+        return res.redirect("/register");
       })
       .catch((error) => console.log(error));
   },
@@ -51,7 +51,7 @@ module.exports = {
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.render("register", {
+      return res.render("login", {
         old: req.body,
         errors: errors.mapped(),
       });
@@ -86,9 +86,9 @@ module.exports = {
             //     res.cookie('rememberToken', token, { maxAge: 1000 * 60  * 60 *  24 * 90 });
             // }
 
-            return res.redirect("/register/profile");
+            return res.redirect("/users/profile");
           } else {
-            return res.render("register", {
+            return res.render("login", {
               errors: {
                 password: {
                   msg: "La contraseña no coincide con la base.",
@@ -126,6 +126,6 @@ module.exports = {
     // Destruimos la cookie de recordar
     // res.cookie('rememberToken', null, { maxAge: -1 });
     // Redirigimos a la home
-    res.redirect("/");
+    res.redirect("/register");
   },
 };

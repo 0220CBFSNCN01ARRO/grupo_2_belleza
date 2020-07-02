@@ -5,10 +5,10 @@
     <div class="container">
         <h1>Bienvenido <%= usuario.nombre %> </h1>
         <p>Su email es: <%= usuario.email %> </p>
-        <img src="../../public/img/users/<%= usuario.image  %> " alt="<%= usuario.nombre %>">
+        <!-- <img src="../../public/img/users/<%= usuario.image  %> " alt="<%= usuario.nombre %>"> -->
     </div>
     <div>
-        <form action="/profile/" enctype="multipart/form-data" method="POST">
+        <form action="/profile" enctype="multipart/form-data" method="POST">
             <label for="image" class="form-label">Selecciona aquí tu foto </label><br>
             <input class="text-input" name="image" type="file">
         </form>

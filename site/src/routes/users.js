@@ -26,8 +26,8 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 // Registro de usuario
-router.get("/", guestUser, userController.register);
-router.post("/", guestUser, userController.store);
+router.get("/register", guestUser, userController.register);
+router.post("/register", guestUser, userController.store);
 
 // Login de usuario
 router.get("/login", guestUser, userController.login);
@@ -37,6 +37,6 @@ router.post("/login", guestUser, userController.processLogin);
 router.post("/logout", userLog, userController.logout);
 
 // Perfil del usuario
-router.get("/profile/:id", userLog, userController.profile);
+router.get("/profile", userLog, userController.profile);
 
 module.exports = router;

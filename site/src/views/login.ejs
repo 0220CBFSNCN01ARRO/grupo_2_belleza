@@ -1,0 +1,50 @@
+<%-include("./partials/head", {title: 'Login'})  %>
+<%-include("./partials/header")  %>
+
+<body>
+
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btn"></div>
+      <button type="button" class="toggle-btn" onclick="login()">Login</button>
+    </div>
+    <form id="login" class="input-group" method="POST" action="/users/login">
+      <div>
+        <input type="text" class="input-field" placeholder="Email" name="email" required>
+        <% if(locals.errors && errors.email) { %>
+        <p><%= errors.email  %> </p>
+        <% } %>
+      </div>
+      <div>
+        <input type="password" class="input-field" placeholder="Contraseña" name="password" required>
+        <% if(locals.errors && errors.password) { %>
+        <p><%= errors.password  %> </p>
+        <% } %>
+      </div>
+      <input type="checkbox" class="check-box"><span style="color: black; font-size: 15px;">Recordar contraseña</span>
+      <div>
+          <a href="/users/register"><span style="color:black; font-size:13px">Click aquí si no estas registrado</span></a>
+      </div>
+      <button type="submit" class="submit-btn">Entrar</button>
+    </form>
+  </div>
+  <div>
+    <script>
+      var x = document.getElementById("login");
+      var y = document.getElementById("registro");
+      var z = document.getElementById("btn");
+      function registro() {
+        x.style.left = "-450px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
+
+      function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+      }
+    </script>
+  </div>
+</body>  
+  <%-include("./partials/footer")  %>

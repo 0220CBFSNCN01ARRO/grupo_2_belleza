@@ -41,7 +41,7 @@ app.use(auth);
 // Rutas
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
-app.use("/register", loginRouter);
+app.use("/users", loginRouter);
 app.use("/admin", adminRouter);
 
 // catch 404 and forward to error handler

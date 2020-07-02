@@ -27,7 +27,7 @@ router.get("/detail/:productId/", productsController.detail);
 
 // CREAR UN PRODUCTO
 router.get("/create/", productsController.create); //Vista del form para crear prod//
-router.post("/create/", upload.any(), productsController.store); //Acción de crear y guardar//
+router.post("/create/", upload.single("imagen"), productsController.store); //Acción de crear y guardar//
 
 // EDITAR UN PRODUCTOS
 router.get("/edit/", productsController.edit); //Vista del form para editar prod//
