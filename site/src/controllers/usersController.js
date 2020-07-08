@@ -38,7 +38,7 @@ module.exports = {
     db.usuarios
       .create(usuario)
       .then((storedUsuario) => {
-        return res.redirect("/register");
+        return res.redirect("/users/login");
       })
       .catch((error) => console.log(error));
   },
