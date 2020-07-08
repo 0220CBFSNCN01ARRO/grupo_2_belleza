@@ -86,7 +86,7 @@ module.exports = {
             //     res.cookie('rememberToken', token, { maxAge: 1000 * 60  * 60 *  24 * 90 });
             // }
 
-            return res.redirect("/profile");
+            return res.redirect("/users/profile");
           } else {
             return res.render("login", {
               errors: {
