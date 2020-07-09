@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     cantidadProducto: DataTypes.INTEGER
   }, {timestamps: false});
   pedidos.associate = function(models) {
-    pedidos.belongsTo(models.historial);
+    
   };
   return pedidos;
 };

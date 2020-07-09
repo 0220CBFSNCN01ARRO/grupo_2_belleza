@@ -8,11 +8,9 @@
       <div id="btn"></div>
       <button type="button" class="toggle-btn" onclick="registro()">Registro</button>
     </div>
-    <form id="registro" class="input-group" method="POST" action="/register">
+    <form id="registro" class="input-group" method="POST" action="/users/register">
       <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Nombre" required>
-      <input name="email" id="email" type="email"
-        class="input-field <%= locals.errors && errors.email ? 'is-danger': '' %> "
-        value="<%= locals.errors && errors.value('email') %>" placeholder="E-mail" required>
+      <input name="email" id="email" type="email" class="input-field <%= locals.errors && errors.email ? 'is-danger': '' %>" value="<%= locals.errors && errors.value('email') %>" placeholder="E-mail" required>
       <% if(locals.errors && errors.has('email')) { %>
       <p><%= errors.msg('email') %> </p>
       <% } %>

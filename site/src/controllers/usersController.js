@@ -7,6 +7,7 @@ const { validationResult } = require("express-validator");
 const validationHelper = require("../validators/validatorHelpler");
 
 module.exports = {
+  // REGISTRO DE USUARIO
   register: (req, res) => {
     res.render("register");
   },
@@ -32,16 +33,17 @@ module.exports = {
       // imagen: req.file ? req.file.filename : '',
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      categoriaUsuarioId: 2,
+      categoriaUsuarioId: 1,
     };
 
     db.usuarios
       .create(usuario)
       .then((storedUsuario) => {
-        return res.redirect("/register");
+        return res.redirect("/users/login");
       })
       .catch((error) => console.log(error));
   },
+  // LOGIN DE USUARIO
   login: (req, res) => {
     res.render("login");
   },
@@ -86,7 +88,7 @@ module.exports = {
             //     res.cookie('rememberToken', token, { maxAge: 1000 * 60  * 60 *  24 * 90 });
             // }
 
-            return res.redirect("/profile");
+            return res.redirect("/users/profile");
           } else {
             return res.render("login", {
               errors: {
@@ -110,6 +112,7 @@ module.exports = {
         }
       });
   },
+  // PERFIL DEL USUARIO
   profile: (req, res) => {
     res.render("profile", { usuarios });
   },

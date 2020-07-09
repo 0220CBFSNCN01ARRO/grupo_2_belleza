@@ -27,11 +27,11 @@ var upload = multer({ storage: storage });
 
 // Registro de usuario
 router.get("/register", guestUser, userController.register);
-router.post("/register", guestUser, userController.store);
+router.post("/register", guestUser, validate.userCreate, userController.store);
 
 // Login de usuario
 router.get("/login", guestUser, userController.login);
-router.post("/login", guestUser, userController.processLogin);
+router.post("/login", guestUser, validate.userLogin, userController.processLogin);
 
 // Logout
 router.post("/logout", userLog, userController.logout);
