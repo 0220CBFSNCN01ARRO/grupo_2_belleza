@@ -7,6 +7,7 @@ const { validationResult } = require("express-validator");
 const validationHelper = require("../validators/validatorHelpler");
 
 module.exports = {
+  // REGISTRO DE USUARIO
   register: (req, res) => {
     res.render("register");
   },
@@ -32,7 +33,7 @@ module.exports = {
       // imagen: req.file ? req.file.filename : '',
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      categoriaUsuarioId: 2,
+      categoriaUsuarioId: 1,
     };
 
     db.usuarios
@@ -42,6 +43,7 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
+  // LOGIN DE USUARIO
   login: (req, res) => {
     res.render("login");
   },
@@ -110,6 +112,7 @@ module.exports = {
         }
       });
   },
+  // PERFIL DEL USUARIO
   profile: (req, res) => {
     res.render("profile", { usuarios });
   },

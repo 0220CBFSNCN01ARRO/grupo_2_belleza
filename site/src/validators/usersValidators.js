@@ -20,7 +20,7 @@ module.exports = {
                         }
                     })
             }),
-        check('password', 'La contraseña debe ser de al menos 8 caracteres')
+        check('password')
             .notEmpty().withMessage('Debes completar el password')
     ],
     userCreate: [
