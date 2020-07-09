@@ -1,17 +1,17 @@
-<%-include("./partials/head", {title: '<%= usuario.nombre %>'})  %>
+<%-include("./partials/head", {title: '<%= usuario.nombre %>'}) %>
 <%-include("./partials/headerLog")  %>
 
 <body>
     <div class="container">
         <h1>Bienvenido <%= usuario.nombre %> </h1>
         <p>Su email es: <%= usuario.email %> </p>
-        
+
     </div>
     <div>
         <form action="/users/profile" enctype="multipart/form-data" method="POST" class="input-group">
             <label for="image" class="form-label">Selecciona aquí tu imagen </label><br>
             <input class="text-input" name="imagen" type="file">
-            
+
             <label for="" class="form-label">Completa la siguiente información </label><br>
             <input name="apellido" id="apellido" type="text" class="input-field" placeholder="Apellido" required>
             <input name="direccion" id="direccion" type="text" class="input-field" placeholder="Dirección" required>

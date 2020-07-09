@@ -19,9 +19,9 @@ var auth = require("./middlewares/auth");
 app.use(logger("dev"));
 
 // view engine setup
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, "../public")));
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, 'views'));
+app.set("views", path.join(__dirname, "views"));
 
 // Formularios
 app.use(express.urlencoded({ extended: false }));
@@ -30,13 +30,14 @@ app.use(methodOverride("_method"));
 
 // Session y cookies
 app.use(cookieParser());
-app.use(session({
-  secret: 'SecretBeauty',
-  resave: false,
-  saveUninitialized: true
-}));
+app.use(
+  session({
+    secret: "SecretBeauty",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 app.use(auth);
-
 
 // Rutas
 app.use("/", indexRouter);
