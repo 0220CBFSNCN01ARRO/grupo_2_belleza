@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
   categoriaUsuario.associate = (models) => {
     categoriaUsuario.hasMany(models.usuarios, {
       as: 'categoriaUsuario',
-      foreignKey: 'categoriaUsuarioId'
     });
   };
   return categoriaUsuario;
