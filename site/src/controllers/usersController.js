@@ -93,7 +93,7 @@ module.exports = {
             return res.render("login", {
               errors: {
                 password: {
-                  msg: "La contraseña no coincide con la base.",
+                  msg: "La contraseña no coincide con la base de datos.",
                 },
               },
               old: req.body,
@@ -114,7 +114,9 @@ module.exports = {
   },
   // PERFIL DEL USUARIO
   profile: (req, res) => {
-    res.render("profile", { usuarios });
+    db.usuarios.findByPk(req.params.usuarioId).then((usuario) => {
+      res.render("profile", { usuario });
+    });
   },
   logout: async (req, res) => {
     // Borramos el registro de la base de datos si existe

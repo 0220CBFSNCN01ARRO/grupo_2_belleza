@@ -42,6 +42,6 @@ router.post(
 router.post("/logout", userLog, userController.logout);
 
 // Perfil del usuario
-router.get("/profile", userLog, userController.profile);
+router.get("/profile/:usuarioId", userLog, userController.profile);
 
 module.exports = router;
