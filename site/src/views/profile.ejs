@@ -2,11 +2,11 @@
 <%-include("./partials/headerLog")  %>
 
 <body>
-    <div class="container">
-
-        <h1>Bienvenido <%= usuario.nombre %> </h1>
-        <p>Su email es: <%= usuario.email %> </p>
-
+    <div class="box-perfil">
+        <div class="bienvenida">
+            <h1>Bienvenido <%= usuario.nombre %> </h1>
+            <p>Su email es: <%= usuario.email %> </p>
+        </div>
     </div>
     <div>
         <form action="/users/profile" enctype="multipart/form-data" method="POST" class="input-group">

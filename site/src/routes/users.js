@@ -6,9 +6,12 @@ const userController = require("../controllers/usersController.js");
 const multer = require("multer");
 const path = require("path");
 
+// Middleware para validar usuarios
 const userLog = require("../middlewares/userLog");
 const guestUser = require("../middlewares/guestUser");
+const auth = require("../middlewares/auth");
 
+// Validacion con express-validator
 const validate = require("../validators/usersValidators");
 
 // MULTER
@@ -30,18 +33,10 @@ router.get("/register", guestUser, userController.register);
 router.post("/register", guestUser, validate.userCreate, userController.store);
 
 // Login de usuario
-router.get("/login", guestUser, userController.login);
-router.post(
-  "/login",
-  guestUser,
-  validate.userLogin,
-  userController.processLogin
-);
+router.get("/login", auth, userController.login);
+router.post("/login", guestUser, validate.userLogin, userController.processLogin);
 
 // Logout
 router.post("/logout", userLog, userController.logout);
-
-// Perfil del usuario
-router.get("/profile/:usuarioId", userLog, userController.profile);
 
 module.exports = router;

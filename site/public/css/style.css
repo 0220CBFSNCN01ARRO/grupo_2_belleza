@@ -1074,3 +1074,14 @@ footer {
 
 /*Fin Slide  */
 
+/* -- PERFIL DE USUARIO -- */
+.box-perfil {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.bienvenida {
+height: 100%;
+}

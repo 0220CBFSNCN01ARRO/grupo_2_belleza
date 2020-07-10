@@ -17,7 +17,7 @@ module.exports = {
     // betterErrors.create('image', 'No me gusta el archivo que subiste', req.body.imagen);
     betterErrors.create(
       "email",
-      "No me gusta el email que elegiste",
+      "Mail no valido",
       req.body.email
     );
 
@@ -47,9 +47,8 @@ module.exports = {
   login: (req, res) => {
     res.render("login");
   },
-
   processLogin: (req, res, next) => {
-    // Si existe el usuario
+      // Si existe el usuario
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -58,67 +57,26 @@ module.exports = {
         errors: errors.mapped(),
       });
     }
-
-    db.usuarios
-      .findOne({
-        where: { email: req.body.email },
-      })
-      .then((usuarios) => {
-        // Si el email existe
-        console.log(usuarios);
-        if (usuarios) {
-          // Y la contraseña es válida
-          if (bcrypt.compareSync(req.body.password, usuarios.password)) {
-            // Eliminamos la contraseña antes de guardar en sesión
-            userData = usuarios.dataValues;
-            delete userData.password;
-
-            req.session.usuarios = userData;
-
-            // Si pidió que recordar
-            // if (req.body.remember) {
-            //     // Generamos un token seguro, eso para que no pueda entrar cualquiera
-            //     // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
-            //     const token = crypto.randomBytes(64).toString('base64');
-
-            //     // Lo guardamos en nuestra base, para poder chequearlo luego
-            //     user.createToken({userId: user.id, token});
-
-            //     // Recordamos al usuario por 3 meses         msegs  segs  mins  hs   días
-            //     res.cookie('rememberToken', token, { maxAge: 1000 * 60  * 60 *  24 * 90 });
-            // }
-
-            return res.redirect("/users/profile");
-          } else {
-            return res.render("login", {
-              errors: {
-                password: {
-                  msg: "La contraseña no coincide con la base de datos.",
-                },
-              },
-              old: req.body,
-            });
-          }
-        } else {
-          return res.render("register", {
-            errors: {
-              email: {
-                msg:
-                  "El email no se encuentra registrado en nuestra base de datos",
-              },
-            },
-            old: req.body,
-          });
-        }
+    if(req.body.checkboxlogin){
+      db.usuarios.findOne({
+          where: {email: req.body.email}})
+      .then(usuario => {
+          req.session.usuario = usuario; 
+          let data = req.session.usuario      
+          res.cookie('cookieuser',data,{ 
+              maxAge: 1000 * 60 * 60 * 24 * 90 });        
+          return res.render ('profile',{
+              tittle:"Perfil usuario","usuario":usuario})
       });
+  } else {
+      db.usuarios.findOne({
+          where: {email: req.body.email}})
+      .then(usuario => {
+      req.session.usuario = usuario
+      let datos=req.session.usuario
+      return res.render ('profile',{tittle:"Perfil usuario","usuario":datos})})}
   },
-  // PERFIL DEL USUARIO
-  profile: (req, res) => {
-    db.usuarios.findByPk(req.params.usuarioId).then((usuario) => {
-      res.render("profile", { usuario });
-    });
-  },
-  logout: async (req, res) => {
+  logout: async (req, res, next) => {
     // Borramos el registro de la base de datos si existe
     //   if (req.cookies.remember) {
     //     await db.token.destroy({
