@@ -37,7 +37,7 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   font-family: "Raleway", sans-serif;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 }
 
 a:link,
@@ -1075,13 +1075,24 @@ footer {
 /*Fin Slide  */
 
 /* -- PERFIL DE USUARIO -- */
-.box-perfil {
+.perfil-usuario {
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  padding: 10%;
 }
 .bienvenida {
 height: 100%;
+}
+.contenido-form-perfil {
+  display: flex;
+  justify-content: center;
+}
+.form-perfil {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
 }

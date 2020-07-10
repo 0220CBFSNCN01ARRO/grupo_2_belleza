@@ -2,25 +2,34 @@
 <%-include("./partials/headerLog")  %>
 
 <body>
+<div class="perfil-usuario">
     <div class="box-perfil">
         <div class="bienvenida">
             <h1>Bienvenido <%= usuario.nombre %> </h1>
             <p>Su email es: <%= usuario.email %> </p>
         </div>
     </div>
-    <div>
-        <form action="/users/profile" enctype="multipart/form-data" method="POST" class="input-group">
-            <label for="image" class="form-label">Selecciona aquí tu imagen </label><br>
-            <input class="text-input" name="imagen" type="file">
-
-            <label for="" class="form-label">Completa la siguiente información </label><br>
-            <input name="apellido" id="apellido" type="text" class="input-field" placeholder="Apellido" required>
-            <input name="direccion" id="direccion" type="text" class="input-field" placeholder="Dirección" required>
-        </form>
-        <form action="/users/logout" method="POST">
-            <button type="submit">Logout</button>
-        </form>
+    <div class="contenido-form-perfil">
+        <div>
+            <form action="/users/login" enctype="multipart/form-data" method="POST" class="form-perfil">
+                <label for="" class="form-label" style="font-size: 15px;">Completa la siguiente información para actualizar tus datos </label><br>
+                <input name="apellido" id="apellido" type="text" class="input-field" placeholder="Apellido" required>
+                <input name="direccion" id="direccion" type="text" class="input-field" placeholder="Dirección" required>
+                <br><br>
+                <label for="image" class="form-label" style="font-size: 15px;">Selecciona aquí tu imagen </label><br>
+                <input class="text-input" name="imagen" type="file">
+                <br><br>
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+        <br><br>
+        <div class="btn-logout">
+            <form action="/users/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
     </div>
+</div>
 </body>
 
 <%-include("./partials/footer")  %>

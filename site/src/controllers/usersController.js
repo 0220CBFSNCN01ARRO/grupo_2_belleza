@@ -76,19 +76,17 @@ module.exports = {
       let datos=req.session.usuario
       return res.render ('profile',{tittle:"Perfil usuario","usuario":datos})})}
   },
-  logout: async (req, res, next) => {
+  logout: (req, res, next) => {
     // Borramos el registro de la base de datos si existe
     //   if (req.cookies.remember) {
     //     await db.token.destroy({
     //         where: { token: req.cookies.remember}
     //     })
     // }
-
-    // Destruimos la sesión
-    req.session.destroy();
-    // Destruimos la cookie de recordar
-    // res.cookie('rememberToken', null, { maxAge: -1 });
-    // Redirigimos a la home
-    res.redirect("/register");
+    req.session.usuario=null
+    res.clearCookie('cookieuser')
+    console.log();
+    res.rendirect('/users/login', {title:"DHStyle"})
+  
   },
 };
