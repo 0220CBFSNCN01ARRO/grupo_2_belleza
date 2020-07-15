@@ -8,17 +8,20 @@
       <div id="btn"></div>
       <button type="button" class="toggle-btn" onclick="registro()">Registro</button>
     </div>
+    <div class="errores">
+      <ul></ul>
+    </div>
     <form id="registro" class="input-group" method="POST" action="/users/register">
-      <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Nombre" required>
+      <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Nombre">
       <input name="email" id="email" type="email"
         class="input-field <%= locals.errors && errors.email ? 'is-danger': '' %>"
-        value="<%= locals.errors && errors.value('email') %>" placeholder="E-mail" required>
+        value="<%= locals.errors && errors.value('email') %>" placeholder="E-mail" >
       <% if(locals.errors && errors.has('email')) { %>
       <p style="font-size: 12px; color: red;"><%= errors.msg('email') %> </p>
       <% } %>
       <input name="password" id="pass" type="password"
         class="input-field <%= locals.errors && errors.password ? 'is-danger': '' %> "
-        value="<%= locals.errors && errors.value('password') %>" placeholder="Contraseña" required>
+        value="<%= locals.errors && errors.value('password') %>" placeholder="Contraseña" >
       <% if(locals.errors && errors.has('password')) { %>
       <p style="font-size: 12px; color: red;"><%= errors.msg('password') %> </p>
       <% } %>
@@ -28,23 +31,6 @@
       <button type="submit" class="submit-btn">Registrarse</button>
     </form>
   </div>
-  <div>
-    <script>
-      var x = document.getElementById("login");
-      var y = document.getElementById("registro");
-      var z = document.getElementById("btn");
-      function registro() {
-        x.style.left = "-450px";
-        y.style.left = "50px";
-        z.style.left = "110px";
-      }
-
-      function login() {
-        x.style.left = "50px";
-        y.style.left = "450px";
-        z.style.left = "0";
-      }
-    </script>
-  </div>
+  <script src="/js/validator.js"></script>
 </body>
 <%-include("./partials/footer")  %>
