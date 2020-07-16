@@ -37,7 +37,7 @@ window.addEventListener("load", function(){
     }
 );
 
-// FORMULARIO CARRITO
+// FORMULARIO CREACION DE PRDUCTO
 
 let formularioProductAdd = document.querySelector("#productAdd");
 let productoNombre = document.getElementById("nombre")

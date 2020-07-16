@@ -78,7 +78,21 @@ module.exports = {
       return res.render ('profile',{tittle:"Perfil usuario","usuario":datos})})}
   },
   update: (req, res) => {
+    usuario = req.body;
+        
+        usuario.imagen = req.params.imagen ? req.body.imagen : req.body.oldimagen;
+        delete usuario.oldimagen;
 
+        db.usuarios
+            .update(usuario, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(updatedusuario => {
+                res.redirect("/login")
+            })
+            .catch(error => { console.log(error) })
   },
 
   logout: (req, res, next) => {

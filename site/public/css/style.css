@@ -1089,11 +1089,15 @@ footer {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 10%;
+  padding: 4%;
 }
 .bienvenida {
 height: 100%;
+margin-bottom: 4%;
+color: black;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 .contenido-form-perfil {
   display: flex;
@@ -1102,6 +1106,10 @@ height: 100%;
 .form-perfil {
   display: flex;
   height: 100%;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
+}
+.btn-logout {
+  display: flex;
+  flex-direction: column-reverse;
 }
