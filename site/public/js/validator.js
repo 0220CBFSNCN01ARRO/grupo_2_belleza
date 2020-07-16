@@ -41,11 +41,10 @@ window.addEventListener("load", function(){
 
 let formularioProductAdd = document.querySelector("#productAdd");
 let productoNombre = document.getElementById("nombre")
-let campoDescripcion = document.getElementById("#descripcion");
+let campoDescripcion = document.getElementById("descripcion");
 let erroresCart = [];
 
 formularioProductAdd.addEventListener("submit", function (e){
-    e.preventDefault();
     
     if (productoNombre.value == ""){
         erroresCart.push("El campo Nombre debe estar completo");
@@ -54,7 +53,7 @@ formularioProductAdd.addEventListener("submit", function (e){
     };
     
     if (campoDescripcion.value == ""){
-        erroresCart.push("El campo descripción debe estar completo");
+        erroresCart.push("El campo Descripción debe estar completo");
     }else if (campoDescripcion.value.length < 20){
         erroresCart.push("La descripción debe tener al menos 20 caracteres");
     };
