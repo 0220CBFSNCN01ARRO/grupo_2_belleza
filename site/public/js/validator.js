@@ -8,7 +8,6 @@ window.addEventListener("load", function(){
     let campoPassword = document.getElementById("pass");
 
     formularioRegistro.addEventListener("submit", function (e){
-       
         if (campoNombre.value == ""){
             errores.push("El campo Nombre debe estar completo");
         }else if (campoNombre.value.length < 2){
@@ -33,42 +32,38 @@ window.addEventListener("load", function(){
                 }
                 // ulErrores=[];
         }
-        
-        console.log(errores)
         });
-
-// FORMULARIO LOGIN
-//         let formularioLogin = document.querySelector("form.login");
-// formularioLogin.addEventListener("submit", function (e){
-//     e.preventDefault();
-
-//     let campoEmailLogin = document.querySelector("input.emailLogin");
-// if (campoEmailLogin.value == ""){
-//     errores.push("El campo Email debe estar completo");
-
-//     let campoPassLogin = document.querySelector("input.passLogin");
-//         if (campoPassLogin.value == ""){
-//             errores.push("El campo Contraseña debe estar completo");
-//         };
-//         }});
-// // FIN FORMULARIO LOGIN
 
     }
 );
 
-// let formularioProductAdd = document.querySelector("form.productAdd");
-// formularioProductAdd.addEventListener("submit", function (e){
-//     e.preventDefault();
-//     let productoNombre = document.querySelector("input.nombre")
-//     if (productoNombre.value == ""){
-//         errores.push("El campo Nombre debe estar completo");
-//     }else if (campoNombre.value.lenght < 5){
-//         errores.push("El campo de Nombre debe tener al menos 5 caracteres");
-//     };
-//     let campoDescripcion = document.querySelector("textarea.descripcion");
-//     if (campoDescripcion.value == ""){
-//         errores.push("El campo Email debe estar completo");
-//     }else if (campoDescripcion.value.lenght < 20){
-//         errores.push("La descripción debe tener al menos 20 caracteres");
-//     };
-// });
+// FORMULARIO CARRITO
+
+let formularioProductAdd = document.querySelector("#productAdd");
+let productoNombre = document.getElementById("nombre")
+let campoDescripcion = document.getElementById("#descripcion");
+let erroresCart = [];
+
+formularioProductAdd.addEventListener("submit", function (e){
+    e.preventDefault();
+    
+    if (productoNombre.value == ""){
+        erroresCart.push("El campo Nombre debe estar completo");
+    }else if (campoNombre.value.length < 5){
+        erroresCart.push("El nombre debe tener al menos 5 caracteres");
+    };
+    
+    if (campoDescripcion.value == ""){
+        erroresCart.push("El campo descripción debe estar completo");
+    }else if (campoDescripcion.value.length < 20){
+        erroresCart.push("La descripción debe tener al menos 20 caracteres");
+    };
+    if (erroresCart.length != 0){
+        e.preventDefault();
+        let ulErroresCart = document.querySelector("#erroresCart ul");
+        for (let i = 0; i < erroresCart.length; i++){
+            ulErroresCart.innerHTML += "<li>" + erroresCart[i] + "</li>"
+            }
+            // ulErrores=[];
+    }
+});

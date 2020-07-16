@@ -797,7 +797,7 @@ i.icon {
   left: 50px;
 }
 
-#errores{
+#errores, #erroresLogin{
   color: red;
 }
 
