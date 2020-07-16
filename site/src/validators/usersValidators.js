@@ -21,7 +21,7 @@ module.exports = {
                     })
             }),
         check('password')
-            .notEmpty().withMessage('Debes completar el password')
+            .notEmpty().withMessage('Debes completar la contraseña')
     ],
     userCreate: [
         check('nombre')

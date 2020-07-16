@@ -29,7 +29,7 @@ module.exports = {
       // imagen: req.file ? req.file.filename : '',
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      categoriaUsuarioId: 1,
+      categoriaUsuarioId: 2,
     };
 
     db.usuarios
@@ -53,6 +53,7 @@ module.exports = {
         errors: errors.mapped(),
       });
     }
+<<<<<<< HEAD
     if (req.body.checkboxlogin) {
       db.usuarios
         .findOne({
@@ -83,11 +84,65 @@ module.exports = {
           });
         });
     }
+=======
+    if(req.body.checkboxlogin){
+      db.usuarios.findOne({
+          where: {email: req.body.email}})
+      .then(usuario => {
+          req.session.usuario = usuario; 
+          let data = req.session.usuario      
+          res.cookie('cookieuser',data,{ 
+              maxAge: 1000 * 60 });  
+                    //* 60 * 24 * 90  
+          return res.render ('profile',{
+              tittle:"Perfil usuario","usuario":usuario})
+      });
+  } else {
+      db.usuarios.findOne({
+          where: {email: req.body.email}})
+      .then(usuario => {
+      req.session.usuario = usuario
+      let datos=req.session.usuario
+      return res.render ('profile',{tittle:"Perfil usuario","usuario":datos})})}
+>>>>>>> 78406b307854ff149f3341caaaaf5d41cb2dac89
   },
+  update: (req, res) => {
+    usuario = req.body;
+        
+        usuario.imagen = req.params.imagen ? req.body.imagen : req.body.oldimagen;
+        delete usuario.oldimagen;
+
+        db.usuarios
+            .update(usuario, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(updatedusuario => {
+                res.redirect("/login")
+            })
+            .catch(error => { console.log(error) })
+  },
+
   logout: (req, res, next) => {
+<<<<<<< HEAD
     req.session.usuario = null;
     res.clearCookie("cookieuser");
     console.log();
     res.redirect("/users/login", { title: "DHStyle" });
+=======
+   
+    // req.session.usuario=null
+    // res.clearCookie('cookieuser')
+    // console.log();
+    // {res.render('/', {title:"DHStyle"})}
+  
+    // Destruimos la sesión
+    req.session.destroy();
+    // Destruimos la cookie de recordar
+    res.cookie('cookieuser', null, { maxAge: -1 });
+    // Redirigimos a la home
+    res.redirect('/')
+>>>>>>> 78406b307854ff149f3341caaaaf5d41cb2dac89
   },
 };

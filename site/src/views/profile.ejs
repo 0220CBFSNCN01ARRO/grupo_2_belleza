@@ -11,15 +11,16 @@
     </div>
     <div class="contenido-form-perfil">
         <div>
-            <form action="/users/login" enctype="multipart/form-data" method="POST" class="form-perfil">
+            <form action="/login?_method=PUT" enctype="multipart/form-data" method="POST" class="form-perfil">
                 <label for="" class="form-label" style="font-size: 15px;">Completa la siguiente información para actualizar tus datos </label><br>
-                <input name="apellido" id="apellido" type="text" class="input-field" placeholder="Apellido" required>
-                <input name="direccion" id="direccion" type="text" class="input-field" placeholder="Dirección" required>
+                <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Nombre" >
+                <input name="apellido" id="apellido" type="text" class="input-field" placeholder="Apellido" >
+                <input name="direccion" id="direccion" type="text" class="input-field" placeholder="Dirección" >
                 <br><br>
                 <label for="image" class="form-label" style="font-size: 15px;">Selecciona aquí tu imagen </label><br>
                 <input class="text-input" name="imagen" type="file">
                 <br><br>
-                <button type="submit">Actualizar</button>
+                <button type="submit" style="width: 40%;">Actualizar</button>
             </form>
         </div>
         <br><br>

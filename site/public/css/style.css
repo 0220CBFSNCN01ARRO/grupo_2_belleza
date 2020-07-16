@@ -607,6 +607,10 @@ i.icon {
   padding: 3px;
   font-size: 18px;
 }
+
+#erroresCart{
+  color: red;
+}
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .contain-prod-create {
@@ -730,13 +734,14 @@ i.icon {
   border: 0;
   outline: none;
   position: relative;
+  left: 28%;
 }
 
 #btn {
   top: 0;
   left: 0;
   position: absolute;
-  width: 115px;
+  width: 100%;
   height: 100%;
   background: linear-gradient(to right, #ff105f, #ffad06);
   border-radius: 30px;
@@ -795,6 +800,10 @@ i.icon {
 
 #registro {
   left: 50px;
+}
+
+#errores, #erroresLogin{
+  color: red;
 }
 
 /* Footer */
@@ -1080,11 +1089,15 @@ footer {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 10%;
+  padding: 4%;
 }
 .bienvenida {
 height: 100%;
+margin-bottom: 4%;
+color: black;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 .contenido-form-perfil {
   display: flex;
@@ -1093,6 +1106,10 @@ height: 100%;
 .form-perfil {
   display: flex;
   height: 100%;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
+}
+.btn-logout {
+  display: flex;
+  flex-direction: column-reverse;
 }
