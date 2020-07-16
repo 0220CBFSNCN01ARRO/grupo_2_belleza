@@ -8,15 +8,18 @@
       <div id="btn"></div>
       <button type="button" class="toggle-btn" onclick="login()">LOGIN</button>
     </div>
+    <div id="erroresLogin">
+      <ul></ul>
+    </div>
     <form id="login" class="input-group" method="POST" action="/users/login">
       <div>
-        <input type="text" class="input-field" placeholder="Email" name="email" required>
+        <input id="emailLogin" type="text" class="input-field" placeholder="Email" name="email">
         <% if(locals.errors && errors.email) { %>
         <p style="font-size: 12px; color: red;"><%= errors.email.msg  %> </p>
         <% } %>
       </div>
       <div>
-        <input type="password" class="input-field" placeholder="Contraseña" name="password" required>
+        <input id="passLogin" type="password" class="input-field" placeholder="Contraseña" name="password">
         <% if(locals.errors && errors.password) { %>
         <p style="font-size: 12px; color: red;"><%= errors.password.msg  %> </p>
         <% } %>
@@ -28,5 +31,6 @@
       <button type="submit" class="submit-btn">Entrar</button>
     </form>
   </div>
+  <script src="/js/validatorLogin.js"></script>
 </body>
 <%-include("./partials/footer")  %>

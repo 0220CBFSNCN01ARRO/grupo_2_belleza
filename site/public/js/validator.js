@@ -1,66 +1,68 @@
 window.addEventListener("load", function(){
 
     // FORMULARIO REGISTRO
-    let formularioRegistro = document.querySelector("form.registro");
+    let formularioRegistro = document.querySelector("#registro");
+    let errores = [];
+    let campoNombre = document.getElementById("nombre");
+    let campoEmail = document.getElementById("email");
+    let campoPassword = document.getElementById("pass");
 
     formularioRegistro.addEventListener("submit", function (e){
-        e.preventDefault();
-
-        let campoNombre = document.querySelector("input.nombre");
         if (campoNombre.value == ""){
-            alert("El campo Nombre debe estar completo");
-        }else if (campoNombre.value.lenght < 2){
-            alert("El campo de Nombre debe tener al menos 2 caracteres");
+            errores.push("El campo Nombre debe estar completo");
+        }else if (campoNombre.value.length < 2){
+            errores.push("El campo de Nombre debe tener al menos 2 caracteres");
         };
-        
-        let campoEmail = document.querySelector("input.email");
+
         if (campoEmail.value == ""){
-            alert("El campo Email debe estar completo");
+            errores.push("El campo Email debe estar completo");
         };
-        // else if (campoEmail.value.lenght < 2){
-        //     alert("El campo de Email debe tener al menos 2 caracteres");
-        // };
-
-        let campoPassword = document.querySelector("input.password");
+            
         if (campoPassword.value == ""){
-            alert("El campo Contraseña debe estar completo");
-        }else if (campoPassword.value.lenght < 8){
-            alert("El campo Contraseña debe tener al menos 8 caracteres");
+            errores.push("El campo Contraseña debe estar completo");
+        }else if (campoPassword.value.length < 8){
+            errores.push("La contraseña debe tener al menos 8 caracteres");
         };
+
+        if (errores.length != 0){
+            e.preventDefault();
+            let ulErrores = document.querySelector("#errores ul");
+            for (let i = 0; i < errores.length; i++){
+                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+                }
+                // ulErrores=[];
+        }
         });
-
-// FORMULARIO LOGIN
-        let formularioLogin = document.querySelector("form.login");
-formularioLogin.addEventListener("submit", function (e){
-    e.preventDefault();
-
-    let campoEmailLogin = document.querySelector("input.emailLogin");
-if (campoEmailLogin.value == ""){
-    alert("El campo Email debe estar completo");
-
-    let campoPassLogin = document.querySelector("input.passLogin");
-        if (campoPassLogin.value == ""){
-            alert("El campo Contraseña debe estar completo");
-        };
-        }});
-// FIN FORMULARIO LOGIN
 
     }
 );
 
-let formularioProductAdd = document.querySelector("form.productAdd");
+// FORMULARIO CARRITO
+
+let formularioProductAdd = document.querySelector("#productAdd");
+let productoNombre = document.getElementById("nombre")
+let campoDescripcion = document.getElementById("descripcion");
+let erroresCart = [];
+
 formularioProductAdd.addEventListener("submit", function (e){
-    e.preventDefault();
-    let productoNombre = document.querySelector("input.nombre")
+    
     if (productoNombre.value == ""){
-        alert("El campo Nombre debe estar completo");
-    }else if (campoNombre.value.lenght < 5){
-        alert("El campo de Nombre debe tener al menos 5 caracteres");
+        erroresCart.push("El campo Nombre debe estar completo");
+    }else if (campoNombre.value.length < 5){
+        erroresCart.push("El nombre debe tener al menos 5 caracteres");
     };
-    let campoDescripcion = document.querySelector("textarea.descripcion");
+    
     if (campoDescripcion.value == ""){
-        alert("El campo Email debe estar completo");
-    }else if (campoDescripcion.value.lenght < 20){
-        alert("La descripción debe tener al menos 20 caracteres");
+        erroresCart.push("El campo Descripción debe estar completo");
+    }else if (campoDescripcion.value.length < 20){
+        erroresCart.push("La descripción debe tener al menos 20 caracteres");
     };
+    if (erroresCart.length != 0){
+        e.preventDefault();
+        let ulErroresCart = document.querySelector("#erroresCart ul");
+        for (let i = 0; i < erroresCart.length; i++){
+            ulErroresCart.innerHTML += "<li>" + erroresCart[i] + "</li>"
+            }
+            // ulErrores=[];
+    }
 });

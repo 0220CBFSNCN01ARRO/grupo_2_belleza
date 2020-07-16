@@ -607,6 +607,10 @@ i.icon {
   padding: 3px;
   font-size: 18px;
 }
+
+#erroresCart{
+  color: red;
+}
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .contain-prod-create {
@@ -796,6 +800,10 @@ i.icon {
 
 #registro {
   left: 50px;
+}
+
+#errores, #erroresLogin{
+  color: red;
 }
 
 /* Footer */
