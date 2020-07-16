@@ -15,11 +15,7 @@ module.exports = {
     let errors = validationResult(req);
     let betterErrors = validationHelper(errors.mapped());
     // betterErrors.create('image', 'No me gusta el archivo que subiste', req.body.imagen);
-    betterErrors.create(
-      "email",
-      "Mail no valido",
-      req.body.email
-    );
+    betterErrors.create("email", "Mail no valido", req.body.email);
 
     if (!errors.isEmpty()) {
       return res.render("register", {
@@ -48,7 +44,7 @@ module.exports = {
     res.render("login");
   },
   processLogin: (req, res, next) => {
-      // Si existe el usuario
+    // Si existe el usuario
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -57,36 +53,41 @@ module.exports = {
         errors: errors.mapped(),
       });
     }
-    if(req.body.checkboxlogin){
-      db.usuarios.findOne({
-          where: {email: req.body.email}})
-      .then(usuario => {
-          req.session.usuario = usuario; 
-          let data = req.session.usuario      
-          res.cookie('cookieuser',data,{ 
-              maxAge: 1000 * 60 * 60 * 24 * 90 });        
-          return res.render ('profile',{
-              tittle:"Perfil usuario","usuario":usuario})
-      });
-  } else {
-      db.usuarios.findOne({
-          where: {email: req.body.email}})
-      .then(usuario => {
-      req.session.usuario = usuario
-      let datos=req.session.usuario
-      return res.render ('profile',{tittle:"Perfil usuario","usuario":datos})})}
+    if (req.body.checkboxlogin) {
+      db.usuarios
+        .findOne({
+          where: { email: req.body.email },
+        })
+        .then((usuario) => {
+          req.session.usuario = usuario;
+          let data = req.session.usuario;
+          res.cookie("cookieuser", data, {
+            maxAge: 1000 * 60 * 60 * 24 * 90,
+          });
+          return res.render("profile", {
+            tittle: "Perfil usuario",
+            usuario: usuario,
+          });
+        });
+    } else {
+      db.usuarios
+        .findOne({
+          where: { email: req.body.email },
+        })
+        .then((usuario) => {
+          req.session.usuario = usuario;
+          let datos = req.session.usuario;
+          return res.render("profile", {
+            tittle: "Perfil usuario",
+            usuario: datos,
+          });
+        });
+    }
   },
   logout: (req, res, next) => {
-    // Borramos el registro de la base de datos si existe
-    //   if (req.cookies.remember) {
-    //     await db.token.destroy({
-    //         where: { token: req.cookies.remember}
-    //     })
-    // }
-    req.session.usuario=null
-    res.clearCookie('cookieuser')
+    req.session.usuario = null;
+    res.clearCookie("cookieuser");
     console.log();
-    res.rendirect('/users/login', {title:"DHStyle"})
-  
+    res.redirect("/users/login", { title: "DHStyle" });
   },
 };
