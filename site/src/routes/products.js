@@ -6,6 +6,7 @@ const path = require("path");
 // controllers require
 const productsController = require("../controllers/productsController");
 
+
 //  Multer
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {

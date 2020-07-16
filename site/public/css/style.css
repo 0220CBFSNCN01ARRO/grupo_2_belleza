@@ -730,13 +730,14 @@ i.icon {
   border: 0;
   outline: none;
   position: relative;
+  left: 28%;
 }
 
 #btn {
   top: 0;
   left: 0;
   position: absolute;
-  width: 115px;
+  width: 100%;
   height: 100%;
   background: linear-gradient(to right, #ff105f, #ffad06);
   border-radius: 30px;

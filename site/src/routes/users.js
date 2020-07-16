@@ -35,6 +35,7 @@ router.post("/register", guestUser, validate.userCreate, userController.store);
 // Login de usuario
 router.get("/login", auth, userController.login);
 router.post("/login", guestUser, validate.userLogin, userController.processLogin);
+// router.put("/login", upload.single("imagen"), userController.update);
 
 // Logout
 router.post("/logout", userLog, userController.logout);

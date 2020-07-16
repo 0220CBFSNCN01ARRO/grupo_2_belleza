@@ -33,7 +33,7 @@ module.exports = {
       // imagen: req.file ? req.file.filename : '',
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      categoriaUsuarioId: 1,
+      categoriaUsuarioId: 2,
     };
 
     db.usuarios
@@ -64,7 +64,8 @@ module.exports = {
           req.session.usuario = usuario; 
           let data = req.session.usuario      
           res.cookie('cookieuser',data,{ 
-              maxAge: 1000 * 60 * 60 * 24 * 90 });        
+              maxAge: 1000 * 60 });  
+                    //* 60 * 24 * 90  
           return res.render ('profile',{
               tittle:"Perfil usuario","usuario":usuario})
       });
@@ -76,17 +77,22 @@ module.exports = {
       let datos=req.session.usuario
       return res.render ('profile',{tittle:"Perfil usuario","usuario":datos})})}
   },
+  update: (req, res) => {
+
+  },
+
   logout: (req, res, next) => {
-    // Borramos el registro de la base de datos si existe
-    //   if (req.cookies.remember) {
-    //     await db.token.destroy({
-    //         where: { token: req.cookies.remember}
-    //     })
-    // }
-    req.session.usuario=null
-    res.clearCookie('cookieuser')
-    console.log();
-    res.rendirect('/users/login', {title:"DHStyle"})
+   
+    // req.session.usuario=null
+    // res.clearCookie('cookieuser')
+    // console.log();
+    // {res.render('/', {title:"DHStyle"})}
   
+    // Destruimos la sesión
+    req.session.destroy();
+    // Destruimos la cookie de recordar
+    res.cookie('cookieuser', null, { maxAge: -1 });
+    // Redirigimos a la home
+    res.redirect('/')
   },
 };
