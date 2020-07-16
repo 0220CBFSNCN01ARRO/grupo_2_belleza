@@ -3,35 +3,37 @@ window.addEventListener("load", function(){
     // FORMULARIO REGISTRO
     let formularioRegistro = document.querySelector("#registro");
     let errores = [];
+    let campoNombre = document.getElementById("nombre");
+    let campoEmail = document.getElementById("email");
+    let campoPassword = document.getElementById("pass");
 
     formularioRegistro.addEventListener("submit", function (e){
-        let campoNombre = document.getElementById("nombre");
+       
         if (campoNombre.value == ""){
             errores.push("El campo Nombre debe estar completo");
         }else if (campoNombre.value.length < 2){
-            alert("El campo de Nombre debe tener al menos 2 caracteres");
+            errores.push("El campo de Nombre debe tener al menos 2 caracteres");
         };
-        
-        let campoEmail = document.getElementById("email");
+
         if (campoEmail.value == ""){
-        errores.push("El campo Email debe estar completo");
+            errores.push("El campo Email debe estar completo");
         };
-    
-        let campoPassword = document.getElementById("password");
+            
         if (campoPassword.value == ""){
             errores.push("El campo Contraseña debe estar completo");
         }else if (campoPassword.value.length < 8){
             errores.push("La contraseña debe tener al menos 8 caracteres");
         };
 
-        if (errores.length < 0){
+        if (errores.length != 0){
             e.preventDefault();
-            let ulErrores = document.querySelector("div.errores ul");
-
+            let ulErrores = document.querySelector("#errores ul");
             for (let i = 0; i < errores.length; i++){
                 ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-            }
+                }
+                // ulErrores=[];
         }
+        
         console.log(errores)
         });
 

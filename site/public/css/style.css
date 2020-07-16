@@ -797,6 +797,10 @@ i.icon {
   left: 50px;
 }
 
+#errores{
+  color: red;
+}
+
 /* Footer */
 
 footer {
