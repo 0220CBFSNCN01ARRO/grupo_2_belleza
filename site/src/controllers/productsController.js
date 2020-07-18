@@ -3,7 +3,6 @@ const path = require("path");
 const db = require("../database/models");
 const { Op } = db.Sequelize;
 
-
 const controller = {
   // VER TODOS LOS PRODUCTOS
   products: (req, res) => {
@@ -54,15 +53,17 @@ const controller = {
   // EDITAR UN PRODUCTO EXISTENTE
   edit: async (req, res) => {
     const categoria = await db.categoriaProducto.findAll();
-    const producto = await db.productos.findByPk(req.params.productId, {include: ['categoriaProducto']});
-    return res.render('productEdit', {producto, categoria})
+    const producto = await db.productos.findByPk(req.params.productId, {
+      include: ["categoriaProducto"],
+    });
+    return res.render("productEdit", { producto, categoria });
   },
   // ACCION DE EDITAR
   update: (req, res) => {
     let producto = req.body;
 
     producto.imagen = req.params.imagen ? req.body.imagen : req.body.oldImagen;
-    delete product.oldImagen;
+    delete producto.oldImagen;
 
     db.productos
       .update(producto, {
@@ -71,21 +72,21 @@ const controller = {
         },
       })
       .then((updatedProducto) => {
-        return res.redirect(`/productDetail/${req.params.productId}`);
+        return res.redirect(`/products/detail/${req.params.productId}`);
       })
-      .catch(error => res.send(error));
+      .catch((error) => res.send(error));
   },
-  
+
   // BORRAR UN PRODUCTO
   destroy: async (req, res) => {
-      await db.productos.destroy({ where: { id: req.params.productId } });
-      res.redirect("/products/");
+    await db.productos.destroy({ where: { id: req.params.productId } });
+    res.redirect("/products/");
   },
 
   // BUSCAR PRODUCTO
   search: (req, res) => {
     let search = req.query.buscar;
-    
+
     db.productos
       .findAll({
         where: {
@@ -93,14 +94,14 @@ const controller = {
         },
       })
       .then((productos) => res.render("search", { productos, search }));
-    },
+  },
   // CARRITO DE COMPRAS
   carrito: function (req, res) {
-  res.render("productCart", { title: "Carrito de compras" });
+    res.render("productCart", { title: "Carrito de compras" });
   },
   // compra
   compra: function (req, res) {
-  res.render("productCart", { title: "Compra" });
+    res.render("productCart", { title: "Compra" });
   },
 };
 

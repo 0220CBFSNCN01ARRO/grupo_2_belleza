@@ -6,7 +6,6 @@ const path = require("path");
 // controllers require
 const productsController = require("../controllers/productsController");
 
-
 //  Multer
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -31,8 +30,12 @@ router.get("/create/", productsController.create); //Vista del form para crear p
 router.post("/create/", upload.single("imagen"), productsController.store); //Acción de crear y guardar//
 
 // EDITAR UN PRODUCTOS
-router.get("/edit/", productsController.edit); //Vista del form para editar prod//
-router.put("/edit/:productId", productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
+router.get("/edit/:productId", productsController.edit); //Vista del form para editar prod//
+router.put(
+  "/edit/:productId",
+  upload.single("imagen"),
+  productsController.update
+); //Acción d mandar la modificacion (Modificar el formulario)//
 
 // CARRITO
 router.get("/carrito", productsController.carrito); //carrito

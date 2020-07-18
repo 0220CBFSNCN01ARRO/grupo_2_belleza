@@ -1,12 +1,13 @@
 window.addEventListener("load", function () {
   // FORMULARIO REGISTRO
   let formularioRegistro = document.querySelector("#registro");
-  let errores = [];
+
   let campoNombre = document.getElementById("nombre");
   let campoEmail = document.getElementById("email");
   let campoPassword = document.getElementById("pass");
 
   formularioRegistro.addEventListener("submit", function (e) {
+    let errores = [];
     if (campoNombre.value == "") {
       errores.push("El campo Nombre debe estar completo");
     } else if (campoNombre.value.length < 2) {
@@ -39,9 +40,11 @@ window.addEventListener("load", function () {
 let formularioProductAdd = document.querySelector("#productAdd");
 let productoNombre = document.getElementById("nombre");
 let productoDescripcion = document.getElementById("descripcion");
+let imagen = document.getElementById("imagen");
 
 formularioProductAdd.addEventListener("submit", function (e) {
   let erroresCart = [];
+  let extensionImg = /(.jpg|.jpeg|.png|.gif)$/i;
   if (productoNombre.value == "") {
     erroresCart.push("El campo Nombre debe estar completo");
   } else if (productoNombre.value.length < 5) {
@@ -53,7 +56,9 @@ formularioProductAdd.addEventListener("submit", function (e) {
   } else if (productoDescripcion.value.length < 20) {
     erroresCart.push("La descripción debe tener al menos 20 caracteres");
   }
-
+  if (!extensionImg.exec(imagen.value)) {
+    erroresCart.push("El archivo debe tener formato JPG, JPEG, PNG, GIF");
+  }
   if (erroresCart.length != 0) {
     e.preventDefault();
     let ulErroresCart = document.querySelector("#erroresCart ul");
