@@ -1,14 +1,15 @@
 window.addEventListener("load", function () {
   let formularioLogin = document.querySelector("#login");
 
-  let campoEmailLogin = document.getElementById("emailLogin");
-  let campoPassLogin = document.getElementById("passLogin");
+let formularioLogin = document.querySelector("#login");
+    
+    let campoEmailLogin = document.getElementById("emailLogin");
+    let campoPassLogin = document.getElementById("passLogin");
 
-  formularioLogin.addEventListener("submit", function (e) {
+formularioLogin.addEventListener("submit", function (e){
     let erroresLogin = [];
-    if (campoEmailLogin.value == "") {
-      erroresLogin.push("El campo Email debe estar completo");
-    }
+    if (campoEmailLogin.value == ""){
+    erroresLogin.push("El campo Email debe estar completo");
 
     if (campoPassLogin.value == "") {
       erroresLogin.push("El campo Contraseña debe estar completo");
@@ -21,5 +22,6 @@ window.addEventListener("load", function () {
         ulErroresLogin.innerHTML += "<li>" + erroresLogin[i] + "</li>";
       }
     }
-  });
-});
+  }
+  })
+})
