@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 02-07-2020 a las 20:52:54
+-- Tiempo de generación: 18-07-2020 a las 18:41:14
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `dhstyle`
 --
-CREATE DATABASE IF NOT EXISTS `dhstyle` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `dhstyle` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `dhstyle`;
 
 -- --------------------------------------------------------
@@ -32,20 +31,19 @@ USE `dhstyle`;
 
 CREATE TABLE `categoriaproducto` (
   `ID` smallint(6) NOT NULL,
-  `categoria` varchar(30) NOT NULL,
-  `parentCategoryId` smallint(6) NOT NULL,
-  `categoriaProducto` smallint(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `categoria` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categoriaproducto`
 --
 
-INSERT INTO `categoriaproducto` (`ID`, `categoria`, `parentCategoryId`, `categoriaProducto`) VALUES
-(1, 'jabon', 0, 0),
-(2, 'shampoo', 0, 0),
-(3, 'acondicionador', 1, 0),
-(4, 'perfume', 0, 0);
+INSERT INTO `categoriaproducto` (`ID`, `categoria`) VALUES
+(1, 'jabon'),
+(2, 'shampoo'),
+(3, 'acondicionador'),
+(4, 'perfume'),
+(5, 'talco');
 
 -- --------------------------------------------------------
 
@@ -56,7 +54,7 @@ INSERT INTO `categoriaproducto` (`ID`, `categoria`, `parentCategoryId`, `categor
 CREATE TABLE `categoriausuario` (
   `ID` smallint(6) NOT NULL,
   `categoria` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categoriausuario`
@@ -78,10 +76,10 @@ CREATE TABLE `historial` (
   `pedidoId` smallint(6) NOT NULL,
   `usuarioId` smallint(6) NOT NULL,
   `nombreProducto` varchar(30) NOT NULL,
-  `descripcionProducto` text NOT NULL,
+  `descripcionProducto` mediumtext NOT NULL,
   `precioProducto` decimal(10,0) NOT NULL,
   `cantidadProducto` smallint(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `historial`
@@ -116,11 +114,11 @@ INSERT INTO `historial` (`ID`, `pedidoId`, `usuarioId`, `nombreProducto`, `descr
 --
 
 CREATE TABLE `pedidos` (
-  `ID` smallint(6) UNSIGNED NOT NULL,
-  `usuarioId` smallint(6) UNSIGNED NOT NULL,
-  `productoId` smallint(6) UNSIGNED NOT NULL,
-  `stockProductoId` smallint(6) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ID` smallint(6) NOT NULL,
+  `usuarioId` smallint(6) NOT NULL,
+  `productoId` smallint(6) NOT NULL,
+  `stockProductoId` smallint(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `pedidos`
@@ -157,12 +155,12 @@ INSERT INTO `pedidos` (`ID`, `usuarioId`, `productoId`, `stockProductoId`) VALUE
 CREATE TABLE `productos` (
   `ID` smallint(6) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `descripcion` text NOT NULL,
+  `descripcion` mediumtext NOT NULL,
   `precio` decimal(10,0) NOT NULL,
   `imagen` varchar(50) NOT NULL,
   `stock` smallint(6) NOT NULL,
   `categoriaProductoId` smallint(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `productos`
@@ -190,7 +188,9 @@ INSERT INTO `productos` (`ID`, `nombre`, `descripcion`, `precio`, `imagen`, `sto
 (19, 'Bubulcus ibis', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '757', 'http://dummyimage.com/165x176.png/ff4444/ffffff', 9, 5),
 (20, 'Varanus sp.', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', '382', 'http://dummyimage.com/109x100.png/ff4444/ffffff', 12, 5),
 (21, 'jabon', 'asdad', '21', '', 5, 1),
-(22, 'jabon', 'asdsad', '20', '', 4, 1);
+(22, 'jabon', 'asdsad', '20', '', 4, 1),
+(23, 'jabon', 'saaaaaaaaaaaaaaaaarasa', '12', 'imagen-1594417274227.jpg', 15, 1),
+(24, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '1', 'imagen-1594786357389.jpg', 3, 4);
 
 -- --------------------------------------------------------
 
@@ -202,7 +202,7 @@ CREATE TABLE `productousuario` (
   `ID` smallint(6) NOT NULL,
   `usuarioId` smallint(6) NOT NULL,
   `productoId` smallint(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,7 @@ CREATE TABLE `usuarios` (
   `direccion` varchar(50) DEFAULT NULL,
   `imagen` varchar(100) DEFAULT NULL,
   `categoriaUsuarioId` smallint(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -245,7 +245,9 @@ INSERT INTO `usuarios` (`ID`, `nombre`, `apellido`, `email`, `password`, `direcc
 (17, 'Gusty', 'Dayley', 'gdayleyg@abc.net.au', 'OMBwBBVELO', '1967 Harbort Lane', 'http://dummyimage.com/141x225.png/ff4444/ffffff', 3),
 (18, 'Orsola', 'Fraczek', 'ofraczekh@about.me', 'KqzxYcnW', '7895 Burning Wood Circle', 'http://dummyimage.com/216x135.png/dddddd/000000', 3),
 (19, 'Wendall', 'Colten', 'wcolteni@prweb.com', 'xXO2Y98mw', '17 Sunbrook Road', 'http://dummyimage.com/105x239.png/cc0000/ffffff', 2),
-(20, 'Darrelle', 'Darville', 'ddarvillej@discuz.net', 'atQy8RiMk9', '963 Sullivan Drive', 'http://dummyimage.com/133x120.png/ff4444/ffffff', 1);
+(20, 'Darrelle', 'Darville', 'ddarvillej@discuz.net', 'atQy8RiMk9', '963 Sullivan Drive', 'http://dummyimage.com/133x120.png/ff4444/ffffff', 1),
+(22, 'guille', NULL, 'nadie@sinmail.com', '$2b$10$gj.MzMLZcEqj8IZ.dgYtcuFJeCA3z3//H9HP1J07Nfokejo1qYqFu', NULL, NULL, 1),
+(23, 'Felipe', NULL, 'feli@mail.com', '$2b$10$cQ6hnNK6pbTgX.es5hzJ5.weeOWpJP55H3bn6XrAir2vYfsVNnCvu', NULL, NULL, 1);
 
 --
 -- Índices para tablas volcadas
@@ -267,27 +269,30 @@ ALTER TABLE `categoriausuario`
 -- Indices de la tabla `historial`
 --
 ALTER TABLE `historial`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `usuarioId` (`usuarioId`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `productoId` (`productoId`),
+  ADD KEY `usuarioId` (`usuarioId`);
 
 --
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `producto-categoria` (`categoriaProductoId`);
 
 --
 -- Indices de la tabla `productousuario`
 --
 ALTER TABLE `productousuario`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `productoId` (`productoId`);
+  ADD KEY `productoId` (`productoId`),
+  ADD KEY `usuarioId` (`usuarioId`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -304,7 +309,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categoriaproducto`
 --
 ALTER TABLE `categoriaproducto`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `categoriausuario`
@@ -322,13 +327,13 @@ ALTER TABLE `historial`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID` smallint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `productousuario`
@@ -340,30 +345,36 @@ ALTER TABLE `productousuario`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `categoriaproducto`
+-- Filtros para la tabla `pedidos`
 --
-ALTER TABLE `categoriaproducto`
-  ADD CONSTRAINT `categoriaproducto_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `productos` (`ID`) ON DELETE CASCADE;
+ALTER TABLE `pedidos`
+  ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`productoId`) REFERENCES `productos` (`ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`ID`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `producto-categoria` FOREIGN KEY (`categoriaProductoId`) REFERENCES `categoriaproducto` (`ID`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `productousuario`
 --
 ALTER TABLE `productousuario`
-  ADD CONSTRAINT `productousuario_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuarios` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `productousuario_ibfk_2` FOREIGN KEY (`productoId`) REFERENCES `productos` (`ID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `productousuario_ibfk_2` FOREIGN KEY (`productoId`) REFERENCES `productos` (`ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `productousuario_ibfk_3` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`ID`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `historial` (`ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`categoriaUsuarioId`) REFERENCES `categoriausuario` (`ID`) ON DELETE CASCADE;
 COMMIT;
 
