@@ -62,7 +62,7 @@ const controller = {
   update: (req, res) => {
     let producto = req.body;
 
-    producto.imagen = req.params.imagen ? req.body.imagen : req.body.oldImagen;
+    producto.imagen = req.file ? req.file.filename : req.body.oldImage;
     delete producto.oldImagen;
 
     db.productos
