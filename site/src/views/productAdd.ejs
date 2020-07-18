@@ -10,20 +10,21 @@
         </div>
         <!-- Agregar productos nuevos -->
         <div class="products-create">
-            
+
             <form id="productAdd" action="/products/create" method="POST" enctype="multipart/form-data">
                 <div class="prod-create-box">
                     <div class="">
                         <label for="nombre" class="form-label">Nombre del producto</label><br>
-                        <input type="text" id="nombre" name="nombre" placeholder=" Ej: jabon de miel" class="form-input" required>
+                        <input type="text" id="nombre" name="nombre" placeholder=" Ej: jabon de miel"
+                            class="form-input">
                     </div>
                     <div class="">
                         <label for="precio" class="form-label">Precio</label><br>
-                        <input type="text" id="precio" name="precio" placeholder=" Ej: 120" class="form-input" required>
+                        <input type="text" id="precio" name="precio" placeholder=" Ej: 120" class="form-input">
                     </div>
                     <div class="">
                         <label for="categoriaProductoId" class="form-label">Categoría</label><br>
-                        <select type="text" id="categoria" name="categoriaProductoId" class="form-input" required>
+                        <select type="text" id="categoria" name="categoriaProductoId" class="form-input">
                             <option value="">Selecciona una opción</option>
                             <option value="1">jabon</option>
                             <option value="2">shampoo</option>
@@ -37,7 +38,7 @@
                     </div>
                     <div class="">
                         <label for="descripcion" class="form-label">Descripción</label><br>
-                        <textarea name="descripcion" id="descripcion" cols="100" rows="40" class="form-input"
+                        <textarea name="descripcion" id="descripcion" cols="70" rows="7"
                             placeholder="Agrega aqui el detalle del producto"></textarea>
                     </div>
                     <div class="">
@@ -54,7 +55,7 @@
                         <button type="reset" class="btn-cancelar">Cancelar</button>
                     </div>
                 </div>
-                
+
             </form>
             <div id="erroresCart">
                 <ul></ul>
