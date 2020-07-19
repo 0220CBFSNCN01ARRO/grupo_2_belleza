@@ -9,7 +9,7 @@ const validationHelper = require("../validators/validatorHelpler");
 module.exports = {
   // REGISTRO DE USUARIO
   register: (req, res) => {
-    res.render("register");
+    res.render("users/register");
   },
   store: (req, res) => {
     let errors = validationResult(req);
@@ -18,7 +18,7 @@ module.exports = {
     betterErrors.create("email", "Mail no valido", req.body.email);
 
     if (!errors.isEmpty()) {
-      return res.render("register", {
+      return res.render("users/register", {
         old: req.body,
         errors: betterErrors,
       });
@@ -41,14 +41,14 @@ module.exports = {
   },
   // LOGIN DE USUARIO
   login: (req, res) => {
-    res.render("login");
+    res.render("users/login");
   },
   processLogin: (req, res, next) => {
     // Si existe el usuario
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.render("login", {
+      return res.render("users/login", {
         old: req.body,
         errors: errors.mapped(),
       });
@@ -65,7 +65,7 @@ module.exports = {
             maxAge: 1000 * 60,
           });
           //* 60 * 24 * 90
-          return res.render("profile", {
+          return res.render("users/profile", {
             tittle: "Perfil usuario",
             usuario: usuario,
           });
@@ -78,7 +78,7 @@ module.exports = {
         .then((usuario) => {
           req.session.usuario = usuario;
           let datos = req.session.usuario;
-          return res.render("profile", {
+          return res.render("users/profile", {
             tittle: "Perfil usuario",
             usuario: datos,
           });

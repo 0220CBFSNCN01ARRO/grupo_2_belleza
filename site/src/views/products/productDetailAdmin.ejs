@@ -1,0 +1,33 @@
+<%-include("../partials/head", {title: 'Admin'}) %>
+<%-include("../partials/admin")  %>
+
+<!-- Detalle Productos -->
+<main class="box2">
+    <div class="products-container">
+        <div class="">
+            <div class="">
+                <h5 class="products-title"> Producto: <%= producto.nombre %> </h5>
+            </div>
+        </div>
+        <div class="product-detail">
+            <div class="pp-dd">
+                <div class="prod-detail">
+                    <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
+                        <img src="/img/products/<%= producto.imagen %>" alt="imagen de producto"
+                            style="position: relative;">
+                    </figure>
+                    <article class="descript-detail">
+                        <p id="desc-price-detail">
+                            <br>
+                            <%= producto.descripcion %>
+                            <br><br>
+                            $ <%= producto.precio %>
+                        </p>
+                        <button class="boton-carrito-detail"><a href="/products/edit/<%= producto.id %>">Editar</button></a>
+                        <button class="boton-carrito-detail"><a href="/products/delete/<%= producto.id %>">Borrar</button></a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

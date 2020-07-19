@@ -9,7 +9,7 @@ const controller = {
     db.productos
       .findAll()
       .then((productos) => {
-        res.render("products", { productos: productos });
+        res.render("products/products", { productos: productos });
       })
       .catch((error) => console.log(error));
   },
@@ -20,7 +20,7 @@ const controller = {
       .findByPk(req.params.productId)
       .then((producto) => {
         if (producto) {
-          res.render("productDetail", { producto: producto });
+          res.render("products/productDetail", { producto: producto });
         } else {
           res.render("error");
         }
@@ -33,7 +33,7 @@ const controller = {
     db.productos
       .findAll()
       .then((categoria) => {
-        res.render("productAdd", { categoria });
+        res.render("products/productAdd", { categoria });
       })
       .catch((error) => {
         console.log(error);
@@ -56,7 +56,7 @@ const controller = {
     const producto = await db.productos.findByPk(req.params.productId, {
       include: ["categoriaProducto"],
     });
-    return res.render("productEdit", { producto, categoria });
+    return res.render("products/productEdit", { producto, categoria });
   },
   // ACCION DE EDITAR
   update: (req, res) => {
@@ -97,11 +97,11 @@ const controller = {
   },
   // CARRITO DE COMPRAS
   carrito: function (req, res) {
-    res.render("productCart", { title: "Carrito de compras" });
+    res.render("products/productCart", { title: "Carrito de compras" });
   },
   // compra
   compra: function (req, res) {
-    res.render("productCart", { title: "Compra" });
+    res.render("products/productCart", { title: "Compra" });
   },
 };
 
