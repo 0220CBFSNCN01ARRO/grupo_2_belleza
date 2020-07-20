@@ -7,15 +7,18 @@
         <div class="bienvenida">
             <h1>Bienvenido <%= usuario.nombre %> </h1>
             <p>Su email es: <%= usuario.email %> </p>
+            <article>
+                <img src="/img/users/<%= usuario.imagen %> " alt="Foto de perfil" style="width: 50%; height: 20vh;" class="imagen"> <br>
+            </article>
         </div>
     </div>
     <div class="contenido-form-perfil">
         <div>
-            <form action="/login?_method=PUT" enctype="multipart/form-data" method="POST" class="form-perfil">
+            <form action="/users/login/<%= usuario.id %>?_method=PUT" enctype="multipart/form-data" method="POST" class="form-perfil">
                 <label for="" class="form-label" style="font-size: 15px;">Completa la siguiente información para actualizar tus datos </label><br>
-                <input name="nombre" id="nombre" type="text" class="input-field" placeholder="Nombre" >
-                <input name="apellido" id="apellido" type="text" class="input-field" placeholder="Apellido" >
-                <input name="direccion" id="direccion" type="text" class="input-field" placeholder="Dirección" >
+                <input name="nombre" id="nombre" type="text" class="input-field" value="<%= usuario.nombre %>" >
+                <input name="apellido" id="apellido" type="text" class="input-field" value="<%= usuario.apellido %>" placeholder="Apellido" >
+                <input name="direccion" id="direccion" type="text" class="input-field" value="<%= usuario.direccion %>" placeholder="Dirección" >
                 <br><br>
                 <label for="image" class="form-label" style="font-size: 15px;">Selecciona aquí tu imagen </label><br>
                 <input class="text-input" name="imagen" type="file">

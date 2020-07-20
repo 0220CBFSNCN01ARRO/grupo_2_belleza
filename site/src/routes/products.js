@@ -31,11 +31,7 @@ router.post("/create/", upload.single("imagen"), productsController.store); //Ac
 
 // EDITAR UN PRODUCTOS
 router.get("/edit/:productId", productsController.edit); //Vista del form para editar prod//
-router.put(
-  "/edit/:productId",
-  upload.single("imagen"),
-  productsController.update
-); //Acción d mandar la modificacion (Modificar el formulario)//
+router.put("/edit/:productId", upload.single("imagen"), productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
 
 // CARRITO
 router.get("/carrito", productsController.carrito); //carrito

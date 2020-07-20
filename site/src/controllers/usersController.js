@@ -62,11 +62,10 @@ module.exports = {
           req.session.usuario = usuario;
           let data = req.session.usuario;
           res.cookie("cookieuser", data, {
-            maxAge: 1000 * 60,
+            maxAge: 1000 * 60* 60 * 24 * 90,
           });
-          //* 60 * 24 * 90
           return res.render("users/profile", {
-            tittle: "Perfil usuario",
+            title: "Perfil usuario",
             usuario: usuario,
           });
         });
@@ -79,7 +78,7 @@ module.exports = {
           req.session.usuario = usuario;
           let datos = req.session.usuario;
           return res.render("users/profile", {
-            tittle: "Perfil usuario",
+            title: "Perfil usuario",
             usuario: datos,
           });
         });
@@ -94,11 +93,11 @@ module.exports = {
     db.usuarios
       .update(usuario, {
         where: {
-          id: req.params.id,
+          id: usuario.id,
         },
       })
       .then((updatedusuario) => {
-        res.redirect("/login");
+        res.redirect(`/users/profile/${usuario.id}`);
       })
       .catch((error) => {
         console.log(error);
@@ -106,11 +105,6 @@ module.exports = {
   },
 
   logout: (req, res, next) => {
-    // req.session.usuario=null
-    // res.clearCookie('cookieuser')
-    // console.log();
-    // {res.render('/', {title:"DHStyle"})}
-
     // Destruimos la sesión
     req.session.destroy();
     // Destruimos la cookie de recordar
