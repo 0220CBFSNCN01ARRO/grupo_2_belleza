@@ -8,7 +8,7 @@ var productsRouter = require("./routes/products");
 var loginRouter = require("./routes/users");
 
 // rutas apis
-var productsApiRouter = require('./routes/api/products')
+var productsApiRouter = require("./routes/api/products");
 // var usersApiRouter = require('./routes/api/users')
 
 // Metodo para implementar PUT y DELETE
@@ -17,7 +17,7 @@ var session = require("express-session");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-var auth = require("./middlewares/auth");
+// var auth = require("./middlewares/auth");
 
 app.use(logger("dev"));
 
@@ -40,7 +40,7 @@ app.use(
     saveUninitialized: true,
   })
 );
-app.use(auth);
+// app.use(auth);
 
 // Rutas
 app.use("/", indexRouter);
@@ -48,7 +48,7 @@ app.use("/products", productsRouter);
 app.use("/users", loginRouter);
 
 // rutas api
-app.use('/api/products', productsApiRouter);
+app.use("/api/products", productsApiRouter);
 // app.use('/api/users', usersApiRouter);
 
 // catch 404 and forward to error handler

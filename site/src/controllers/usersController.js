@@ -62,7 +62,7 @@ module.exports = {
           req.session.usuario = usuario;
           let data = req.session.usuario;
           res.cookie("cookieuser", data, {
-            maxAge: 1000 * 60* 60 * 24 * 90,
+            maxAge: 1000 * 60 * 60 * 24 * 90,
           });
           return res.render("users/profile", {
             title: "Perfil usuario",
@@ -93,23 +93,31 @@ module.exports = {
     db.usuarios
       .update(usuario, {
         where: {
-          id: usuario.id,
+          id: req.params.usuarioId,
         },
       })
       .then((updatedusuario) => {
-        res.redirect(`/users/profile/${usuario.id}`);
+        res.redirect(`/users/login/${req.params.usuarioId}`);
       })
       .catch((error) => {
         console.log(error);
       });
   },
+  // logout(req, res, next) {
+  //   req.session.usuario = null;
+  //   res.clearCookie("cookieuser");
+  //   {
+  //     res.render("users/login");
+  //   }
+  // },
 
   logout: (req, res, next) => {
     // Destruimos la sesión
     req.session.destroy();
-    // Destruimos la cookie de recordar
+    // // Destruimos la cookie de recordar
     res.cookie("cookieuser", null, { maxAge: -1 });
-    // Redirigimos a la home
+    // // Redirigimos a la home
     res.redirect("/");
+    // console.log("no anda");
   },
 };

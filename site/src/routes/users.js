@@ -34,10 +34,15 @@ router.post("/register", guestUser, validate.userCreate, userController.store);
 
 // Login de usuario
 router.get("/login", auth, userController.login);
-router.post("/login/", guestUser, validate.userLogin, userController.processLogin);
-router.put("/login/:usuarioId/", upload.single("imagen"), guestUser, userController.update);
+router.post("/login", validate.userLogin, userController.processLogin);
+router.put(
+  "/login/:usuarioId",
+  upload.single("imagen"),
+  userLog,
+  userController.update
+);
 
 // Logout
-router.post("/logout", userLog, userController.logout);
+router.post("/logout", userController.logout);
 
 module.exports = router;
