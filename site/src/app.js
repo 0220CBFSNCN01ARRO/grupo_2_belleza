@@ -17,7 +17,6 @@ var session = require("express-session");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-// var auth = require("./middlewares/auth");
 
 app.use(logger("dev"));
 
@@ -40,7 +39,7 @@ app.use(
     saveUninitialized: true,
   })
 );
-// app.use(auth);
+
 
 // Rutas
 app.use("/", indexRouter);

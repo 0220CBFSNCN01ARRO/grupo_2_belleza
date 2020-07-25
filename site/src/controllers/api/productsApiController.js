@@ -34,19 +34,28 @@ const controller = {
         });
   },
 
-  // VER DETALLE DE CADA PRODUCTO
-//   detail: (req, res) => {
-//     db.productos
-//       .findByPk(req.params.productId)
-//       .then((producto) => {
-//         if (producto) {
-//           res.render("productDetail", { producto: producto });
-//         } else {
-//           res.render("error");
-//         }
-//       })
-//       .catch((error) => console.log(error));
-//   }
+//   VER DETALLE DE CADA PRODUCTO
+  detail: async (req, res) => {
+    const producto = await db.productos.findByPk(req.params.productId, {
+        include: ['categoriaProducto']
+    })
+   
+    res.json({
+        meta: {
+            status: 200,
+            link: '/api/products/' + req.params.productId
+        },
+        data: {
+            id: producto.id,
+            nombre: producto.nombre,
+            descripcion: producto.descripcion,
+            categoria: producto.categoriaProducto,
+            precio: producto.precio,
+            stock: producto.stock,
+            imagen: producto.imagen,
+            link: `/api/products/${producto.id}`
+            }
+    });
 }
-
-  module.exports = controller;
+}
+module.exports = controller;

@@ -103,14 +103,6 @@ module.exports = {
         console.log(error);
       });
   },
-  // logout(req, res, next) {
-  //   req.session.usuario = null;
-  //   res.clearCookie("cookieuser");
-  //   {
-  //     res.render("users/login");
-  //   }
-  // },
-
   logout: (req, res, next) => {
     // Destruimos la sesión
     req.session.destroy();
