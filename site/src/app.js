@@ -9,7 +9,7 @@ var loginRouter = require("./routes/users");
 
 // rutas apis
 var productsApiRouter = require("./routes/api/products");
-// var usersApiRouter = require('./routes/api/users')
+var usersApiRouter = require('./routes/api/users')
 
 // Metodo para implementar PUT y DELETE
 var methodOverride = require("method-override");
@@ -48,7 +48,7 @@ app.use("/users", loginRouter);
 
 // rutas api
 app.use("/api/products", productsApiRouter);
-// app.use('/api/users', usersApiRouter);
+app.use('/api/users', usersApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
