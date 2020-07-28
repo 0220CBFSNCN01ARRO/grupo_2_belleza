@@ -1,12 +1,11 @@
 /*====== Basics ======*/
-@import url("https://fonts.coogleapis.com/css?family=Poppins:400,500,600,700&display=sawp");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .content-fluid {
   position: relative;
   margin: auto;
@@ -294,7 +293,7 @@ nav ul li.btn span.show:before {
   color: red;
 }
 
-/* CUERPO */
+/* HOME */
 h2 {
   margin-left: 50px;
   margin-top: 20px;
