@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
 }
 .content-fluid {
   position: relative;
@@ -153,15 +153,21 @@ nav ul {
   justify-content: center;
 }
 
+.img-logo {
+  display: flex;
+}
+
 .img-logo img {
   height: 50px;
   margin-right: 10px;
 }
 
 nav ul li.logo {
-  flex: 1;
+  font-family: "Dancing Script", cursive;
+  margin: 10px;
   font-size: 30px;
   font-weight: 700;
+  color: goldenrod;
 }
 
 nav ul div.items {
@@ -171,12 +177,13 @@ nav ul div.items {
 
 nav ul div.items a {
   text-decoration: none;
+  color: white;
   font-size: 18px;
   padding: 0 12px;
 }
 
 nav ul div.items a:hover {
-  color: cyan;
+  color: goldenrod;
 }
 
 nav ul .search-icon {
@@ -993,7 +1000,7 @@ footer {
 
 #slide {
   position: relative;
-  margin: auto;
+  margin: 20px auto;
   overflow: hidden;
   width: 70%;
 }
@@ -1015,6 +1022,7 @@ footer {
 
 #slide ul li img {
   width: 100%;
+  height: 500px;
 }
 
 #slide #paginacion {
