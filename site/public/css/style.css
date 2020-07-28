@@ -1,6 +1,4 @@
 /*====== Basics ======*/
-@import url("https://fonts.coogleapis.com/css?family=Poppins:400,500,600,700&display=sawp");
-
 * {
   margin: 0;
   padding: 0;
@@ -300,7 +298,7 @@ h2 {
   margin-top: 20px;
   /* font-size: 2rem; */
   color: #000;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
 }
 
@@ -309,14 +307,14 @@ h2 {
 }
 
 .box1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
 }
 
 /* Productos cuidados especiales */
 
 h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 300;
   color: #151515;
   padding: 5px;
@@ -341,13 +339,11 @@ h3 {
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  
 }
 
 .mainProd {
   border-radius: 8px;
   box-shadow: 2px 2px 10px #666;
-
 }
 
 .primer-prod {
@@ -366,7 +362,6 @@ h3 {
 }
 
 /* Final prods especiales */
-
 
 /* PRODUCTS */
 .box2 {
@@ -608,7 +603,7 @@ i.icon {
   font-size: 18px;
 }
 
-#erroresCart{
+#erroresCart {
   color: red;
 }
 /* Extra large devices (large desktops, 1200px and up) */
@@ -802,7 +797,8 @@ i.icon {
   left: 50px;
 }
 
-#errores, #erroresLogin{
+#errores,
+#erroresLogin {
   color: red;
 }
 
@@ -1092,12 +1088,12 @@ footer {
   padding: 4%;
 }
 .bienvenida {
-height: 100%;
-margin-bottom: 4%;
-color: black;
-display: flex;
-flex-direction: column;
-align-items: center;
+  height: 100%;
+  margin-bottom: 4%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contenido-form-perfil {
   display: flex;
