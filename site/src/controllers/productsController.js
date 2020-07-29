@@ -56,7 +56,7 @@ const controller = {
     const producto = await db.productos.findByPk(req.params.productId, {
       include: ["categoriaProducto"],
     });
-    return res.render("products/productEdit", { producto, categoria });
+    return res.render("products/productDetailAdmin", { producto, categoria });
   },
   // ACCION DE EDITAR
   update: (req, res) => {

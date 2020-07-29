@@ -35,7 +35,7 @@ module.exports = {
     db.usuarios
       .create(usuario)
       .then((storedUsuario) => {
-        return res.redirect("/users/login");
+        return res.redirect("/users/profile");
       })
       .catch((error) => console.log(error));
   },
@@ -64,15 +64,15 @@ module.exports = {
           res.cookie("cookieuser", data, {
             maxAge: 1000 * 60 * 60 * 24 * 90,
           });
-          if (usuario.categoria == '2') {
+          if (usuario.categoriaUsuario == '1') {
           return (
-          res.render("users/profile", {
-            title: "Perfil usuario",
+          res.render('users/administ', {
+            title: "Perfil administrador",
             usuario: usuario,
           }))
         } else {
-          res.render('users/administ', {
-            title: "Perfil administrador",
+          res.render("users/profile", {
+            title: "Perfil usuario",
             usuario: datos,
           })
         }
@@ -86,14 +86,14 @@ module.exports = {
           req.session.usuario = usuario;
           let datos = req.session.usuario;
 
-          if (usuario.categoria == 2){
-          return res.render("users/profile", {
-            title: "Perfil usuario",
+          if (usuario.categoriaUsuario == 1){
+          return res.render('users/administ', {
+            title: "Perfil administrador",
             usuario: datos,
           })
         } else {
-          res.render('users/administ', {
-            title: "Perfil administrador",
+          res.render("users/profile", {
+            title: "Perfil usuario",
             usuario: datos,
           })
         };
