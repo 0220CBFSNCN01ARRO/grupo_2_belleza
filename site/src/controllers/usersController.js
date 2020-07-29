@@ -64,10 +64,18 @@ module.exports = {
           res.cookie("cookieuser", data, {
             maxAge: 1000 * 60 * 60 * 24 * 90,
           });
-          return res.render("users/profile", {
+          if (usuario.categoria == '2') {
+          return (
+          res.render("users/profile", {
             title: "Perfil usuario",
             usuario: usuario,
-          });
+          }))
+        } else {
+          res.render('users/administ', {
+            title: "Perfil administrador",
+            usuario: datos,
+          })
+        }
         });
     } else {
       db.usuarios
@@ -77,10 +85,18 @@ module.exports = {
         .then((usuario) => {
           req.session.usuario = usuario;
           let datos = req.session.usuario;
+
+          if (usuario.categoria == 2){
           return res.render("users/profile", {
             title: "Perfil usuario",
             usuario: datos,
-          });
+          })
+        } else {
+          res.render('users/administ', {
+            title: "Perfil administrador",
+            usuario: datos,
+          })
+        };
         });
     }
   },
