@@ -24,7 +24,9 @@
                             $ <%= producto.precio %>
                         </p>
                         <button class="boton-carrito-detail"><a href="/products/edit/<%= producto.id %>">Editar</button></a>
-                        <button class="boton-carrito-detail"><a href="/products/delete/<%= producto.id %>">Borrar</button></a>
+                        <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button class="boton-carrito-detail">Borrar</button>
+                        </form>
                     </article>
                 </div>
             </div>
