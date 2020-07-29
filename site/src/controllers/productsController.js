@@ -79,8 +79,10 @@ const controller = {
 
   // BORRAR UN PRODUCTO
   destroy: async (req, res) => {
-    await db.productos.destroy({ where: { id: req.params.productId } });
-    res.redirect("/products/");
+    await db.productos.destroy({ 
+      where: { id: req.params.productId } 
+    });
+    res.redirect("/products");
   },
 
   // BUSCAR PRODUCTO

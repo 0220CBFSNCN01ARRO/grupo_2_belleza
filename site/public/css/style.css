@@ -1113,6 +1113,10 @@ footer {
   height: 100%;
   width: 100%;
   flex-direction: column;
+  line-height: 50px;
+}
+.text-input {
+  margin-bottom: 20px;
 }
 .btn-logout {
   display: flex;

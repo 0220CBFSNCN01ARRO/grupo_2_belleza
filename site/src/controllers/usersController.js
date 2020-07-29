@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const validationHelper = require("../validators/validatorHelpler");
+const usuarios = require("../database/models/usuarios");
 
 module.exports = {
   // REGISTRO DE USUARIO
@@ -35,7 +36,7 @@ module.exports = {
     db.usuarios
       .create(usuario)
       .then((storedUsuario) => {
-        return res.redirect("/users/profile");
+        return res.redirect("/users/login");
       })
       .catch((error) => console.log(error));
   },
@@ -57,14 +58,19 @@ module.exports = {
       db.usuarios
         .findOne({
           where: { email: req.body.email },
-        })
+        },
+        {
+          include: [
+              "categoriaUsuario"
+          ]
+      })
         .then((usuario) => {
           req.session.usuario = usuario;
           let data = req.session.usuario;
           res.cookie("cookieuser", data, {
             maxAge: 1000 * 60 * 60 * 24 * 90,
           });
-          if (usuario.categoriaUsuario == '1') {
+          if (usuario.categoriaUsuarioId == 1) {
           return (
           res.render('users/administ', {
             title: "Perfil administrador",
@@ -73,7 +79,7 @@ module.exports = {
         } else {
           res.render("users/profile", {
             title: "Perfil usuario",
-            usuario: datos,
+            usuario: usuario,
           })
         }
         });
@@ -81,12 +87,17 @@ module.exports = {
       db.usuarios
         .findOne({
           where: { email: req.body.email },
-        })
+        },
+        {
+          include: [
+              "categoriaUsuario"
+          ]
+      })
         .then((usuario) => {
           req.session.usuario = usuario;
           let datos = req.session.usuario;
 
-          if (usuario.categoriaUsuario == 1){
+          if (usuario.categoriaUsuarioId == 1){
           return res.render('users/administ', {
             title: "Perfil administrador",
             usuario: datos,
@@ -109,11 +120,11 @@ module.exports = {
     db.usuarios
       .update(usuario, {
         where: {
-          id: req.params.usuarioId,
+          id: req.session.usuario.ID,
         },
       })
       .then((updatedusuario) => {
-        res.redirect(`/users/login/${req.params.usuarioId}`);
+        res.redirect("/users/login");
       })
       .catch((error) => {
         console.log(error);

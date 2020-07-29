@@ -38,6 +38,7 @@ router.get("/carrito", productsController.carrito); //carrito
 router.post("/carrito", productsController.compra); //Acción para comprar
 
 // BORRAR UN PRODUCTO
+router.get("/delete/:productId/", productsController.edit);
 router.delete("/delete/:productId/", productsController.destroy);
 
 // BUSCAR UN PRODUCTO
