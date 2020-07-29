@@ -27,6 +27,28 @@ const controller = {
       })
       .catch((error) => console.log(error));
   },
+  // PRODUCTOS ADMIN
+  productsAdmin: (req, res) => {
+    db.productos
+      .findAll()
+      .then((productos) => {
+        res.render("products/productsAdmin", { productos: productos });
+      })
+      .catch((error) => console.log(error));
+  },
+// VER DETALLE DE CADA PRODUCTO ADMIN
+detailAdmin: (req, res) => {
+  db.productos
+    .findByPk(req.params.productId)
+    .then((producto) => {
+      if (producto) {
+        res.render("products/productDetailAdmin", { producto: producto });
+      } else {
+        res.render("error");
+      }
+    })
+    .catch((error) => console.log(error));
+},
 
   // CREAR UN PRODUCTO NUEVO
   create: (req, res) => {
@@ -56,7 +78,7 @@ const controller = {
     const producto = await db.productos.findByPk(req.params.productId, {
       include: ["categoriaProducto"],
     });
-    return res.render("products/productDetailAdmin", { producto, categoria });
+    return res.render("products/productEdit", { producto, categoria });
   },
   // ACCION DE EDITAR
   update: (req, res) => {
@@ -72,7 +94,7 @@ const controller = {
         },
       })
       .then((updatedProducto) => {
-        return res.redirect(`/products/detail/${req.params.productId}`);
+        return res.redirect(`/products/detailAdmin/${req.params.productId}`);
       })
       .catch((error) => res.send(error));
   },

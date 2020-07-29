@@ -24,12 +24,14 @@ var upload = multer({ storage: storage });
 // PRODUCTOS Y DETALLE
 router.get("/", productsController.products);
 router.get("/detail/:productId/", productsController.detail);
+router.get("/productsAdmin", productsController.productsAdmin)
+router.get("/detailAdmin/:productId/", productsController.detailAdmin);
 
 // CREAR UN PRODUCTO
 router.get("/create/", productsController.create); //Vista del form para crear prod//
 router.post("/create/", upload.single("imagen"), productsController.store); //Acción de crear y guardar//
 
-// EDITAR UN PRODUCTOS
+// EDITAR UN PRODUCTO
 router.get("/edit/:productId", productsController.edit); //Vista del form para editar prod//
 router.put("/edit/:productId", upload.single("imagen"), productsController.update); //Acción d mandar la modificacion (Modificar el formulario)//
 
@@ -43,5 +45,7 @@ router.delete("/delete/:productId/", productsController.destroy);
 
 // BUSCAR UN PRODUCTO
 router.get("/search", productsController.search);
+
+// 
 
 module.exports = router;

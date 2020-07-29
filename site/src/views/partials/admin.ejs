@@ -1,5 +1,5 @@
 <nav class="sidebar">
-    <div class="text"><a href="/users/administ">Menu Administardor</a></div>
+    <div class="text"><a href="/users/login">Menu Administardor</a></div>
     <ul>
         <li><a href="#">Usuarios</a>
             <ul class="op-btn-show">
@@ -13,14 +13,17 @@
             </a>
             <ul class="op-btn-show">
                 <li><a href="/products/create">Agregar</a></li>
-                <li><a href="productDetailAdmin">Editar</a></li>
-                <li><a href="productDetailAdmin">Eliminar</a></li>
+                <li><a href="/products/productsAdmin">Editar</a></li>
+                <li><a href="/products/detailAdmin">Eliminar</a></li>
             </ul>
         </li>
         <li><a href="/">Home</a></li>
-
-
     </ul>
+    <div class="btn-logout-adm">
+        <form action="/users/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 </nav>
 
 <script>
