@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 18-07-2020 a las 18:41:14
+-- Tiempo de generación: 29-07-2020 a las 22:47:20
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.2.19
 
@@ -62,8 +62,7 @@ CREATE TABLE `categoriausuario` (
 
 INSERT INTO `categoriausuario` (`ID`, `categoria`) VALUES
 (1, 'Admin'),
-(2, 'Logueado'),
-(3, 'Visitante');
+(2, 'Logueado');
 
 -- --------------------------------------------------------
 
@@ -120,32 +119,6 @@ CREATE TABLE `pedidos` (
   `stockProductoId` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `pedidos`
---
-
-INSERT INTO `pedidos` (`ID`, `usuarioId`, `productoId`, `stockProductoId`) VALUES
-(1, 3, 16, 9),
-(2, 2, 9, 49),
-(3, 3, 8, 27),
-(4, 3, 18, 10),
-(5, 2, 8, 40),
-(6, 3, 17, 6),
-(7, 3, 15, 40),
-(8, 1, 18, 37),
-(9, 2, 14, 21),
-(10, 2, 6, 19),
-(11, 2, 2, 7),
-(12, 2, 2, 1),
-(13, 1, 16, 23),
-(14, 1, 10, 49),
-(15, 3, 13, 24),
-(16, 3, 20, 5),
-(17, 2, 5, 13),
-(18, 3, 20, 31),
-(19, 3, 5, 1),
-(20, 1, 13, 39);
-
 -- --------------------------------------------------------
 
 --
@@ -167,7 +140,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`ID`, `nombre`, `descripcion`, `precio`, `imagen`, `stock`, `categoriaProductoId`) VALUES
-(1, 'Cyrtodactylus louisiadensis', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', '663', 'http://dummyimage.com/118x212.png/dddddd/000000', 10, 3),
+(1, 'probando probando', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\r\n\r\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.    ', '663', 'imagen-1595110304223.jpg', 10, 2),
 (2, 'Anastomus oscitans', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '931', 'http://dummyimage.com/167x193.png/5fa2dd/ffffff', 9, 5),
 (3, 'Macaca mulatta', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', '791', 'http://dummyimage.com/123x156.png/cc0000/ffffff', 11, 2),
 (4, 'Uraeginthus angolensis', 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '602', 'http://dummyimage.com/182x103.png/ff4444/ffffff', 2, 4),
@@ -190,7 +163,23 @@ INSERT INTO `productos` (`ID`, `nombre`, `descripcion`, `precio`, `imagen`, `sto
 (21, 'jabon', 'asdad', '21', '', 5, 1),
 (22, 'jabon', 'asdsad', '20', '', 4, 1),
 (23, 'jabon', 'saaaaaaaaaaaaaaaaarasa', '12', 'imagen-1594417274227.jpg', 15, 1),
-(24, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '1', 'imagen-1594786357389.jpg', 3, 4);
+(24, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '1', 'imagen-1594786357389.jpg', 3, 4),
+(25, 'sopa', 'sarasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '150', '', 3, 2),
+(26, 'perf', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '25', '', 6, 4),
+(27, 'otra prueba', '123456', '125', '', 12, 2),
+(28, 'prueba con imagen', 'sargdyrt', '1252', 'imagen-1595098969590.jpg', 12, 2),
+(29, 'tg', '', '123', '', 25, 1),
+(30, '', 'sadfgdffg', '120', '', 12, 2),
+(31, 'Perfume de hombre', 'este perfume eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', '1325', 'imagen-1595993596150.jpg', 22, 4),
+(32, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '126', 'imagen-1595994105476.jpg', 36, 1),
+(33, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '126', 'imagen-1595994145599.jpg', 36, 1),
+(34, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '126', 'imagen-1595994201492.jpg', 36, 1),
+(35, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '1252', 'imagen-1595994289066.jpg', 14, 3),
+(36, 'prueba de nuevo', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '1252', 'imagen-1595994359396.jpg', 14, 3),
+(37, '0303456', 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm', '36', 'imagen-1595994417275.jpg', 12, 2),
+(38, '0303456', 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm', '36', 'imagen-1595994527120.jpg', 12, 2),
+(39, 'testeando', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '1258', 'imagen-1595994559151.jpg', 12, 2),
+(40, 'testeando', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '1258', 'imagen-1595994629601.jpg', 12, 2);
 
 -- --------------------------------------------------------
 
@@ -226,28 +215,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID`, `nombre`, `apellido`, `email`, `password`, `direccion`, `imagen`, `categoriaUsuarioId`) VALUES
-(1, 'Maye', 'Skill', 'mskill0@bbb.org', 'WhPhRP', '5278 Paget Center', 'http://dummyimage.com/186x152.png/cc0000/ffffff', 3),
-(2, 'Jodie', 'Handley', 'jhandley1@thetimes.co.uk', 'I61xff', '013 Mcguire Crossing', 'http://dummyimage.com/123x214.png/5fa2dd/ffffff', 1),
-(3, 'Lazarus', 'Appleyard', 'lappleyard2@pcworld.com', '0OH49h', '297 American Ash Way', 'http://dummyimage.com/209x143.png/5fa2dd/ffffff', 2),
-(4, 'Gabriel', 'Crowcher', 'gcrowcher3@rakuten.co.jp', 'WIhV35ep', '7 Gateway Plaza', 'http://dummyimage.com/145x102.png/5fa2dd/ffffff', 2),
-(5, 'Yasmeen', 'Corzon', 'ycorzon4@hao123.com', 'sadWJ6eY', '6245 Crest Line Lane', 'http://dummyimage.com/205x228.png/dddddd/000000', 3),
-(6, 'Goldina', 'Garrit', 'ggarrit5@irs.gov', 'VIFLvX', '0 Hanson Avenue', 'http://dummyimage.com/198x128.png/ff4444/ffffff', 2),
-(7, 'Nahum', 'Dutson', 'ndutson6@foxnews.com', '6HgbJzRODA8', '47782 Butternut Terrace', 'http://dummyimage.com/123x148.png/cc0000/ffffff', 3),
-(8, 'Cly', 'Bernade', 'cbernade7@symantec.com', 'VjmEDkkOF', '76613 Steensland Road', 'http://dummyimage.com/161x233.png/cc0000/ffffff', 1),
-(9, 'Collen', 'Driscoll', 'cdriscoll8@aol.com', '8C9ZpSIL1K', '71 Loftsgordon Point', 'http://dummyimage.com/226x139.png/cc0000/ffffff', 1),
-(10, 'Hiram', 'Stangroom', 'hstangroom9@salon.com', 'UUwMwaBY', '48 Schmedeman Point', 'http://dummyimage.com/191x198.png/dddddd/000000', 2),
-(11, 'Herold', 'Blas', 'hblasa@abc.net.au', 'uJO15b4S', '8503 Spenser Alley', 'http://dummyimage.com/188x197.png/dddddd/000000', 1),
-(12, 'Marilin', 'Shrieves', 'mshrievesb@yelp.com', '53vXuwcY5vF', '53 Lien Alley', 'http://dummyimage.com/196x159.png/dddddd/000000', 2),
-(13, 'Dotti', 'Moens', 'dmoensc@china.com.cn', 'ubGTt4Y', '970 Petterle Place', 'http://dummyimage.com/197x221.png/dddddd/000000', 3),
-(14, 'Vyky', 'Rockhall', 'vrockhalld@columbia.edu', 'jZUieD', '18949 Crownhardt Crossing', 'http://dummyimage.com/138x133.png/ff4444/ffffff', 2),
-(15, 'Zaccaria', 'Arni', 'zarnie@xing.com', '35LYWbJP', '826 Alpine Park', 'http://dummyimage.com/191x100.png/dddddd/000000', 3),
-(16, 'Sam', 'Stoller', 'sstollerf@multiply.com', 'bTAVNNYNy', '5634 Service Plaza', 'http://dummyimage.com/138x249.png/dddddd/000000', 3),
-(17, 'Gusty', 'Dayley', 'gdayleyg@abc.net.au', 'OMBwBBVELO', '1967 Harbort Lane', 'http://dummyimage.com/141x225.png/ff4444/ffffff', 3),
-(18, 'Orsola', 'Fraczek', 'ofraczekh@about.me', 'KqzxYcnW', '7895 Burning Wood Circle', 'http://dummyimage.com/216x135.png/dddddd/000000', 3),
-(19, 'Wendall', 'Colten', 'wcolteni@prweb.com', 'xXO2Y98mw', '17 Sunbrook Road', 'http://dummyimage.com/105x239.png/cc0000/ffffff', 2),
-(20, 'Darrelle', 'Darville', 'ddarvillej@discuz.net', 'atQy8RiMk9', '963 Sullivan Drive', 'http://dummyimage.com/133x120.png/ff4444/ffffff', 1),
-(22, 'guille', NULL, 'nadie@sinmail.com', '$2b$10$gj.MzMLZcEqj8IZ.dgYtcuFJeCA3z3//H9HP1J07Nfokejo1qYqFu', NULL, NULL, 1),
-(23, 'Felipe', NULL, 'feli@mail.com', '$2b$10$cQ6hnNK6pbTgX.es5hzJ5.weeOWpJP55H3bn6XrAir2vYfsVNnCvu', NULL, NULL, 1);
+(1, 'Gonzalo', NULL, 'admin2@mail.com', '12345678', NULL, NULL, 1),
+(25, 'Guille', 'Cipriani', 'admin1@mail.com', '12345678', NULL, NULL, 1),
+(27, 'Rocio', NULL, 'admin3@mail.com', '12345678', NULL, NULL, 1),
+(28, 'Pepito', NULL, 'nadie@sinmail.com', '$2b$10$MRe3.lsVbfAkZ3V4y9D7k.Sv30Idbvf/rJvUhOfeBl.AgyBEBMQpa', NULL, NULL, 2);
 
 --
 -- Índices para tablas volcadas
@@ -333,7 +304,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `productousuario`
@@ -345,7 +316,7 @@ ALTER TABLE `productousuario`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Restricciones para tablas volcadas
