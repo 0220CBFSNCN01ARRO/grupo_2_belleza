@@ -108,17 +108,19 @@ detailAdmin: (req, res) => {
   },
 
   // BUSCAR PRODUCTO
-  search: (req, res) => {
+  search: async (req, res) => {
     let search = req.query.buscar;
 
-    db.productos
-      .findAll({
+    let productos = await db.productos.findAll()
+    let categorias = await db.categoriaProducto.findAll({
         where: {
-          categoriaProductoId: { [Op.like]: "%" + search + "%" },
+          categoria: { [Op.like]: "%" + search + "%" },
         },
+        include: ["productos"]
       })
-      .then((productos) => res.render("search", { productos, search }));
+      return res.render("products/search", { productos, search, categorias });
   },
+
   // CARRITO DE COMPRAS
   carrito: function (req, res) {
     res.render("products/productCart", { title: "Carrito de compras" });

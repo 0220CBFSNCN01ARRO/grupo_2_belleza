@@ -11,16 +11,16 @@
                 <li><a href="/products">Productos</a></li>
                 <li><a href="/users/login">LogIn</a></li>
                 <li><a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a></li>
+                <form action="/products/search" method="GET" class="form-search" >
+                    <input type="text" name="buscar" class="search-icon" placeholder="buscar producto">
+                    <label class="icon">
+                        <span class="fas fa-search"></span>
+                    </label>
+                </form>
             </div>
-            <form action="/products/search" method="GET">
-                <input type="text" name="buscar" class="form-control" placeholder="buscar producto">
-            </form>
             <!-- <li class="search-icon">
                 <input type="search" placeholder="Buscar un producto">
-                <label class="icon">
-                    <span class="fas fa-search"></span>
                 
-                </label>
             </li> -->
         </ul>
     </nav>

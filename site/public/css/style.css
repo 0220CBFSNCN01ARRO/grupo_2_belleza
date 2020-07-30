@@ -151,11 +151,13 @@ nav ul {
   list-style: none;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .img-logo {
   display: flex;
+  position: relative;
+ 
 }
 
 .img-logo img {
@@ -172,9 +174,12 @@ nav ul li.logo {
 }
 
 nav ul div.items {
-  padding: 0 25px;
+  /* padding: 0 25px; */
   display: inline-flex;
+  left: 480px;
+  position: relative;
 }
+
 
 nav ul div.items a {
   text-decoration: none;
@@ -188,7 +193,7 @@ nav ul div.items a:hover {
 }
 
 nav ul .search-icon {
-  height: 40px;
+  height: 27px;
   width: 240px;
   display: flex;
   background: #f2f2f2;
@@ -224,6 +229,10 @@ nav ul .search-icon .icon span {
   font-size: 18px;
 }
 
+.form-search {
+  display: flex;
+}
+
 nav ul li.btn {
   font-size: 29px;
   flex: 1;
@@ -254,8 +263,8 @@ nav ul li.btn span.show:before {
     z-index: 1;
     padding: 9px 40px 9px 0;
   }
-  .search-icon {
-    flex-direction: row-reverse;
+  .icon label {
+    margin: 2%;
   }
   nav ul div.items {
     z-index: -1;
@@ -1132,4 +1141,20 @@ margin: 6%;
 .btn-logout-adm {
   display: flex;
   justify-content: center;
+}
+
+/* Products Admin */
+.box2-admin {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin-left: 17%;
+}
+
+/* Detalle productos Admin */
+.products-container-admin {
+  flex-wrap: wrap;
+  display: flex;
+  width: 80%;
 }
