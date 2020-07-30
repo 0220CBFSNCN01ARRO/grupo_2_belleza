@@ -104,7 +104,7 @@ detailAdmin: (req, res) => {
     await db.productos.destroy({ 
       where: { id: req.params.productId } 
     });
-    res.redirect("/products");
+    res.redirect("/products/productsAdmin");
   },
 
   // BUSCAR PRODUCTO
