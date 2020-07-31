@@ -3,7 +3,7 @@
 
 <body>
     <!-- Todos los productos -->
-    <div class="box2">
+    <div class="box2-admin">
         <div class="products-container">
             <div class="tit-productos">
                 <span>
@@ -13,7 +13,7 @@
             <div class="prod-container-tarj">
                 <% for(producto of productos) {%>
                 <div class="tarjeta">
-                    <a href="/products/detail/<%= producto.id %>">
+                    <a href="/products/detailAdmin/<%= producto.id %>">
                         <figure class="prod-img">
                             <img src="/img/products/<%= producto.imagen %>" alt="imagen <%= producto.nombre %>">
                         </figure>
@@ -21,7 +21,7 @@
                     <div class="cuerpo-tarjeta">
                         <h4 style="color: black;"><%= producto.nombre %> </h4>
                         <p style="color: black;"> $ <%= producto.precio %> </p>
-                        <a href="/products/edit"><button class="boton-carrito"> Ver producto</button></a>
+                        <a href="/products/detailAdmin/<%= producto.id %>"><button class="boton-carrito"> Ver producto</button></a>
                     </div>
                 </div>
                 <% }  %>

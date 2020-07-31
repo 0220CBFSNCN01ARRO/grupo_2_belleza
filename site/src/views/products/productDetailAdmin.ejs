@@ -2,8 +2,8 @@
 <%-include("../partials/admin")  %>
 
 <!-- Detalle Productos -->
-<main class="box2">
-    <div class="products-container">
+<main class="box2-admin">
+    <div class="products-container-admin">
         <div class="">
             <div class="">
                 <h5 class="products-title"> Producto: <%= producto.nombre %> </h5>
@@ -24,7 +24,9 @@
                             $ <%= producto.precio %>
                         </p>
                         <button class="boton-carrito-detail"><a href="/products/edit/<%= producto.id %>">Editar</button></a>
-                        <button class="boton-carrito-detail"><a href="/products/delete/<%= producto.id %>">Borrar</button></a>
+                        <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button class="boton-carrito-detail">Borrar</button>
+                        </form>
                     </article>
                 </div>
             </div>

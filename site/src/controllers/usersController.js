@@ -120,7 +120,7 @@ module.exports = {
     db.usuarios
       .update(usuario, {
         where: {
-          id: req.session.usuario.ID,
+          id: req.session.usuario.id,
         },
       })
       .then((updatedusuario) => {
