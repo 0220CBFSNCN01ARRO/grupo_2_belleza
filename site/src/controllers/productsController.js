@@ -111,14 +111,13 @@ detailAdmin: (req, res) => {
   search: async (req, res) => {
     let search = req.query.buscar;
 
-    let productos = await db.productos.findAll()
-    let categorias = await db.categoriaProducto.findAll({
+    let productos = await db.productos.findAll({
         where: {
-          categoria: { [Op.like]: "%" + search + "%" },
+          nombre: { [Op.like]: "%" + search + "%" },
         },
-        include: ["productos"]
+        include: ["categoriaProducto"]
       })
-      return res.render("products/search", { productos, search, categorias });
+      return res.render("products/search", { productos, search });
   },
 
   // CARRITO DE COMPRAS

@@ -124,7 +124,7 @@ module.exports = {
         },
       })
       .then((updatedusuario) => {
-        res.redirect("/users/login");
+        res.render("users/profile");
       })
       .catch((error) => {
         console.log(error);
