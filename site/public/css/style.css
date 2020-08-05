@@ -28,7 +28,7 @@
 }
 /* CUERPO */
 body {
-  background-image: url("/img/fondos/fondo-clarito2.jpg");
+  background-image: url("/img/fondos/fondo-elegant-white.jpg");
   /* font-weight: bold; */
   width: 100%;
   color: white;
@@ -318,9 +318,6 @@ h2 {
   font-weight: 400;
 }
 
-.covid {
-  margin: 10px;
-}
 
 .box1 {
   font-family: "Playfair Display", serif;
@@ -329,16 +326,34 @@ h2 {
 
 /* Productos cuidados especiales */
 
-h3 {
-  font-family: "Playfair Display", serif;
+.prod-covid {
+  display: flex;
+}
+.covid {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.tit-covid {
+  font-family: 'Gloria Hallelujah', cursive;
   font-weight: 300;
-  color: #151515;
+  color: #373535!important;
   padding: 5px;
   margin-bottom: 5px;
+  width: 75%;
+  text-align: center;
+  align-self: center;
+}
+.img-covid {
+  display: flex;
+  margin-left: 5%;
+  width: 60%;
+  align-self: center;
 }
 
 .productos-especiales {
   margin: 30px;
+  display: flex;
 }
 
 .row {
@@ -399,7 +414,7 @@ h3 {
 }
 
 .tarjeta {
-  background-color: #ffffff;
+  background-color: #f0e7e73b;
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
@@ -441,8 +456,8 @@ figure {
   background-color: rgb(54, 50, 50);
   border-radius: 15px;
   color: honeydew;
-  height: 5vh;
-  width: 20vh;
+  height: 7vh;
+  width: 23vh;
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -497,7 +512,7 @@ figure {
   text-align: left;
 }
 .prod-detail {
-  background-color: #ffffff;
+  background-color:  #ffffff4f;;
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
@@ -528,8 +543,8 @@ article {
   background-color: rgb(54, 50, 50);
   border-radius: 15px;
   color: honeydew;
-  height: 5vh;
-  width: 30vh;
+  height: 7vh;
+  width: 34vh;
   align-self: center;
   font-size: 15px;
 }
@@ -638,7 +653,7 @@ i.icon {
   justify-content: center;
   font-size: 1.1rem;
   color: black;
-  background-color: #f0f0f0;
+  background-color: #a29d9d47;
   border-radius: 8px;
   margin: 10%;
   padding: 2%;
@@ -722,7 +737,7 @@ i.icon {
   height: 480px;
   position: relative;
   margin: 6% auto;
-  background: lavender;
+  background: #b7b7c436;
   padding: 5px;
   overflow: hidden;
   border-radius: 30px;
