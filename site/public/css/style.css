@@ -179,9 +179,10 @@ nav ul div.items {
 }
 
 nav ul div.items a {
+  font-family: "Dancing Script", cursive;
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 21px;
   padding: 0 12px;
 }
 
@@ -195,6 +196,7 @@ nav ul .search-icon {
   display: flex;
   background: #f2f2f2;
   border-radius: 5px;
+  
 }
 
 nav ul .search-icon input {
@@ -211,7 +213,7 @@ nav ul .search-icon input {
 nav ul .search-icon .icon {
   height: 100%;
   width: 40px;
-  line-height: 40px;
+  line-height: 30px;
   text-align: center;
   border: 1px solid #cccccc;
   border-radius: 0 5px 5px 0;
@@ -856,6 +858,7 @@ footer {
 
 .box h2 {
   font-size: 1.125rem;
+  font-family: "Dancing Script", cursive;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
