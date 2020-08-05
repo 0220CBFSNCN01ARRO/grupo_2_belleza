@@ -336,18 +336,20 @@ h2 {
   width: 50%;
 }
 .tit-covid {
-  font-family: 'Gloria Hallelujah', cursive;
-  font-weight: 300;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
   color: #373535!important;
-  padding: 5px;
   margin-bottom: 5px;
   width: 75%;
   text-align: center;
   align-self: center;
+  font-size: 2rem;
+  
 }
 .img-covid {
   display: flex;
   margin-left: 5%;
+  margin-top: 5%;
   width: 60%;
   align-self: center;
 }
@@ -355,6 +357,7 @@ h2 {
 .productos-especiales {
   margin: 30px;
   display: flex;
+  margin-left: 17%;
 }
 
 .row {
