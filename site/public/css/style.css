@@ -319,11 +319,6 @@ h2 {
   font-weight: 400;
 }
 
-.covid {
-  margin: 10px;
-  display: flex;
-  margin-top: 6%;
-}
 
 .box1 {
   font-family: "Playfair Display", serif;
@@ -332,19 +327,29 @@ h2 {
 
 /* Productos cuidados especiales */
 
+.prod-covid {
+  display: flex;
+}
+.covid {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
 .tit-covid {
   font-family: 'Gloria Hallelujah', cursive;
   font-weight: 300;
   color: #373535!important;
   padding: 5px;
   margin-bottom: 5px;
-  width: 36%;
+  width: 75%;
   text-align: center;
   align-self: center;
 }
 .img-covid {
   display: flex;
   margin-left: 5%;
+  width: 60%;
+  align-self: center;
 }
 
 .productos-especiales {
