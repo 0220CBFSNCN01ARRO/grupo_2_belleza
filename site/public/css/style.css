@@ -157,7 +157,6 @@ nav ul {
 .img-logo {
   display: flex;
   position: relative;
- 
 }
 
 .img-logo img {
@@ -174,12 +173,10 @@ nav ul li.logo {
 }
 
 nav ul div.items {
-  /* padding: 0 25px; */
   display: inline-flex;
   left: 480px;
   position: relative;
 }
-
 
 nav ul div.items a {
   text-decoration: none;
@@ -269,6 +266,7 @@ nav ul li.btn span.show:before {
   nav ul div.items {
     z-index: -1;
     position: fixed;
+
     top: -320px;
     background: #222222;
     width: 100%;
@@ -279,6 +277,7 @@ nav ul li.btn span.show:before {
 
   nav ul div.items.show {
     top: 60px;
+    color: white;
   }
 
   nav ul div.items li {
@@ -1134,9 +1133,9 @@ footer {
 
 /*-- VISTA ADMINISTRADOR --*/
 .vista-adm {
-display: flex;
-justify-content: center;
-margin: 6%;
+  display: flex;
+  justify-content: center;
+  margin: 6%;
 }
 .btn-logout-adm {
   display: flex;
