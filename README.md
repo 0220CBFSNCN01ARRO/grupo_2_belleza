@@ -32,3 +32,7 @@ https://ninjamock.com/s/NFX6DGx
 ## Trello
 
 https://trello.com/b/To3a4KkB/proy-integrador-webfullstack-grupo-2-belleza
+
+
+## Usuarios administradores para pruebas:
+- usuario: admin1@mail.com      pass: 12345678
