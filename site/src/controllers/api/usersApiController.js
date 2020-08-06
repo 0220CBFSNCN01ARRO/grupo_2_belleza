@@ -17,6 +17,7 @@ const controller = {
                 return {
                 id: usuario.id,
                 nombre: usuario.nombre,
+                apellido: usuario.apellido,
                 email: usuario.email,
                 link: `/api/users/${usuario.id}`
                 }
