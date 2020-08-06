@@ -27,16 +27,14 @@ class Productos extends Component {
           });
         }
         )
-       }
-       
-       render() {
-         const {error, totalProductos, productos} = this.state;
-         if(error) {
-         return <div>Error: {error.message}</div>;
-         } else {
-           return (
-            
-            
+      }
+      
+      render() {
+        const {error, totalProductos, productos} = this.state;
+        if(error) {
+        return <div>Error: {error.message}</div>;
+        } else {
+          return (
             <div>
               <div className="row">
                 <div className="col-md-4">
@@ -45,8 +43,6 @@ class Productos extends Component {
                   </div>
                 </div>
                 <div className="col-md-8">
-                  
-                  
                     <table className="table">
                         <thead>
                             <tr>
@@ -61,23 +57,18 @@ class Productos extends Component {
                             <tr>
                               <th scope="row" key={product.id + i}>{product.id}</th>
                               <td key={product.nombre + i}>{product.nombre}</td>
-                              <td key={product.categoria.categoria + i}>{product.categoria.categoria}</td>
+                              <td key={product.categoria + i}>{product.categoria}</td>
                               <td key={product.descripcion + i}>{product.descripcion}</td>
                             </tr>
                         ))}
                         </tbody>
                     </table>
-                  
-                  
                 </div>
                 </div>
                 </div>
-              
-              
            )
          }
        }
-    
 }
         
 export default Productos;

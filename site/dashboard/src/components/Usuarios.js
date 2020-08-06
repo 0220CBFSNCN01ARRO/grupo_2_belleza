@@ -27,8 +27,7 @@ class Usuarios extends Component {
           });
         }
         )
-       }
-       
+      }
       render() {
         const {error, cantidad, usuarios} = this.state;
           if(error) {
@@ -73,11 +72,9 @@ class Usuarios extends Component {
                 </div>
               </div>
             </div>
-
           )
         }
       }
-    
-}
+  }
         
 export default Usuarios;
