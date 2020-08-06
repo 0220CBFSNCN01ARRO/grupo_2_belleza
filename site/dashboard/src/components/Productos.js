@@ -12,13 +12,13 @@ class Productos extends Component {
     }
 
     componentDidMount() {
-      fetch("api/products")
+      fetch("/api/products")
         .then(res => res.json())
         .then(
-          (data) => {
+          (datos) => {
             this.setState({
-                totalProductos: data.meta.totalProductos,
-              productos: data.productos
+              totalProductos: datos.meta.totalProductos,
+              productos: datos.data
           });
         },
         (error) => {
