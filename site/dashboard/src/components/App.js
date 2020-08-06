@@ -1,7 +1,8 @@
 import React from 'react';
 import Content from './Content';
 import NavBar from './NavBar';
-import '../assets/css/LastProduct.css';
+import '../assets/css/app.css';
+
 
 function App() {
   return (

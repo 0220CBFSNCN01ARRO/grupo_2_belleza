@@ -3,7 +3,6 @@ const path = require("path");
 const db = require("../../database/models");
 
 
-
 const controller = {
   // VER TODOS LOS USUARIOS
   users: async (req, res) => {
