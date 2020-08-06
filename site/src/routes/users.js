@@ -22,25 +22,31 @@ var storage = multer.diskStorage({
   filename: (req, file, cb) => {
     cb(
       null,
-      file.fieldname + "-" + req.session.usuario.id + path.extname(file.originalname)
+      file.fieldname +
+        "-" +
+        req.session.usuario.id +
+        path.extname(file.originalname)
     );
   },
 });
-var upload = multer({ storage: storage,
+var upload = multer({
+  storage: storage,
   limits: {
     fileSize: 25000000,
-},
-  fileFilter: function(req, file, cb) {
-      const fileTypes = /jpeg|jpg|png|gif/;
-      const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
-      const mimeType = fileTypes.test(file.mimetype);
+  },
+  fileFilter: function (req, file, cb) {
+    const fileTypes = /jpeg|jpg|png|gif/;
+    const extName = fileTypes.test(
+      path.extname(file.originalname).toLowerCase()
+    );
+    const mimeType = fileTypes.test(file.mimetype);
 
-      if(mimeType && extName){
-          return cb(null, true);
-      } else {
-          cb('Subir sólo una imagen');
-      }
-  }
+    if (mimeType && extName) {
+      return cb(null, true);
+    } else {
+      cb("Subir sólo una imagen");
+    }
+  },
 });
 
 // Registro de usuario

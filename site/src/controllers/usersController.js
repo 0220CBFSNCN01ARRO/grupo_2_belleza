@@ -56,14 +56,14 @@ module.exports = {
     }
     if (req.body.checkboxlogin) {
       db.usuarios
-        .findOne({
-          where: { email: req.body.email },
-        },
-        {
-          include: [
-              "categoriaUsuario"
-          ]
-      })
+        .findOne(
+          {
+            where: { email: req.body.email },
+          },
+          {
+            include: ["categoriaUsuario"],
+          }
+        )
         .then((usuario) => {
           req.session.usuario = usuario;
           let data = req.session.usuario;
@@ -71,47 +71,46 @@ module.exports = {
             maxAge: 1000 * 60 * 60 * 24 * 90,
           });
           if (usuario.categoriaUsuarioId == 1) {
-          return (
-          res.render('users/administ', {
-            title: "Perfil administrador",
-            usuario: usuario,
-          }))
-        } else {
-          res.render("users/profile", {
-            title: "Perfil usuario",
-            usuario: usuario,
-          })
-        }
+            return res.render("users/administ", {
+              title: "Perfil administrador",
+              usuario: usuario,
+            });
+          } else {
+            res.render("users/profile", {
+              title: "Perfil usuario",
+              usuario: usuario,
+            });
+          }
         });
     } else {
       db.usuarios
-        .findOne({
-          where: { email: req.body.email },
-        },
-        {
-          include: [
-              "categoriaUsuario"
-          ]
-      })
+        .findOne(
+          {
+            where: { email: req.body.email },
+          },
+          {
+            include: ["categoriaUsuario"],
+          }
+        )
         .then((usuario) => {
           req.session.usuario = usuario;
           let datos = req.session.usuario;
 
-          if (usuario.categoriaUsuarioId == 1){
-          return res.render('users/administ', {
-            title: "Perfil administrador",
-            usuario: datos,
-          })
-        } else {
-          res.render("users/profile", {
-            title: "Perfil usuario",
-            usuario: datos,
-          })
-        };
+          if (usuario.categoriaUsuarioId == 1) {
+            return res.render("users/administ", {
+              title: "Perfil administrador",
+              usuario: datos,
+            });
+          } else {
+            res.render("users/profile", {
+              title: "Perfil usuario",
+              usuario: datos,
+            });
+          }
         });
     }
   },
-  update: (req, res) => {
+  update: (req, res, next) => {
     usuario = req.body;
 
     usuario.imagen = req.params.imagen ? req.body.imagen : req.body.oldimagen;
