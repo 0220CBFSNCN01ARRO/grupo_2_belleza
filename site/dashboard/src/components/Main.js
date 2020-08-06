@@ -12,27 +12,30 @@ import Categories from './Categories';
 // }
 // ]
 
-class Main extends Component {
-    constructor() {
-        super();
-        this.state = {
-            cards: []
+    class Main extends Component {
+        constructor() {
+            super();
+            this.state = {
+                cards: []
+            }
         }
-    }
-    componentDidMount() {
-        fetch("api/dashboard/widgets")
-        .then(res=>res.json())
-        .then(res=>{
-            this.setState({
-                cards: res.data
+        componentDidMount() {
+            fetch("api/products")
+            .then(res=>res.json())
+            .then(res=>{
+                let newCard = res.data
+				this.setState(prevState => {
+					return { cards: newCard }
             })
+            .catch(error => console.log(error))
         })
     }
-    render () {
-    return (
+
+        render() {
+        return (
         <div className="container-fluid">
 
-        {/* <!-- Content Row --> */}
+        {/* <!-- Content Row -->
         <div className="row mb-4 justify-content-between">
             {
                 this.state.cards.map((card, i)=> {
@@ -43,7 +46,7 @@ class Main extends Component {
                     )
                 })
             }
-        </div>
+        </div> */}
         
         {/* <!-- Content Row --> */}
         <div className="row">
@@ -60,9 +63,7 @@ class Main extends Component {
         </div>
         
     )
-}}
+}
+}
 
 export default Main
-
-
-
