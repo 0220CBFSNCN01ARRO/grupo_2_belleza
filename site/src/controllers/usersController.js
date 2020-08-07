@@ -111,7 +111,7 @@ module.exports = {
         });
     }
   },
-  update: (req, res) => {
+  update: (req, res, next) => {
     usuario = req.body;
 
     usuario.imagen = req.params.imagen ? req.body.imagen : req.body.oldimagen;
