@@ -10,7 +10,29 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/products">Productos</a></li>
                 <li><a href="/users/login">Conectarse</a></li>
-                <li><a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a></li>
+
+                <!-- <li><a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a></li>
+                <li> -->
+                    <div class='carrito'>
+
+                        <p class="carrito-total">
+                            <i class="fas fa-shopping-cart">
+                          <span class="simpleCart_quantity badge badge-danger">0</span>
+                        </p>
+              
+                        <div class="bolsa">
+                          <div class="simpleCart_items"></div>
+                          <span class="simpleCart_total"></span>
+                          <div class="opciones">
+                            <a class="boton simpleCart_empty" href="javascript:void(0)">Vaciar carrito</a>
+                            <a class="boton simpleCart_checkout" href="#">Checkout</a>
+                          </div>
+                        </div>
+              
+                      </div>
+                </li>
+
+
                 <li class="search-icon">
                     <form action="/products/search" method="GET" class="form-search">
                         <input type="text" name="buscar" class="search-icon" placeholder="buscar producto">
