@@ -12,8 +12,7 @@ var storage = multer.diskStorage({
     cb(null, path.join(__dirname, "../../public/img/products")); //aca hay un problema con la ruta
   },
   filename: (req, file, cb) => {
-    cb(
-      null,
+    cb(null,
       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
     );
   },

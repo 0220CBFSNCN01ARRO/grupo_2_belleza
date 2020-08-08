@@ -15,7 +15,7 @@ module.exports = {
   store: (req, res) => {
     let errors = validationResult(req);
     let betterErrors = validationHelper(errors.mapped());
-    // betterErrors.create('image', 'No me gusta el archivo que subiste', req.body.imagen);
+    betterErrors.create('image', 'No me gusta el archivo que subiste', req.body.imagen);
     betterErrors.create("email", "Mail no valido", req.body.email);
 
     if (!errors.isEmpty()) {
@@ -27,7 +27,7 @@ module.exports = {
     usuario = {
       nombre: req.body.nombre,
       apellido: req.body.apellido,
-      // imagen: req.file ? req.file.filename : '',
+      imagen: req.file ? req.file.filename : '',
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       categoriaUsuarioId: 2,
@@ -110,11 +110,13 @@ module.exports = {
         });
     }
   },
+  profile: (req, res) => {
+    res.render('users/profile');
+  },
   update: (req, res, next) => {
     usuario = req.body;
-
-    usuario.imagen = req.params.imagen ? req.body.imagen : req.body.oldimagen;
-    delete usuario.oldimagen;
+    usuario.imagen = req.file ? req.file.filename : "";
+    
 
     db.usuarios
       .update(usuario, {
@@ -123,7 +125,7 @@ module.exports = {
         },
       })
       .then((updatedusuario) => {
-        res.render("users/profile");
+        res.redirect("/users/profile");
       })
       .catch((error) => {
         console.log(error);
