@@ -1151,6 +1151,10 @@ footer {
   display: flex;
   flex-direction: column-reverse;
 }
+.imagen-perfil{
+width: 50%;
+height: auto;
+}
 
 /*-- VISTA ADMINISTRADOR --*/
 .vista-adm {

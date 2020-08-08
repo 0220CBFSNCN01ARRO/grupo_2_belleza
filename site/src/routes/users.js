@@ -22,7 +22,7 @@ var storage = multer.diskStorage({
   filename: (req, file, cb) => {
     cb(
       null,
-      file.fieldname + "-" + req.session.usuario.id + path.extname(file.originalname)
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
     );
   },
 });
@@ -45,7 +45,7 @@ var upload = multer({ storage: storage,
 
 // Registro de usuario
 router.get("/register", guestUser, userController.register);
-router.post("/register", guestUser, validate.userCreate, userController.store);
+router.post("/register",upload.single("imagen"), guestUser, validate.userCreate, userController.store);
 
 // Login de usuario
 router.get("/login", auth, userController.login);
