@@ -26,21 +26,24 @@ var storage = multer.diskStorage({
     );
   },
 });
-var upload = multer({ storage: storage,
+var upload = multer({
+  storage: storage,
   limits: {
     fileSize: 25000000,
-},
-  fileFilter: function(req, file, cb) {
-      const fileTypes = /jpeg|jpg|png|gif/;
-      const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
-      const mimeType = fileTypes.test(file.mimetype);
+  },
+  fileFilter: function (req, file, cb) {
+    const fileTypes = /jpeg|jpg|png|gif/;
+    const extName = fileTypes.test(
+      path.extname(file.originalname).toLowerCase()
+    );
+    const mimeType = fileTypes.test(file.mimetype);
 
-      if(mimeType && extName){
-          return cb(null, true);
-      } else {
-          cb('Subir sólo una imagen');
-      }
-  }
+    if (mimeType && extName) {
+      return cb(null, true);
+    } else {
+      cb("Subir sólo una imagen");
+    }
+  },
 });
 
 // Registro de usuario
