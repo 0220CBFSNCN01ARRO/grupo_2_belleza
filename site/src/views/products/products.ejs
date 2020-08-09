@@ -5,30 +5,30 @@
     <!-- Todos los productos -->
     <div class="box2">
         <div class="products-container">
+            
             <div class="tit-productos">
                 <span>
                     <h2 class="titulo">Productos</h2>
                 </span>
             </div>
-            <div class="prod-container-tarj">
+            <div class="prod-container-tarj ">
                 <% for(producto of productos) {%> 
-                    <div class="tarjeta">
+                    <div class="tarjeta simpleCart_shelfItem">
                         <a href="/products/detail/<%= producto.id %>">
                             <figure class="prod-img">
-                                <img src="/img/products/<%= producto.imagen %>" alt="imagen <%= producto.nombre %>">
+                                <img class="item_image" src="/img/products/<%= producto.imagen %>" alt="imagen <%= producto.nombre %>">
                             </figure>
                         </a>
                         <div class="cuerpo-tarjeta">
-                            <h4 style="color: black;"><%= producto.nombre %> </h4>
-                            <p style="color: black;"> $ <%= producto.precio %> </p>
-                            <a href="/products/carrito"><button class="boton-carrito"><i class="fas fa-shopping-cart"></i> Agregar</button></a>
+                            <h4 class="item_name" style="color: black;"><%= producto.nombre %> </h4>
+                            <p class="item_price" style="color: black;"> $ <%= producto.precio %> </p>
+                            <input class="item_Quantity" type="number" min="1" max="10" value="1" />
+                            <a class="item_add" href="javascript:;"><button class="boton-carrito"><i class="fas fa-shopping-cart" ></i> Agregar</a></button>
                         </div>
                     </div>
                 <% }  %>
             </div>
         </div>
     </div>
-
-
 
 <%- include("../partials/footer")  %>
