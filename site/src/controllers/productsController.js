@@ -68,7 +68,7 @@ detailAdmin: (req, res) => {
     db.productos
       .create(req.body)
       .then((storedProduct) => {
-        return res.redirect("/products/");
+        return res.redirect("/products/productsAdmin/");
       })
       .catch((error) => res.send(error));
   },
