@@ -1202,8 +1202,9 @@ height: auto;
   width: 10%;
 }
 .bolsa {
+  color: black;
   position: absolute;
-  background: #f2f2f2;
+  background: #acacac;
   display: none;
   padding: 5px;
   z-index: 9999;
@@ -1228,6 +1229,10 @@ height: auto;
 .item_price {
   font-size: 2em;
 } */
+.item-image img {
+  height: 100px;
+  width: 70px;
+}
 .item-remove a {
   color: #ec2626;
 }
@@ -1237,4 +1242,14 @@ height: auto;
   border: thin solid;
   transition: 0.5s;
   padding: 5px 10px;
+}
+
+.opciones{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.simpleCart_total{
+  font-weight: bold;
+  text-align: right;
 }
