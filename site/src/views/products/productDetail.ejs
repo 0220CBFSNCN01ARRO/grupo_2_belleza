@@ -11,20 +11,19 @@
         </div>
         <div class="product-detail">
             <div class="pp-dd">
-                <div class="prod-detail">
+                <div class="prod-detail simpleCart_shelfItem">
                     <figure class="img-prod-detail" style="display: inline-flex; justify-content: start;">
-                        <img src="/img/products/<%= producto.imagen %>" alt="imagen de producto"
+                        <img class="item_image" src="/img/products/<%= producto.imagen %>" alt="imagen de producto"
                             style="position: relative;">
                     </figure>
                     <article class="descript-detail">
                         <p id="desc-price-detail">
                             <br>
                             <%= producto.descripcion %>
-                            <br><br>
-                            $ <%= producto.precio %>
-                        </p>
+                        </p><br>
+                        <p class="item_price"> $ <%= producto.precio %> </p>
                         <button class="boton-carrito-detail">
-                            <a href="/products/carrito"><i class="fa fa-shopping-cart"></i>Agregar al
+                            <a class="item_add" href="javascript:;"><i class="fa fa-shopping-cart"></i>Agregar al
                                 carrito</button></a>
                         <div class="m-1">
                             <i class="far fa-credit-card" style="color:#3e3b3b;"></i><i class="icon"> Pagá en cuotas sin interés</i>

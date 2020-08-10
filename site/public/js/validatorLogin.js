@@ -1,10 +1,7 @@
 window.addEventListener("load", function () {
-  let formularioLogin = document.querySelector("#login");
-
 let formularioLogin = document.querySelector("#login");
-    
-    let campoEmailLogin = document.getElementById("emailLogin");
-    let campoPassLogin = document.getElementById("passLogin");
+let campoEmailLogin = document.getElementById("emailLogin");
+let campoPassLogin = document.getElementById("passLogin");
 
 formularioLogin.addEventListener("submit", function (e){
     let erroresLogin = [];

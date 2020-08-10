@@ -144,6 +144,7 @@ nav {
   border: 1px solid #000;
   border-left: none;
   border-right: none;
+  background-attachment: scroll !important;
 }
 
 nav ul {
@@ -861,7 +862,6 @@ footer {
 
 .box h2 {
   font-size: 1.125rem;
-  font-family: "Dancing Script", cursive;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
@@ -1169,6 +1169,9 @@ height: auto;
   display: flex;
   justify-content: center;
 }
+.bienvenido-adm {
+  color: black;
+}
 
 /* Products Admin */
 .box2-admin {
@@ -1237,12 +1240,12 @@ height: auto;
   color: #ec2626;
 }
 
-.item_add {
+/* .item_add {
   border-radius: 21.5px;
   border: thin solid;
   transition: 0.5s;
   padding: 5px 10px;
-}
+} */
 
 .opciones{
   display: flex;

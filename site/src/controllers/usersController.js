@@ -1,11 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
-const crypto = require("crypto");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const validationHelper = require("../validators/validatorHelpler");
-const usuarios = require("../database/models/usuarios");
 
 module.exports = {
   // REGISTRO DE USUARIO
@@ -15,7 +13,7 @@ module.exports = {
   store: (req, res) => {
     let errors = validationResult(req);
     let betterErrors = validationHelper(errors.mapped());
-    betterErrors.create('image', 'No me gusta el archivo que subiste', req.body.imagen);
+    betterErrors.create('imagen', 'No es un archivo de imagen válido', req.body.imagen);
     betterErrors.create("email", "Mail no valido", req.body.email);
 
     if (!errors.isEmpty()) {
@@ -23,7 +21,7 @@ module.exports = {
         old: req.body,
         errors: betterErrors,
       });
-    }
+    } 
     usuario = {
       nombre: req.body.nombre,
       apellido: req.body.apellido,
@@ -45,7 +43,7 @@ module.exports = {
     res.render("users/login");
   },
   processLogin: (req, res, next) => {
-    // Si existe el usuario
+    // Si no existe el usuario
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -55,9 +53,7 @@ module.exports = {
       });
     }
     if (req.body.checkboxlogin) {
-      db.usuarios
-        .findOne(
-          {
+      db.usuarios.findOne({
             where: { email: req.body.email },
           },
           {
@@ -65,6 +61,7 @@ module.exports = {
           }
         )
         .then((usuario) => {
+          if(usuario) 
           req.session.usuario = usuario;
           let data = req.session.usuario;
           res.cookie("cookieuser", data, {
