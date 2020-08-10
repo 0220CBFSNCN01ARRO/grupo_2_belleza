@@ -6,23 +6,26 @@ class Usuarios extends Component {
         super(props);
         this.state = {
           error: null,
+          isLoaded: false,
           cantidad: "",
           usuarios:[]
         }
     }
 
     componentDidMount() {
-      console.log('prueba api dashboard');
+      console.log('arriba usuarios');
       fetch("/api/users")
         .then(res => res.json())
         .then(datos => {
             this.setState({
+              isLoaded: true,
               cantidad: datos.meta.totalUsuarios,
               usuarios: datos.data
           });
         },
         (error) => {
           this.setState({
+            isLoaded: true,
             error
           });
         }
@@ -37,7 +40,7 @@ class Usuarios extends Component {
             
             <div>
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-3">
                   <div>
                     <h4 className="mt-3">Cantidad de Usuarios Registrados:<br></br>
                     <mark className="total-dashboard-panel">{cantidad}</mark>

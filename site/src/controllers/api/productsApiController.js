@@ -7,7 +7,7 @@ const { Op } = db.Sequelize;
 const controller = {
   // VER TODOS LOS PRODUCTOS
   products: async (req, res) => {
-    const productos = await db.productos.findAll({include: ['categoriaProducto']})
+    const productos = await db.productos.findAll({order: [['id', 'ASC']], include: ['categoriaProducto']})
     const categoriaProducto = await db.categoriaProducto.findAll({
         include: ["productos"]
     })
@@ -57,6 +57,6 @@ const controller = {
             link: `/api/products/${producto.id}`
             }
     });
-}
+    }
 }
 module.exports = controller;

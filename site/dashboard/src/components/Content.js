@@ -13,27 +13,22 @@ function Content(props) {
             </div>
           </nav>
           <div className="tab-content" id="nav-tabContent">
-            
-          <div className="tab-pane fade show active" id="nav-users" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div className="row">
-              
-                <Usuarios/>
-              
-            </div>
-          </div>   
-
-
-
-          <div className="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div className="row">
-              
-                <Productos/>
-              
-            </div>
-          </div> 
-           
+            <div className="tab-pane fade show active" id="nav-users" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div className="row">
+                
+                  <Usuarios/>
+                
+              </div>
+            </div>   
+            <div className="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div className="row">
+                
+                  <Productos/>
+                
+              </div>
           </div>
         </div>
+      </div>
     )
 }
 

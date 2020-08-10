@@ -6,23 +6,27 @@ class Productos extends Component {
         super(props);
         this.state = {
           error: null,
+          isLoaded: false,
           totalProductos: "",
           productos:[]
         }
     }
 
     componentDidMount() {
+      console.log('arriba prod');
       fetch("/api/products")
         .then(res => res.json())
         .then(
           (datos) => {
             this.setState({
+              isLoaded: true,
               totalProductos: datos.meta.totalProductos,
               productos: datos.data
           });
         },
         (error) => {
           this.setState({
+            isLoaded: true,
             error
           });
         }
@@ -37,7 +41,7 @@ class Productos extends Component {
           return (
             <div>
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-2">
                   <div>
                     <h4 className="mt-3">Cantidad de <br></br>Productos:<br></br><mark className="total-dashboard-panel">{totalProductos}</mark></h4>
                   </div>
